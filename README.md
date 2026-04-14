@@ -15,7 +15,7 @@
 ## 🌐 Live App
 
 <p align="center">
-  <a href="YOUR_STREAMLIT_LINK_HERE">
+  <a href=<a href="https://quiz-app-for-college-midsem.streamlit.app">>
     <img src="https://img.shields.io/badge/🚀%20Launch%20App-00C2FF?style=for-the-badge&logo=streamlit&logoColor=white"/>
   </a>
 </p>
