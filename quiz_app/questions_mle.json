@@ -1,226 +1,2326 @@
 {
   "Linear Algebra for ML": [
-    {"question": "Which operation is NOT defined for two matrices A (2x3) and B (3x2)?", "options": ["A × B", "B × A", "A + B", "Transpose of A"], "answer": "A + B", "difficulty": "Medium"},
-    {"question": "What is the rank of a matrix?", "options": ["Number of rows", "Number of non-zero eigenvalues", "Maximum number of linearly independent rows or columns", "Determinant value"], "answer": "Maximum number of linearly independent rows or columns", "difficulty": "Medium"},
-    {"question": "If A is a 3×3 matrix with determinant 0, which statement is TRUE?", "options": ["A is invertible", "A has full rank", "Columns of A are linearly dependent", "A has 3 distinct eigenvalues"], "answer": "Columns of A are linearly dependent", "difficulty": "Hard"},
-    {"question": "The dot product of vectors [1,2,3] and [4,5,6] equals:", "options": ["15", "32", "21", "12"], "answer": "32", "difficulty": "Easy"},
-    {"question": "In ML, why is matrix multiplication important?", "options": ["To store datasets", "To perform linear transformations and compute weighted sums", "To sort data points", "To generate random samples"], "answer": "To perform linear transformations and compute weighted sums", "difficulty": "Easy"},
-    {"question": "What does it mean for two vectors to be orthogonal?", "options": ["They have the same magnitude", "Their dot product is zero", "They point in the same direction", "Their cross product is zero"], "answer": "Their dot product is zero", "difficulty": "Easy"},
-    {"question": "Principal Component Analysis (PCA) relies primarily on which linear algebra concept?", "options": ["Matrix addition", "Eigenvalue decomposition", "Gaussian elimination", "LU decomposition"], "answer": "Eigenvalue decomposition", "difficulty": "Medium"},
-    {"question": "The L2 norm (Euclidean norm) of vector [3, 4] is:", "options": ["7", "5", "12", "25"], "answer": "5", "difficulty": "Easy"},
-    {"question": "A matrix A is symmetric if:", "options": ["A = -A^T", "A = A^T", "A × A = I", "det(A) = 1"], "answer": "A = A^T", "difficulty": "Easy"},
-    {"question": "Which decomposition is used in Singular Value Decomposition (SVD)?", "options": ["A = L + U", "A = QR", "A = UΣV^T", "A = PDQ"], "answer": "A = UΣV^T", "difficulty": "Hard"},
-    {"question": "In gradient descent, the gradient is a:", "options": ["Scalar value", "Vector of partial derivatives", "Matrix of second derivatives", "Single partial derivative"], "answer": "Vector of partial derivatives", "difficulty": "Medium"},
-    {"question": "What is a scalar in the context of linear algebra?", "options": ["A 1D array", "A 2D matrix", "A single numerical value", "A set of vectors"], "answer": "A single numerical value", "difficulty": "Easy"},
-    {"question": "The identity matrix I has the property that for any matrix A:", "options": ["A + I = 0", "A × I = A", "A - I = I", "I / A = A"], "answer": "A × I = A", "difficulty": "Easy"},
-    {"question": "If eigenvalue λ = 0 for matrix A, what can we conclude?", "options": ["A is invertible", "A is the identity", "A is singular (non-invertible)", "A is diagonal"], "answer": "A is singular (non-invertible)", "difficulty": "Hard"},
-    {"question": "Which statement about a positive definite matrix is TRUE?", "options": ["All eigenvalues are negative", "All eigenvalues are positive", "Determinant is zero", "It cannot be symmetric"], "answer": "All eigenvalues are positive", "difficulty": "Hard"},
-    {"question": "The transpose of matrix product (AB)^T equals:", "options": ["A^T B^T", "B^T A^T", "A B^T", "B A"], "answer": "B^T A^T", "difficulty": "Medium"},
-    {"question": "In ML, feature scaling normalizes data to prevent which issue?", "options": ["Overfitting", "Features with large magnitudes dominating gradient updates", "Underfitting", "Data leakage"], "answer": "Features with large magnitudes dominating gradient updates", "difficulty": "Medium"},
-    {"question": "The covariance matrix of a dataset is always:", "options": ["Diagonal", "Symmetric and positive semi-definite", "Skew-symmetric", "Orthogonal"], "answer": "Symmetric and positive semi-definite", "difficulty": "Hard"},
-    {"question": "What does the trace of a matrix equal?", "options": ["Sum of all elements", "Sum of diagonal elements", "Product of eigenvalues", "Determinant"], "answer": "Sum of diagonal elements", "difficulty": "Medium"},
-    {"question": "A vector space requires closure under which two operations?", "options": ["Multiplication and division", "Addition and scalar multiplication", "Subtraction and exponentiation", "Division and scalar addition"], "answer": "Addition and scalar multiplication", "difficulty": "Medium"},
-    {"question": "In the equation Ax = b, if A is not square, we use which approach to find the best x?", "options": ["Cramer's rule", "Least squares solution (normal equations)", "Gaussian elimination only", "Eigenvalue decomposition"], "answer": "Least squares solution (normal equations)", "difficulty": "Hard"},
-    {"question": "Which matrix operation is used in backpropagation of neural networks?", "options": ["Matrix inversion", "Chain rule with matrix/vector products", "Matrix trace", "Kronecker product"], "answer": "Chain rule with matrix/vector products", "difficulty": "Hard"},
-    {"question": "Basis vectors of a vector space must be:", "options": ["Orthogonal and equal in length", "Linearly independent and spanning the space", "All unit vectors", "Symmetric"], "answer": "Linearly independent and spanning the space", "difficulty": "Medium"},
-    {"question": "The Frobenius norm of a matrix is defined as:", "options": ["Maximum singular value", "Square root of sum of squares of all elements", "Sum of absolute diagonal values", "Product of all eigenvalues"], "answer": "Square root of sum of squares of all elements", "difficulty": "Hard"},
-    {"question": "In PCA, the first principal component captures:", "options": ["Minimum variance direction", "Maximum variance direction", "Average variance direction", "Zero variance direction"], "answer": "Maximum variance direction", "difficulty": "Medium"},
-    {"question": "If two vectors are linearly dependent, one vector can be expressed as:", "options": ["The inverse of the other", "A scalar multiple of the other", "The transpose of the other", "The sum of the other with itself"], "answer": "A scalar multiple of the other", "difficulty": "Easy"},
-    {"question": "Matrix A (m×n) can be multiplied by matrix B only if:", "options": ["m = n", "Number of columns of A = number of rows of B", "Both are square matrices", "Both have the same number of elements"], "answer": "Number of columns of A = number of rows of B", "difficulty": "Easy"},
-    {"question": "What is the computational complexity of multiplying two n×n matrices naively?", "options": ["O(n)", "O(n²)", "O(n³)", "O(2^n)"], "answer": "O(n³)", "difficulty": "Medium"},
-    {"question": "In NumPy, which function computes the dot product of two arrays?", "options": ["np.multiply()", "np.dot()", "np.cross()", "np.inner()"], "answer": "np.dot()", "difficulty": "Easy"},
-    {"question": "The condition number of a matrix measures:", "options": ["Number of non-zero eigenvalues", "Sensitivity of the solution to perturbations in input", "Number of independent rows", "Speed of matrix inversion"], "answer": "Sensitivity of the solution to perturbations in input", "difficulty": "Hard"}
+    {
+      "question": "Which operation is NOT defined for two matrices A (2x3) and B (3x2)?",
+      "options": [
+        "A × B",
+        "A + B",
+        "B × A",
+        "Transpose of A"
+      ],
+      "answer": "A + B",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the rank of a matrix?",
+      "options": [
+        "Maximum number of linearly independent rows or columns",
+        "Number of rows",
+        "Determinant value",
+        "Number of non-zero eigenvalues"
+      ],
+      "answer": "Maximum number of linearly independent rows or columns",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "If A is a 3×3 matrix with determinant 0, which statement is TRUE?",
+      "options": [
+        "A is invertible",
+        "Columns of A are linearly dependent",
+        "A has 3 distinct eigenvalues",
+        "A has full rank"
+      ],
+      "answer": "Columns of A are linearly dependent",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "The dot product of vectors [1,2,3] and [4,5,6] equals:",
+      "options": [
+        "32",
+        "21",
+        "15",
+        "12"
+      ],
+      "answer": "32",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In ML, why is matrix multiplication important?",
+      "options": [
+        "To store datasets",
+        "To perform linear transformations and compute weighted sums",
+        "To generate random samples",
+        "To sort data points"
+      ],
+      "answer": "To perform linear transformations and compute weighted sums",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What does it mean for two vectors to be orthogonal?",
+      "options": [
+        "Their dot product is zero",
+        "Their cross product is zero",
+        "They have the same magnitude",
+        "They point in the same direction"
+      ],
+      "answer": "Their dot product is zero",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Principal Component Analysis (PCA) relies primarily on which linear algebra concept?",
+      "options": [
+        "Matrix addition",
+        "Eigenvalue decomposition",
+        "Gaussian elimination",
+        "LU decomposition"
+      ],
+      "answer": "Eigenvalue decomposition",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The L2 norm (Euclidean norm) of vector [3, 4] is:",
+      "options": [
+        "25",
+        "12",
+        "5",
+        "7"
+      ],
+      "answer": "5",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "A matrix A is symmetric if:",
+      "options": [
+        "A × A = I",
+        "det(A) = 1",
+        "A = -A^T",
+        "A = A^T"
+      ],
+      "answer": "A = A^T",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which decomposition is used in Singular Value Decomposition (SVD)?",
+      "options": [
+        "A = QR",
+        "A = UΣV^T",
+        "A = L + U",
+        "A = PDQ"
+      ],
+      "answer": "A = UΣV^T",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "In gradient descent, the gradient is a:",
+      "options": [
+        "Single partial derivative",
+        "Matrix of second derivatives",
+        "Scalar value",
+        "Vector of partial derivatives"
+      ],
+      "answer": "Vector of partial derivatives",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a scalar in the context of linear algebra?",
+      "options": [
+        "A 2D matrix",
+        "A set of vectors",
+        "A 1D array",
+        "A single numerical value"
+      ],
+      "answer": "A single numerical value",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The identity matrix I has the property that for any matrix A:",
+      "options": [
+        "A × I = A",
+        "A + I = 0",
+        "I / A = A",
+        "A - I = I"
+      ],
+      "answer": "A × I = A",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "If eigenvalue λ = 0 for matrix A, what can we conclude?",
+      "options": [
+        "A is the identity",
+        "A is singular (non-invertible)",
+        "A is invertible",
+        "A is diagonal"
+      ],
+      "answer": "A is singular (non-invertible)",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Which statement about a positive definite matrix is TRUE?",
+      "options": [
+        "It cannot be symmetric",
+        "All eigenvalues are negative",
+        "Determinant is zero",
+        "All eigenvalues are positive"
+      ],
+      "answer": "All eigenvalues are positive",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "The transpose of matrix product (AB)^T equals:",
+      "options": [
+        "A B^T",
+        "B^T A^T",
+        "A^T B^T",
+        "B A"
+      ],
+      "answer": "B^T A^T",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "In ML, feature scaling normalizes data to prevent which issue?",
+      "options": [
+        "Features with large magnitudes dominating gradient updates",
+        "Overfitting",
+        "Data leakage",
+        "Underfitting"
+      ],
+      "answer": "Features with large magnitudes dominating gradient updates",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The covariance matrix of a dataset is always:",
+      "options": [
+        "Diagonal",
+        "Symmetric and positive semi-definite",
+        "Skew-symmetric",
+        "Orthogonal"
+      ],
+      "answer": "Symmetric and positive semi-definite",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What does the trace of a matrix equal?",
+      "options": [
+        "Sum of diagonal elements",
+        "Product of eigenvalues",
+        "Sum of all elements",
+        "Determinant"
+      ],
+      "answer": "Sum of diagonal elements",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "A vector space requires closure under which two operations?",
+      "options": [
+        "Division and scalar addition",
+        "Multiplication and division",
+        "Addition and scalar multiplication",
+        "Subtraction and exponentiation"
+      ],
+      "answer": "Addition and scalar multiplication",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "In the equation Ax = b, if A is not square, we use which approach to find the best x?",
+      "options": [
+        "Cramer's rule",
+        "Least squares solution (normal equations)",
+        "Eigenvalue decomposition",
+        "Gaussian elimination only"
+      ],
+      "answer": "Least squares solution (normal equations)",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Which matrix operation is used in backpropagation of neural networks?",
+      "options": [
+        "Matrix inversion",
+        "Matrix trace",
+        "Chain rule with matrix/vector products",
+        "Kronecker product"
+      ],
+      "answer": "Chain rule with matrix/vector products",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Basis vectors of a vector space must be:",
+      "options": [
+        "Linearly independent and spanning the space",
+        "All unit vectors",
+        "Orthogonal and equal in length",
+        "Symmetric"
+      ],
+      "answer": "Linearly independent and spanning the space",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The Frobenius norm of a matrix is defined as:",
+      "options": [
+        "Sum of absolute diagonal values",
+        "Maximum singular value",
+        "Product of all eigenvalues",
+        "Square root of sum of squares of all elements"
+      ],
+      "answer": "Square root of sum of squares of all elements",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "In PCA, the first principal component captures:",
+      "options": [
+        "Average variance direction",
+        "Minimum variance direction",
+        "Maximum variance direction",
+        "Zero variance direction"
+      ],
+      "answer": "Maximum variance direction",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "If two vectors are linearly dependent, one vector can be expressed as:",
+      "options": [
+        "The transpose of the other",
+        "The sum of the other with itself",
+        "A scalar multiple of the other",
+        "The inverse of the other"
+      ],
+      "answer": "A scalar multiple of the other",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Matrix A (m×n) can be multiplied by matrix B only if:",
+      "options": [
+        "m = n",
+        "Both are square matrices",
+        "Both have the same number of elements",
+        "Number of columns of A = number of rows of B"
+      ],
+      "answer": "Number of columns of A = number of rows of B",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the computational complexity of multiplying two n×n matrices naively?",
+      "options": [
+        "O(n³)",
+        "O(n)",
+        "O(2^n)",
+        "O(n²)"
+      ],
+      "answer": "O(n³)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "In NumPy, which function computes the dot product of two arrays?",
+      "options": [
+        "np.multiply()",
+        "np.cross()",
+        "np.inner()",
+        "np.dot()"
+      ],
+      "answer": "np.dot()",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The condition number of a matrix measures:",
+      "options": [
+        "Number of independent rows",
+        "Speed of matrix inversion",
+        "Sensitivity of the solution to perturbations in input",
+        "Number of non-zero eigenvalues"
+      ],
+      "answer": "Sensitivity of the solution to perturbations in input",
+      "difficulty": "Hard"
+    }
   ],
   "Introduction to Machine Learning": [
-    {"question": "Which of the following BEST defines Machine Learning?", "options": ["Explicitly programming rules for every scenario", "Systems that learn from data to improve performance without being explicitly programmed", "Storing large datasets in databases", "Automating repetitive computer tasks"], "answer": "Systems that learn from data to improve performance without being explicitly programmed", "difficulty": "Easy"},
-    {"question": "What is the difference between a parameter and a hyperparameter in ML?", "options": ["Parameters are set before training; hyperparameters are learned during training", "Hyperparameters are set before training; parameters are learned during training", "Both are set manually before training", "Both are learned during training"], "answer": "Hyperparameters are set before training; parameters are learned during training", "difficulty": "Medium"},
-    {"question": "In ML, 'overfitting' refers to:", "options": ["Model performs well on training data but poorly on new data", "Model performs poorly on both training and test data", "Model has too few parameters", "Model trains too slowly"], "answer": "Model performs well on training data but poorly on new data", "difficulty": "Easy"},
-    {"question": "The bias-variance tradeoff in ML means:", "options": ["High bias models have high variance", "Reducing bias always reduces variance", "There is a tradeoff: reducing one often increases the other", "Both bias and variance should always be zero"], "answer": "There is a tradeoff: reducing one often increases the other", "difficulty": "Medium"},
-    {"question": "What is a 'feature' in Machine Learning terminology?", "options": ["The output label of a dataset", "An individual measurable property/variable used as input", "The ML model itself", "The training loss value"], "answer": "An individual measurable property/variable used as input", "difficulty": "Easy"},
-    {"question": "Which technique is used to prevent overfitting by penalizing large model weights?", "options": ["Cross-validation", "Regularization (L1/L2)", "Feature selection", "Data augmentation"], "answer": "Regularization (L1/L2)", "difficulty": "Medium"},
-    {"question": "What does 'training set' mean in an ML workflow?", "options": ["Data used to evaluate final model performance", "Data used to tune hyperparameters", "Data used to fit/learn model parameters", "Data used for deployment"], "answer": "Data used to fit/learn model parameters", "difficulty": "Easy"},
-    {"question": "The difference between Data Mining and Predictive Analysis is:", "options": ["Data mining focuses on future predictions; predictive analysis finds hidden patterns", "Data mining discovers hidden patterns in existing data; predictive analysis forecasts future outcomes", "They are identical processes", "Data mining requires labeled data; predictive analysis doesn't"], "answer": "Data mining discovers hidden patterns in existing data; predictive analysis forecasts future outcomes", "difficulty": "Medium"},
-    {"question": "K-fold cross-validation with K=5 means:", "options": ["Data is split into 5 parts; each part serves as test set once while others train", "5% of data is used for testing", "Model is trained 5 times on full data", "5 different models are compared"], "answer": "Data is split into 5 parts; each part serves as test set once while others train", "difficulty": "Medium"},
-    {"question": "Which evaluation metric is appropriate for imbalanced classification datasets?", "options": ["Accuracy", "F1-Score or AUC-ROC", "Mean Squared Error", "R-squared"], "answer": "F1-Score or AUC-ROC", "difficulty": "Hard"},
-    {"question": "The 'curse of dimensionality' in ML refers to:", "options": ["Computers lacking memory for large datasets", "Exponential increase in data needed as dimensions increase", "Models with too many layers", "Slow training due to large batch sizes"], "answer": "Exponential increase in data needed as dimensions increase", "difficulty": "Hard"},
-    {"question": "WEKA is:", "options": ["A Python library for deep learning", "A data preprocessing technique", "An open-source ML software with GUI-based tools", "A type of neural network"], "answer": "An open-source ML software with GUI-based tools", "difficulty": "Easy"},
-    {"question": "What is 'label' in supervised learning?", "options": ["The input features", "The known output/target variable for training examples", "A type of regularization", "The model's prediction"], "answer": "The known output/target variable for training examples", "difficulty": "Easy"},
-    {"question": "Precision in binary classification is calculated as:", "options": ["TP / (TP + FN)", "TP / (TP + FP)", "TN / (TN + FP)", "(TP + TN) / Total"], "answer": "TP / (TP + FP)", "difficulty": "Medium"},
-    {"question": "Recall (Sensitivity) in classification is:", "options": ["TP / (TP + FP)", "TP / (TP + FN)", "TN / (TN + FN)", "FP / (FP + TN)"], "answer": "TP / (TP + FN)", "difficulty": "Medium"},
-    {"question": "Which is NOT a step in the Machine Learning Lifecycle?", "options": ["Data collection and preprocessing", "Model selection and training", "Hardware manufacturing", "Model evaluation and deployment"], "answer": "Hardware manufacturing", "difficulty": "Easy"},
-    {"question": "A confusion matrix for binary classification has dimensions:", "options": ["1×2", "2×2", "3×3", "n×n where n is number of samples"], "answer": "2×2", "difficulty": "Easy"},
-    {"question": "If a model has high variance, the best remedy is typically:", "options": ["Adding more features", "Increasing model complexity", "Getting more training data or simplifying the model", "Increasing learning rate"], "answer": "Getting more training data or simplifying the model", "difficulty": "Medium"},
-    {"question": "Batch gradient descent processes:", "options": ["One sample per iteration", "A small random subset per iteration", "The entire training dataset per iteration", "Randomly selected half the dataset"], "answer": "The entire training dataset per iteration", "difficulty": "Medium"},
-    {"question": "The ROC curve plots:", "options": ["Precision vs Recall", "True Positive Rate vs False Positive Rate", "Loss vs Epochs", "Accuracy vs Model Complexity"], "answer": "True Positive Rate vs False Positive Rate", "difficulty": "Medium"},
-    {"question": "Feature engineering refers to:", "options": ["Building the ML model architecture", "Creating, transforming, or selecting features to improve model performance", "Testing the model on new data", "Deploying model to production"], "answer": "Creating, transforming, or selecting features to improve model performance", "difficulty": "Medium"},
-    {"question": "Which library is NOT primarily used for machine learning in Python?", "options": ["scikit-learn", "TensorFlow", "Django", "PyTorch"], "answer": "Django", "difficulty": "Easy"},
-    {"question": "Missing data in a dataset can be handled by:", "options": ["Only deleting rows with missing values", "Imputation with mean/median, deletion, or prediction models", "Ignoring missing values always", "Converting to string 'NULL'"], "answer": "Imputation with mean/median, deletion, or prediction models", "difficulty": "Medium"},
-    {"question": "What does 'generalization' mean in ML context?", "options": ["Model memorizes training data", "Model performs well on unseen/new data", "Model has many parameters", "Model trains for many epochs"], "answer": "Model performs well on unseen/new data", "difficulty": "Easy"},
-    {"question": "Stratified sampling ensures that:", "options": ["Equal number of samples from each class", "Class distribution in sample mirrors that of full dataset", "All outliers are removed", "Data is sorted before splitting"], "answer": "Class distribution in sample mirrors that of full dataset", "difficulty": "Hard"},
-    {"question": "In ML, 'epoch' means:", "options": ["A single forward pass through the network", "One complete pass through the entire training dataset", "The learning rate schedule", "A type of regularization technique"], "answer": "One complete pass through the entire training dataset", "difficulty": "Easy"},
-    {"question": "Which of these is a measure of model performance for regression tasks?", "options": ["Accuracy", "F1-Score", "Root Mean Squared Error (RMSE)", "Precision"], "answer": "Root Mean Squared Error (RMSE)", "difficulty": "Easy"},
-    {"question": "The train/validation/test split serves what purpose?", "options": ["Train: fit model, Validation: tune hyperparameters, Test: final unbiased evaluation", "Train: test model, Validation: fit model, Test: tune hyperparameters", "All three are used for fitting the model", "Train and validation are same; test is different"], "answer": "Train: fit model, Validation: tune hyperparameters, Test: final unbiased evaluation", "difficulty": "Medium"},
-    {"question": "What is 'model interpretability'?", "options": ["How fast the model trains", "How well humans can understand and explain model predictions", "How many parameters the model has", "How accurate the model is"], "answer": "How well humans can understand and explain model predictions", "difficulty": "Medium"},
-    {"question": "Which of these best describes the No Free Lunch theorem in ML?", "options": ["No ML model works on any dataset", "No single algorithm works best for all problems", "Computational resources are always limited", "More data always leads to better performance"], "answer": "No single algorithm works best for all problems", "difficulty": "Hard"}
+    {
+      "question": "Which of the following BEST defines Machine Learning?",
+      "options": [
+        "Explicitly programming rules for every scenario",
+        "Systems that learn from data to improve performance without being explicitly programmed",
+        "Storing large datasets in databases",
+        "Automating repetitive computer tasks"
+      ],
+      "answer": "Systems that learn from data to improve performance without being explicitly programmed",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the difference between a parameter and a hyperparameter in ML?",
+      "options": [
+        "Both are set manually before training",
+        "Parameters are set before training; hyperparameters are learned during training",
+        "Both are learned during training",
+        "Hyperparameters are set before training; parameters are learned during training"
+      ],
+      "answer": "Hyperparameters are set before training; parameters are learned during training",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "In ML, 'overfitting' refers to:",
+      "options": [
+        "Model performs poorly on both training and test data",
+        "Model trains too slowly",
+        "Model performs well on training data but poorly on new data",
+        "Model has too few parameters"
+      ],
+      "answer": "Model performs well on training data but poorly on new data",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The bias-variance tradeoff in ML means:",
+      "options": [
+        "Both bias and variance should always be zero",
+        "Reducing bias always reduces variance",
+        "High bias models have high variance",
+        "There is a tradeoff: reducing one often increases the other"
+      ],
+      "answer": "There is a tradeoff: reducing one often increases the other",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a 'feature' in Machine Learning terminology?",
+      "options": [
+        "The training loss value",
+        "The ML model itself",
+        "The output label of a dataset",
+        "An individual measurable property/variable used as input"
+      ],
+      "answer": "An individual measurable property/variable used as input",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which technique is used to prevent overfitting by penalizing large model weights?",
+      "options": [
+        "Data augmentation",
+        "Cross-validation",
+        "Regularization (L1/L2)",
+        "Feature selection"
+      ],
+      "answer": "Regularization (L1/L2)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What does 'training set' mean in an ML workflow?",
+      "options": [
+        "Data used to fit/learn model parameters",
+        "Data used to evaluate final model performance",
+        "Data used to tune hyperparameters",
+        "Data used for deployment"
+      ],
+      "answer": "Data used to fit/learn model parameters",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The difference between Data Mining and Predictive Analysis is:",
+      "options": [
+        "They are identical processes",
+        "Data mining discovers hidden patterns in existing data; predictive analysis forecasts future outcomes",
+        "Data mining requires labeled data; predictive analysis doesn't",
+        "Data mining focuses on future predictions; predictive analysis finds hidden patterns"
+      ],
+      "answer": "Data mining discovers hidden patterns in existing data; predictive analysis forecasts future outcomes",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "K-fold cross-validation with K=5 means:",
+      "options": [
+        "Model is trained 5 times on full data",
+        "5 different models are compared",
+        "Data is split into 5 parts; each part serves as test set once while others train",
+        "5% of data is used for testing"
+      ],
+      "answer": "Data is split into 5 parts; each part serves as test set once while others train",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which evaluation metric is appropriate for imbalanced classification datasets?",
+      "options": [
+        "Mean Squared Error",
+        "R-squared",
+        "F1-Score or AUC-ROC",
+        "Accuracy"
+      ],
+      "answer": "F1-Score or AUC-ROC",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "The 'curse of dimensionality' in ML refers to:",
+      "options": [
+        "Exponential increase in data needed as dimensions increase",
+        "Slow training due to large batch sizes",
+        "Computers lacking memory for large datasets",
+        "Models with too many layers"
+      ],
+      "answer": "Exponential increase in data needed as dimensions increase",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "WEKA is:",
+      "options": [
+        "A Python library for deep learning",
+        "An open-source ML software with GUI-based tools",
+        "A type of neural network",
+        "A data preprocessing technique"
+      ],
+      "answer": "An open-source ML software with GUI-based tools",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is 'label' in supervised learning?",
+      "options": [
+        "A type of regularization",
+        "The known output/target variable for training examples",
+        "The model's prediction",
+        "The input features"
+      ],
+      "answer": "The known output/target variable for training examples",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Precision in binary classification is calculated as:",
+      "options": [
+        "TP / (TP + FP)",
+        "(TP + TN) / Total",
+        "TN / (TN + FP)",
+        "TP / (TP + FN)"
+      ],
+      "answer": "TP / (TP + FP)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Recall (Sensitivity) in classification is:",
+      "options": [
+        "TP / (TP + FP)",
+        "TN / (TN + FN)",
+        "FP / (FP + TN)",
+        "TP / (TP + FN)"
+      ],
+      "answer": "TP / (TP + FN)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which is NOT a step in the Machine Learning Lifecycle?",
+      "options": [
+        "Model evaluation and deployment",
+        "Model selection and training",
+        "Hardware manufacturing",
+        "Data collection and preprocessing"
+      ],
+      "answer": "Hardware manufacturing",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "A confusion matrix for binary classification has dimensions:",
+      "options": [
+        "1×2",
+        "n×n where n is number of samples",
+        "3×3",
+        "2×2"
+      ],
+      "answer": "2×2",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "If a model has high variance, the best remedy is typically:",
+      "options": [
+        "Increasing learning rate",
+        "Adding more features",
+        "Getting more training data or simplifying the model",
+        "Increasing model complexity"
+      ],
+      "answer": "Getting more training data or simplifying the model",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Batch gradient descent processes:",
+      "options": [
+        "A small random subset per iteration",
+        "Randomly selected half the dataset",
+        "One sample per iteration",
+        "The entire training dataset per iteration"
+      ],
+      "answer": "The entire training dataset per iteration",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The ROC curve plots:",
+      "options": [
+        "Loss vs Epochs",
+        "Precision vs Recall",
+        "True Positive Rate vs False Positive Rate",
+        "Accuracy vs Model Complexity"
+      ],
+      "answer": "True Positive Rate vs False Positive Rate",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Feature engineering refers to:",
+      "options": [
+        "Building the ML model architecture",
+        "Testing the model on new data",
+        "Creating, transforming, or selecting features to improve model performance",
+        "Deploying model to production"
+      ],
+      "answer": "Creating, transforming, or selecting features to improve model performance",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which library is NOT primarily used for machine learning in Python?",
+      "options": [
+        "Django",
+        "PyTorch",
+        "TensorFlow",
+        "scikit-learn"
+      ],
+      "answer": "Django",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Missing data in a dataset can be handled by:",
+      "options": [
+        "Imputation with mean/median, deletion, or prediction models",
+        "Converting to string 'NULL'",
+        "Only deleting rows with missing values",
+        "Ignoring missing values always"
+      ],
+      "answer": "Imputation with mean/median, deletion, or prediction models",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What does 'generalization' mean in ML context?",
+      "options": [
+        "Model performs well on unseen/new data",
+        "Model trains for many epochs",
+        "Model memorizes training data",
+        "Model has many parameters"
+      ],
+      "answer": "Model performs well on unseen/new data",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Stratified sampling ensures that:",
+      "options": [
+        "Equal number of samples from each class",
+        "Class distribution in sample mirrors that of full dataset",
+        "Data is sorted before splitting",
+        "All outliers are removed"
+      ],
+      "answer": "Class distribution in sample mirrors that of full dataset",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "In ML, 'epoch' means:",
+      "options": [
+        "A single forward pass through the network",
+        "A type of regularization technique",
+        "The learning rate schedule",
+        "One complete pass through the entire training dataset"
+      ],
+      "answer": "One complete pass through the entire training dataset",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which of these is a measure of model performance for regression tasks?",
+      "options": [
+        "F1-Score",
+        "Accuracy",
+        "Root Mean Squared Error (RMSE)",
+        "Precision"
+      ],
+      "answer": "Root Mean Squared Error (RMSE)",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The train/validation/test split serves what purpose?",
+      "options": [
+        "All three are used for fitting the model",
+        "Train and validation are same; test is different",
+        "Train: fit model, Validation: tune hyperparameters, Test: final unbiased evaluation",
+        "Train: test model, Validation: fit model, Test: tune hyperparameters"
+      ],
+      "answer": "Train: fit model, Validation: tune hyperparameters, Test: final unbiased evaluation",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is 'model interpretability'?",
+      "options": [
+        "How many parameters the model has",
+        "How accurate the model is",
+        "How well humans can understand and explain model predictions",
+        "How fast the model trains"
+      ],
+      "answer": "How well humans can understand and explain model predictions",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which of these best describes the No Free Lunch theorem in ML?",
+      "options": [
+        "No single algorithm works best for all problems",
+        "Computational resources are always limited",
+        "More data always leads to better performance",
+        "No ML model works on any dataset"
+      ],
+      "answer": "No single algorithm works best for all problems",
+      "difficulty": "Hard"
+    }
   ],
   "Types of Machine Learning": [
-    {"question": "In supervised learning, training data must have:", "options": ["Only input features", "Input features and corresponding output labels", "Only output labels", "No labels at all"], "answer": "Input features and corresponding output labels", "difficulty": "Easy"},
-    {"question": "Which is an example of unsupervised learning?", "options": ["Email spam classification", "House price prediction", "Customer segmentation via clustering", "Digit recognition"], "answer": "Customer segmentation via clustering", "difficulty": "Easy"},
-    {"question": "Reinforcement learning is characterized by:", "options": ["Learning from labeled data", "Learning by trial and error using rewards and penalties", "Learning from unlabeled data", "Learning by memorizing training examples"], "answer": "Learning by trial and error using rewards and penalties", "difficulty": "Easy"},
-    {"question": "In RL, the 'agent' interacts with the:", "options": ["Dataset", "Neural network", "Environment", "Loss function"], "answer": "Environment", "difficulty": "Easy"},
-    {"question": "Semi-supervised learning uses:", "options": ["Only labeled data", "Only unlabeled data", "A small amount of labeled data combined with large unlabeled data", "Reward signals from environment"], "answer": "A small amount of labeled data combined with large unlabeled data", "difficulty": "Medium"},
-    {"question": "Which type of ML is used in AlphaGo (the Go-playing AI)?", "options": ["Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Semi-supervised Learning"], "answer": "Reinforcement Learning", "difficulty": "Medium"},
-    {"question": "In the RL framework, the 'reward' function:", "options": ["Defines what data to collect", "Provides feedback signal indicating how good an action was", "Sets model hyperparameters", "Determines feature importance"], "answer": "Provides feedback signal indicating how good an action was", "difficulty": "Medium"},
-    {"question": "The Markov Decision Process (MDP) is the mathematical framework for:", "options": ["Supervised classification", "Unsupervised clustering", "Reinforcement Learning", "Linear Regression"], "answer": "Reinforcement Learning", "difficulty": "Medium"},
-    {"question": "Which statement about supervised vs unsupervised learning is TRUE?", "options": ["Both require labeled data", "Supervised requires labels; unsupervised does not", "Unsupervised requires labels; supervised does not", "Neither requires labeled data"], "answer": "Supervised requires labels; unsupervised does not", "difficulty": "Easy"},
-    {"question": "The ML Lifecycle step that comes AFTER model training is:", "options": ["Data collection", "Feature engineering", "Model evaluation", "Problem definition"], "answer": "Model evaluation", "difficulty": "Easy"},
-    {"question": "Transfer learning involves:", "options": ["Moving data between servers", "Using knowledge from a pre-trained model on a new but related task", "Transferring model between programming languages", "Moving model from training to production"], "answer": "Using knowledge from a pre-trained model on a new but related task", "difficulty": "Medium"},
-    {"question": "Self-supervised learning (e.g., BERT pre-training) is BEST described as:", "options": ["Learning from human-provided labels", "Creating supervision signals from the data itself", "Pure reinforcement learning", "Clustering without labels"], "answer": "Creating supervision signals from the data itself", "difficulty": "Hard"},
-    {"question": "Online learning (incremental learning) differs from batch learning in that it:", "options": ["Requires more memory", "Updates model continuously as new data arrives", "Only works with labeled data", "Requires retraining from scratch on all data"], "answer": "Updates model continuously as new data arrives", "difficulty": "Medium"},
-    {"question": "The 'exploration vs exploitation' dilemma is specific to:", "options": ["Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Regression"], "answer": "Reinforcement Learning", "difficulty": "Medium"},
-    {"question": "Which application is BEST suited for unsupervised learning?", "options": ["Predicting loan default (yes/no)", "Finding groups of similar customers", "Recognizing handwritten digits", "Predicting stock prices"], "answer": "Finding groups of similar customers", "difficulty": "Easy"},
-    {"question": "In RL, 'policy' defines:", "options": ["The reward structure", "How the agent selects actions given a state", "The environment's transition function", "The discount factor value"], "answer": "How the agent selects actions given a state", "difficulty": "Medium"},
-    {"question": "The discount factor γ in RL controls:", "options": ["Learning rate of the model", "How much future rewards are valued vs immediate rewards", "Number of training episodes", "State space size"], "answer": "How much future rewards are valued vs immediate rewards", "difficulty": "Hard"},
-    {"question": "Q-learning is a:", "options": ["Supervised classification algorithm", "Unsupervised clustering method", "Model-free RL algorithm", "Dimensionality reduction technique"], "answer": "Model-free RL algorithm", "difficulty": "Hard"},
-    {"question": "Anomaly detection is typically which type of ML problem?", "options": ["Supervised learning", "Unsupervised or semi-supervised learning", "Pure reinforcement learning", "Cannot be solved with ML"], "answer": "Unsupervised or semi-supervised learning", "difficulty": "Medium"},
-    {"question": "Multi-task learning trains a model to:", "options": ["Handle one task very well", "Perform multiple related tasks simultaneously", "Work without any training data", "Learn from rewards only"], "answer": "Perform multiple related tasks simultaneously", "difficulty": "Medium"},
-    {"question": "The reward in an RL setting can be:", "options": ["Only positive values", "Only negative values", "Either positive, negative, or zero", "Always between 0 and 1"], "answer": "Either positive, negative, or zero", "difficulty": "Easy"},
-    {"question": "Which ML type would you use to detect fraud in credit card transactions where fraud labels are available?", "options": ["Unsupervised Learning", "Supervised Learning", "Reinforcement Learning", "Association Rule Mining"], "answer": "Supervised Learning", "difficulty": "Easy"},
-    {"question": "The 'value function' in RL estimates:", "options": ["Immediate reward only", "Expected cumulative future reward from a given state", "Number of steps to completion", "Model accuracy"], "answer": "Expected cumulative future reward from a given state", "difficulty": "Hard"},
-    {"question": "Active learning is a subtype where:", "options": ["Model learns without any human intervention", "Model selects which data points to get labeled, reducing labeling cost", "Model trains on all available unlabeled data", "Agent learns from environment rewards"], "answer": "Model selects which data points to get labeled, reducing labeling cost", "difficulty": "Hard"},
-    {"question": "Federated learning allows:", "options": ["Training on centralized cloud data only", "Training across multiple devices while keeping data locally private", "Sharing all user data for centralized training", "Training without any communication between nodes"], "answer": "Training across multiple devices while keeping data locally private", "difficulty": "Hard"},
-    {"question": "In supervised learning, regression differs from classification in that:", "options": ["Regression predicts continuous values; classification predicts discrete categories", "Classification predicts continuous values; regression predicts categories", "Both predict continuous values", "Both predict discrete categories"], "answer": "Regression predicts continuous values; classification predicts discrete categories", "difficulty": "Easy"},
-    {"question": "The ML lifecycle step of 'data preprocessing' includes:", "options": ["Only model selection", "Cleaning, normalizing, encoding, and transforming raw data", "Deploying the model", "Only collecting raw data"], "answer": "Cleaning, normalizing, encoding, and transforming raw data", "difficulty": "Easy"},
-    {"question": "Which scenario represents the 'cold start' problem in RL?", "options": ["Slow training convergence", "Agent has no prior knowledge and must explore from scratch", "Dataset has missing values", "Model overfits training data"], "answer": "Agent has no prior knowledge and must explore from scratch", "difficulty": "Hard"},
-    {"question": "The 'state' in RL represents:", "options": ["The agent's action", "The reward received", "A description of the current environment situation", "The policy function"], "answer": "A description of the current environment situation", "difficulty": "Medium"},
-    {"question": "Generative Adversarial Networks (GANs) are used in which type of ML?", "options": ["Supervised Classification", "Generative/Unsupervised Learning", "Pure RL", "Rule-based Systems"], "answer": "Generative/Unsupervised Learning", "difficulty": "Medium"}
+    {
+      "question": "In supervised learning, training data must have:",
+      "options": [
+        "Only input features",
+        "No labels at all",
+        "Input features and corresponding output labels",
+        "Only output labels"
+      ],
+      "answer": "Input features and corresponding output labels",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which is an example of unsupervised learning?",
+      "options": [
+        "Customer segmentation via clustering",
+        "Email spam classification",
+        "House price prediction",
+        "Digit recognition"
+      ],
+      "answer": "Customer segmentation via clustering",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Reinforcement learning is characterized by:",
+      "options": [
+        "Learning from labeled data",
+        "Learning from unlabeled data",
+        "Learning by memorizing training examples",
+        "Learning by trial and error using rewards and penalties"
+      ],
+      "answer": "Learning by trial and error using rewards and penalties",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In RL, the 'agent' interacts with the:",
+      "options": [
+        "Loss function",
+        "Neural network",
+        "Environment",
+        "Dataset"
+      ],
+      "answer": "Environment",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Semi-supervised learning uses:",
+      "options": [
+        "Reward signals from environment",
+        "Only unlabeled data",
+        "Only labeled data",
+        "A small amount of labeled data combined with large unlabeled data"
+      ],
+      "answer": "A small amount of labeled data combined with large unlabeled data",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which type of ML is used in AlphaGo (the Go-playing AI)?",
+      "options": [
+        "Supervised Learning",
+        "Reinforcement Learning",
+        "Unsupervised Learning",
+        "Semi-supervised Learning"
+      ],
+      "answer": "Reinforcement Learning",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "In the RL framework, the 'reward' function:",
+      "options": [
+        "Sets model hyperparameters",
+        "Defines what data to collect",
+        "Provides feedback signal indicating how good an action was",
+        "Determines feature importance"
+      ],
+      "answer": "Provides feedback signal indicating how good an action was",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The Markov Decision Process (MDP) is the mathematical framework for:",
+      "options": [
+        "Supervised classification",
+        "Unsupervised clustering",
+        "Reinforcement Learning",
+        "Linear Regression"
+      ],
+      "answer": "Reinforcement Learning",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which statement about supervised vs unsupervised learning is TRUE?",
+      "options": [
+        "Both require labeled data",
+        "Supervised requires labels; unsupervised does not",
+        "Neither requires labeled data",
+        "Unsupervised requires labels; supervised does not"
+      ],
+      "answer": "Supervised requires labels; unsupervised does not",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The ML Lifecycle step that comes AFTER model training is:",
+      "options": [
+        "Problem definition",
+        "Feature engineering",
+        "Model evaluation",
+        "Data collection"
+      ],
+      "answer": "Model evaluation",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Transfer learning involves:",
+      "options": [
+        "Transferring model between programming languages",
+        "Moving model from training to production",
+        "Using knowledge from a pre-trained model on a new but related task",
+        "Moving data between servers"
+      ],
+      "answer": "Using knowledge from a pre-trained model on a new but related task",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Self-supervised learning (e.g., BERT pre-training) is BEST described as:",
+      "options": [
+        "Clustering without labels",
+        "Learning from human-provided labels",
+        "Creating supervision signals from the data itself",
+        "Pure reinforcement learning"
+      ],
+      "answer": "Creating supervision signals from the data itself",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Online learning (incremental learning) differs from batch learning in that it:",
+      "options": [
+        "Requires retraining from scratch on all data",
+        "Only works with labeled data",
+        "Updates model continuously as new data arrives",
+        "Requires more memory"
+      ],
+      "answer": "Updates model continuously as new data arrives",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The 'exploration vs exploitation' dilemma is specific to:",
+      "options": [
+        "Supervised Learning",
+        "Regression",
+        "Unsupervised Learning",
+        "Reinforcement Learning"
+      ],
+      "answer": "Reinforcement Learning",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which application is BEST suited for unsupervised learning?",
+      "options": [
+        "Predicting loan default (yes/no)",
+        "Predicting stock prices",
+        "Recognizing handwritten digits",
+        "Finding groups of similar customers"
+      ],
+      "answer": "Finding groups of similar customers",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In RL, 'policy' defines:",
+      "options": [
+        "The discount factor value",
+        "The reward structure",
+        "How the agent selects actions given a state",
+        "The environment's transition function"
+      ],
+      "answer": "How the agent selects actions given a state",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The discount factor γ in RL controls:",
+      "options": [
+        "Learning rate of the model",
+        "How much future rewards are valued vs immediate rewards",
+        "State space size",
+        "Number of training episodes"
+      ],
+      "answer": "How much future rewards are valued vs immediate rewards",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Q-learning is a:",
+      "options": [
+        "Unsupervised clustering method",
+        "Supervised classification algorithm",
+        "Dimensionality reduction technique",
+        "Model-free RL algorithm"
+      ],
+      "answer": "Model-free RL algorithm",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Anomaly detection is typically which type of ML problem?",
+      "options": [
+        "Cannot be solved with ML",
+        "Unsupervised or semi-supervised learning",
+        "Pure reinforcement learning",
+        "Supervised learning"
+      ],
+      "answer": "Unsupervised or semi-supervised learning",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Multi-task learning trains a model to:",
+      "options": [
+        "Perform multiple related tasks simultaneously",
+        "Handle one task very well",
+        "Learn from rewards only",
+        "Work without any training data"
+      ],
+      "answer": "Perform multiple related tasks simultaneously",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The reward in an RL setting can be:",
+      "options": [
+        "Either positive, negative, or zero",
+        "Only negative values",
+        "Always between 0 and 1",
+        "Only positive values"
+      ],
+      "answer": "Either positive, negative, or zero",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which ML type would you use to detect fraud in credit card transactions where fraud labels are available?",
+      "options": [
+        "Supervised Learning",
+        "Reinforcement Learning",
+        "Association Rule Mining",
+        "Unsupervised Learning"
+      ],
+      "answer": "Supervised Learning",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The 'value function' in RL estimates:",
+      "options": [
+        "Immediate reward only",
+        "Model accuracy",
+        "Number of steps to completion",
+        "Expected cumulative future reward from a given state"
+      ],
+      "answer": "Expected cumulative future reward from a given state",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Active learning is a subtype where:",
+      "options": [
+        "Agent learns from environment rewards",
+        "Model learns without any human intervention",
+        "Model selects which data points to get labeled, reducing labeling cost",
+        "Model trains on all available unlabeled data"
+      ],
+      "answer": "Model selects which data points to get labeled, reducing labeling cost",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Federated learning allows:",
+      "options": [
+        "Training on centralized cloud data only",
+        "Training without any communication between nodes",
+        "Sharing all user data for centralized training",
+        "Training across multiple devices while keeping data locally private"
+      ],
+      "answer": "Training across multiple devices while keeping data locally private",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "In supervised learning, regression differs from classification in that:",
+      "options": [
+        "Regression predicts continuous values; classification predicts discrete categories",
+        "Both predict discrete categories",
+        "Classification predicts continuous values; regression predicts categories",
+        "Both predict continuous values"
+      ],
+      "answer": "Regression predicts continuous values; classification predicts discrete categories",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The ML lifecycle step of 'data preprocessing' includes:",
+      "options": [
+        "Cleaning, normalizing, encoding, and transforming raw data",
+        "Only collecting raw data",
+        "Deploying the model",
+        "Only model selection"
+      ],
+      "answer": "Cleaning, normalizing, encoding, and transforming raw data",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which scenario represents the 'cold start' problem in RL?",
+      "options": [
+        "Slow training convergence",
+        "Model overfits training data",
+        "Agent has no prior knowledge and must explore from scratch",
+        "Dataset has missing values"
+      ],
+      "answer": "Agent has no prior knowledge and must explore from scratch",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "The 'state' in RL represents:",
+      "options": [
+        "The reward received",
+        "The policy function",
+        "The agent's action",
+        "A description of the current environment situation"
+      ],
+      "answer": "A description of the current environment situation",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Generative Adversarial Networks (GANs) are used in which type of ML?",
+      "options": [
+        "Generative/Unsupervised Learning",
+        "Rule-based Systems",
+        "Pure RL",
+        "Supervised Classification"
+      ],
+      "answer": "Generative/Unsupervised Learning",
+      "difficulty": "Medium"
+    }
   ],
   "Supervised Learning - Classification": [
-    {"question": "In KNN classification, if K=1, the model:", "options": ["Always predicts majority class", "Assigns the class of the nearest single neighbor", "Averages all training labels", "Uses a linear decision boundary"], "answer": "Assigns the class of the nearest single neighbor", "difficulty": "Easy"},
-    {"question": "The main drawback of very small K in KNN is:", "options": ["High bias", "High variance / overfitting to noise", "Slow training", "Cannot handle multi-class problems"], "answer": "High variance / overfitting to noise", "difficulty": "Medium"},
-    {"question": "KNN is a 'lazy learner' because:", "options": ["It has a simple algorithm", "It doesn't build an explicit model during training; computation happens at prediction time", "It uses lazy regularization", "It trains very slowly"], "answer": "It doesn't build an explicit model during training; computation happens at prediction time", "difficulty": "Medium"},
-    {"question": "The time complexity of KNN prediction for n training points with d dimensions is:", "options": ["O(1)", "O(d)", "O(nd)", "O(n²d)"], "answer": "O(nd)", "difficulty": "Hard"},
-    {"question": "In a Decision Tree, information gain is based on:", "options": ["Mean Squared Error", "Reduction in entropy after a split", "Euclidean distance", "Correlation coefficient"], "answer": "Reduction in entropy after a split", "difficulty": "Medium"},
-    {"question": "Entropy of a node where all examples belong to one class is:", "options": ["1", "0.5", "0", "Undefined"], "answer": "0", "difficulty": "Easy"},
-    {"question": "The Gini impurity measures:", "options": ["How often a randomly chosen element would be incorrectly classified", "The depth of the decision tree", "The number of features used", "The information gain at root"], "answer": "How often a randomly chosen element would be incorrectly classified", "difficulty": "Medium"},
-    {"question": "Pruning a decision tree is done to:", "options": ["Increase training accuracy", "Reduce overfitting by removing branches that don't improve validation performance", "Speed up training", "Add more features"], "answer": "Reduce overfitting by removing branches that don't improve validation performance", "difficulty": "Medium"},
-    {"question": "Naive Bayes assumes:", "options": ["Features are correlated", "Features are conditionally independent given the class", "Data is normally distributed", "Classes are equally likely"], "answer": "Features are conditionally independent given the class", "difficulty": "Medium"},
-    {"question": "In Naive Bayes classification, which theorem is applied?", "options": ["Pythagoras theorem", "Bayes' theorem", "Central Limit Theorem", "Chebyshev's theorem"], "answer": "Bayes' theorem", "difficulty": "Easy"},
-    {"question": "The 'kernel trick' in SVM allows:", "options": ["Faster training on linear data", "Mapping data to higher dimensions implicitly without computing coordinates", "Using fewer support vectors", "Handling missing values"], "answer": "Mapping data to higher dimensions implicitly without computing coordinates", "difficulty": "Hard"},
-    {"question": "Support vectors in SVM are:", "options": ["All training data points", "Data points farthest from the decision boundary", "Data points closest to the decision boundary (on the margin)", "Randomly selected training points"], "answer": "Data points closest to the decision boundary (on the margin)", "difficulty": "Medium"},
-    {"question": "The hyperplane in SVM is chosen to:", "options": ["Minimize training error only", "Maximize the margin between classes", "Pass through the centroid of each class", "Minimize the number of support vectors"], "answer": "Maximize the margin between classes", "difficulty": "Medium"},
-    {"question": "SVM with a soft margin uses parameter C to:", "options": ["Control kernel type", "Balance misclassification penalty vs margin width", "Set the number of support vectors", "Define learning rate"], "answer": "Balance misclassification penalty vs margin width", "difficulty": "Hard"},
-    {"question": "Which kernel is most commonly used for non-linearly separable data in SVM?", "options": ["Linear kernel", "RBF (Gaussian) kernel", "Constant kernel", "Identity kernel"], "answer": "RBF (Gaussian) kernel", "difficulty": "Medium"},
-    {"question": "For KNN with K=3 and neighbors having classes [A, B, A], the predicted class is:", "options": ["B", "A", "Tie — no prediction", "Average of A and B"], "answer": "A", "difficulty": "Easy"},
-    {"question": "Which distance metric is most commonly used in KNN?", "options": ["Manhattan distance", "Euclidean distance", "Cosine similarity", "Hamming distance"], "answer": "Euclidean distance", "difficulty": "Easy"},
-    {"question": "ID3 algorithm for decision trees uses which splitting criterion?", "options": ["Gini impurity", "Information Gain (Entropy)", "Variance reduction", "Chi-square statistic"], "answer": "Information Gain (Entropy)", "difficulty": "Medium"},
-    {"question": "Naive Bayes performs well even with:", "options": ["Large datasets only", "Highly correlated features", "Small training datasets", "Continuous features only"], "answer": "Small training datasets", "difficulty": "Medium"},
-    {"question": "What happens when C is very large in SVM?", "options": ["Large margin with more misclassifications allowed", "Small margin that tries to classify all training points correctly (hard margin)", "Model becomes linear", "Support vectors increase dramatically"], "answer": "Small margin that tries to classify all training points correctly (hard margin)", "difficulty": "Hard"},
-    {"question": "Which algorithm builds an ensemble of decision trees?", "options": ["KNN", "Naive Bayes", "Random Forest", "SVM"], "answer": "Random Forest", "difficulty": "Easy"},
-    {"question": "In a Decision Tree with CART algorithm, the splitting criterion for classification is:", "options": ["Information Gain", "Gini Impurity", "Variance", "Cosine Similarity"], "answer": "Gini Impurity", "difficulty": "Medium"},
-    {"question": "The 'zero frequency problem' in Naive Bayes is solved by:", "options": ["Removing rare features", "Laplace smoothing (adding small constant to counts)", "Normalizing features", "Using KNN instead"], "answer": "Laplace smoothing (adding small constant to counts)", "difficulty": "Hard"},
-    {"question": "A linear SVM decision boundary in 2D is:", "options": ["A parabola", "A straight line", "A circle", "A hyperbola"], "answer": "A straight line", "difficulty": "Easy"},
-    {"question": "Multiclass SVM typically uses which strategy?", "options": ["Only binary classification possible", "One-vs-One or One-vs-All strategies", "Voting among all pairs", "Hierarchical decomposition only"], "answer": "One-vs-One or One-vs-All strategies", "difficulty": "Hard"},
-    {"question": "The depth of a fully grown decision tree on n samples (no pruning) is at most:", "options": ["log₂(n)", "n", "√n", "n²"], "answer": "n", "difficulty": "Hard"},
-    {"question": "KNN requires feature scaling because:", "options": ["It uses probabilistic calculations", "Distance metrics are sensitive to feature magnitudes", "It builds an explicit model", "It computes information gain"], "answer": "Distance metrics are sensitive to feature magnitudes", "difficulty": "Medium"},
-    {"question": "The boundary between two classes in a trained SVM is called:", "options": ["Decision hyperplane", "Kernel function", "Feature space", "Margin plane"], "answer": "Decision hyperplane", "difficulty": "Easy"},
-    {"question": "Which classification algorithm is MOST interpretable/explainable?", "options": ["SVM with RBF kernel", "Deep Neural Network", "Decision Tree", "KNN with large K"], "answer": "Decision Tree", "difficulty": "Medium"},
-    {"question": "Gaussian Naive Bayes assumes features follow which distribution?", "options": ["Uniform distribution", "Bernoulli distribution", "Normal (Gaussian) distribution", "Poisson distribution"], "answer": "Normal (Gaussian) distribution", "difficulty": "Medium"}
+    {
+      "question": "In KNN classification, if K=1, the model:",
+      "options": [
+        "Always predicts majority class",
+        "Assigns the class of the nearest single neighbor",
+        "Averages all training labels",
+        "Uses a linear decision boundary"
+      ],
+      "answer": "Assigns the class of the nearest single neighbor",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The main drawback of very small K in KNN is:",
+      "options": [
+        "Cannot handle multi-class problems",
+        "Slow training",
+        "High variance / overfitting to noise",
+        "High bias"
+      ],
+      "answer": "High variance / overfitting to noise",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "KNN is a 'lazy learner' because:",
+      "options": [
+        "It uses lazy regularization",
+        "It doesn't build an explicit model during training; computation happens at prediction time",
+        "It has a simple algorithm",
+        "It trains very slowly"
+      ],
+      "answer": "It doesn't build an explicit model during training; computation happens at prediction time",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The time complexity of KNN prediction for n training points with d dimensions is:",
+      "options": [
+        "O(d)",
+        "O(nd)",
+        "O(1)",
+        "O(n²d)"
+      ],
+      "answer": "O(nd)",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "In a Decision Tree, information gain is based on:",
+      "options": [
+        "Euclidean distance",
+        "Correlation coefficient",
+        "Mean Squared Error",
+        "Reduction in entropy after a split"
+      ],
+      "answer": "Reduction in entropy after a split",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Entropy of a node where all examples belong to one class is:",
+      "options": [
+        "1",
+        "Undefined",
+        "0",
+        "0.5"
+      ],
+      "answer": "0",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The Gini impurity measures:",
+      "options": [
+        "The information gain at root",
+        "The depth of the decision tree",
+        "The number of features used",
+        "How often a randomly chosen element would be incorrectly classified"
+      ],
+      "answer": "How often a randomly chosen element would be incorrectly classified",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Pruning a decision tree is done to:",
+      "options": [
+        "Reduce overfitting by removing branches that don't improve validation performance",
+        "Increase training accuracy",
+        "Add more features",
+        "Speed up training"
+      ],
+      "answer": "Reduce overfitting by removing branches that don't improve validation performance",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Naive Bayes assumes:",
+      "options": [
+        "Classes are equally likely",
+        "Features are correlated",
+        "Features are conditionally independent given the class",
+        "Data is normally distributed"
+      ],
+      "answer": "Features are conditionally independent given the class",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "In Naive Bayes classification, which theorem is applied?",
+      "options": [
+        "Central Limit Theorem",
+        "Pythagoras theorem",
+        "Chebyshev's theorem",
+        "Bayes' theorem"
+      ],
+      "answer": "Bayes' theorem",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The 'kernel trick' in SVM allows:",
+      "options": [
+        "Mapping data to higher dimensions implicitly without computing coordinates",
+        "Using fewer support vectors",
+        "Handling missing values",
+        "Faster training on linear data"
+      ],
+      "answer": "Mapping data to higher dimensions implicitly without computing coordinates",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Support vectors in SVM are:",
+      "options": [
+        "Data points closest to the decision boundary (on the margin)",
+        "All training data points",
+        "Randomly selected training points",
+        "Data points farthest from the decision boundary"
+      ],
+      "answer": "Data points closest to the decision boundary (on the margin)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The hyperplane in SVM is chosen to:",
+      "options": [
+        "Minimize training error only",
+        "Maximize the margin between classes",
+        "Minimize the number of support vectors",
+        "Pass through the centroid of each class"
+      ],
+      "answer": "Maximize the margin between classes",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "SVM with a soft margin uses parameter C to:",
+      "options": [
+        "Balance misclassification penalty vs margin width",
+        "Control kernel type",
+        "Set the number of support vectors",
+        "Define learning rate"
+      ],
+      "answer": "Balance misclassification penalty vs margin width",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Which kernel is most commonly used for non-linearly separable data in SVM?",
+      "options": [
+        "Constant kernel",
+        "RBF (Gaussian) kernel",
+        "Identity kernel",
+        "Linear kernel"
+      ],
+      "answer": "RBF (Gaussian) kernel",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "For KNN with K=3 and neighbors having classes [A, B, A], the predicted class is:",
+      "options": [
+        "B",
+        "A",
+        "Tie — no prediction",
+        "Average of A and B"
+      ],
+      "answer": "A",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which distance metric is most commonly used in KNN?",
+      "options": [
+        "Cosine similarity",
+        "Manhattan distance",
+        "Euclidean distance",
+        "Hamming distance"
+      ],
+      "answer": "Euclidean distance",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "ID3 algorithm for decision trees uses which splitting criterion?",
+      "options": [
+        "Variance reduction",
+        "Gini impurity",
+        "Chi-square statistic",
+        "Information Gain (Entropy)"
+      ],
+      "answer": "Information Gain (Entropy)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Naive Bayes performs well even with:",
+      "options": [
+        "Large datasets only",
+        "Small training datasets",
+        "Highly correlated features",
+        "Continuous features only"
+      ],
+      "answer": "Small training datasets",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What happens when C is very large in SVM?",
+      "options": [
+        "Support vectors increase dramatically",
+        "Large margin with more misclassifications allowed",
+        "Model becomes linear",
+        "Small margin that tries to classify all training points correctly (hard margin)"
+      ],
+      "answer": "Small margin that tries to classify all training points correctly (hard margin)",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Which algorithm builds an ensemble of decision trees?",
+      "options": [
+        "Random Forest",
+        "KNN",
+        "SVM",
+        "Naive Bayes"
+      ],
+      "answer": "Random Forest",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In a Decision Tree with CART algorithm, the splitting criterion for classification is:",
+      "options": [
+        "Gini Impurity",
+        "Cosine Similarity",
+        "Variance",
+        "Information Gain"
+      ],
+      "answer": "Gini Impurity",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The 'zero frequency problem' in Naive Bayes is solved by:",
+      "options": [
+        "Laplace smoothing (adding small constant to counts)",
+        "Using KNN instead",
+        "Removing rare features",
+        "Normalizing features"
+      ],
+      "answer": "Laplace smoothing (adding small constant to counts)",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "A linear SVM decision boundary in 2D is:",
+      "options": [
+        "A straight line",
+        "A parabola",
+        "A hyperbola",
+        "A circle"
+      ],
+      "answer": "A straight line",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Multiclass SVM typically uses which strategy?",
+      "options": [
+        "Only binary classification possible",
+        "One-vs-One or One-vs-All strategies",
+        "Hierarchical decomposition only",
+        "Voting among all pairs"
+      ],
+      "answer": "One-vs-One or One-vs-All strategies",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "The depth of a fully grown decision tree on n samples (no pruning) is at most:",
+      "options": [
+        "√n",
+        "n²",
+        "n",
+        "log₂(n)"
+      ],
+      "answer": "n",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "KNN requires feature scaling because:",
+      "options": [
+        "It computes information gain",
+        "Distance metrics are sensitive to feature magnitudes",
+        "It uses probabilistic calculations",
+        "It builds an explicit model"
+      ],
+      "answer": "Distance metrics are sensitive to feature magnitudes",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The boundary between two classes in a trained SVM is called:",
+      "options": [
+        "Kernel function",
+        "Margin plane",
+        "Feature space",
+        "Decision hyperplane"
+      ],
+      "answer": "Decision hyperplane",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which classification algorithm is MOST interpretable/explainable?",
+      "options": [
+        "Decision Tree",
+        "KNN with large K",
+        "SVM with RBF kernel",
+        "Deep Neural Network"
+      ],
+      "answer": "Decision Tree",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Gaussian Naive Bayes assumes features follow which distribution?",
+      "options": [
+        "Bernoulli distribution",
+        "Normal (Gaussian) distribution",
+        "Poisson distribution",
+        "Uniform distribution"
+      ],
+      "answer": "Normal (Gaussian) distribution",
+      "difficulty": "Medium"
+    }
   ],
   "Supervised Learning - Regression": [
-    {"question": "Linear Regression models the relationship between variables as:", "options": ["Exponential curve", "Polynomial", "Straight line (linear relationship)", "Step function"], "answer": "Straight line (linear relationship)", "difficulty": "Easy"},
-    {"question": "The cost function in Linear Regression minimizes:", "options": ["Sum of absolute residuals", "Sum of squared residuals (MSE)", "Maximum residual", "Product of residuals"], "answer": "Sum of squared residuals (MSE)", "difficulty": "Easy"},
-    {"question": "In simple linear regression y = mx + b, 'b' represents:", "options": ["Slope", "Y-intercept", "Correlation coefficient", "Residual"], "answer": "Y-intercept", "difficulty": "Easy"},
-    {"question": "The Ordinary Least Squares (OLS) method finds parameters by:", "options": ["Maximizing the sum of residuals", "Minimizing the sum of squared differences between predicted and actual values", "Gradient descent only", "Cross-validation"], "answer": "Minimizing the sum of squared differences between predicted and actual values", "difficulty": "Medium"},
-    {"question": "R² (coefficient of determination) value of 0 means:", "options": ["Perfect fit", "Model explains none of the variance in the data", "Negative correlation", "Model overfits"], "answer": "Model explains none of the variance in the data", "difficulty": "Medium"},
-    {"question": "Multicollinearity in multiple linear regression occurs when:", "options": ["Target variable is categorical", "Independent features are highly correlated with each other", "There is no relationship between features and target", "Training data is too small"], "answer": "Independent features are highly correlated with each other", "difficulty": "Hard"},
-    {"question": "Which transformation can convert a non-linear relationship to linear?", "options": ["One-hot encoding", "Log transformation", "Min-max scaling", "PCA"], "answer": "Log transformation", "difficulty": "Medium"},
-    {"question": "Polynomial regression is considered:", "options": ["A type of linear regression (linear in parameters)", "A completely different algorithm from linear regression", "An unsupervised method", "Only applicable to time series"], "answer": "A type of linear regression (linear in parameters)", "difficulty": "Hard"},
-    {"question": "Ridge regression (L2 regularization) adds to the cost function:", "options": ["Sum of absolute values of weights", "Sum of squared values of weights × λ", "Maximum weight value", "Entropy of weights"], "answer": "Sum of squared values of weights × λ", "difficulty": "Medium"},
-    {"question": "Lasso regression (L1 regularization) can perform:", "options": ["Only scaling of features", "Automatic feature selection by setting some weights to exactly zero", "Increase model complexity", "Data augmentation"], "answer": "Automatic feature selection by setting some weights to exactly zero", "difficulty": "Hard"},
-    {"question": "The residual in regression is defined as:", "options": ["Predicted value", "Actual value - Predicted value", "Predicted value - Mean", "Sum of all actual values"], "answer": "Actual value - Predicted value", "difficulty": "Easy"},
-    {"question": "Which assumption of linear regression states that errors are independent of each other?", "options": ["Homoscedasticity", "Normality", "No autocorrelation", "No multicollinearity"], "answer": "No autocorrelation", "difficulty": "Hard"},
-    {"question": "Gradient descent updates weights in the direction of:", "options": ["Positive gradient", "Negative gradient (steepest descent)", "Zero gradient", "Random direction"], "answer": "Negative gradient (steepest descent)", "difficulty": "Medium"},
-    {"question": "The learning rate in gradient descent controls:", "options": ["Number of features", "Step size of each parameter update", "Number of training epochs", "Model complexity"], "answer": "Step size of each parameter update", "difficulty": "Easy"},
-    {"question": "If learning rate is too high in gradient descent:", "options": ["Training is too slow", "Algorithm may diverge or oscillate", "Model underfits", "Weights converge to optimal quickly"], "answer": "Algorithm may diverge or oscillate", "difficulty": "Medium"},
-    {"question": "Mean Absolute Error (MAE) vs MSE: which is more sensitive to outliers?", "options": ["MAE", "MSE (squares errors, magnifying large errors)", "Both equally", "Neither"], "answer": "MSE (squares errors, magnifying large errors)", "difficulty": "Medium"},
-    {"question": "In logistic regression for binary classification, the output is passed through:", "options": ["Linear function", "ReLU function", "Sigmoid function", "Softmax function"], "answer": "Sigmoid function", "difficulty": "Medium"},
-    {"question": "Non-linear regression differs from linear regression in that:", "options": ["It has more features", "The relationship between variables is modeled as a non-linear function", "It requires more data", "It cannot be solved with gradient descent"], "answer": "The relationship between variables is modeled as a non-linear function", "difficulty": "Easy"},
-    {"question": "The 'normal equation' provides the closed-form solution for linear regression as:", "options": ["θ = (X^T X)^{-1} X^T y", "θ = X y^T", "θ = X^T / y", "θ = (X X^T) y"], "answer": "θ = (X^T X)^{-1} X^T y", "difficulty": "Hard"},
-    {"question": "Elastic Net regularization combines:", "options": ["L1 and L3 regularization", "L1 and L2 regularization", "L2 and L3 regularization", "No regularization"], "answer": "L1 and L2 regularization", "difficulty": "Medium"},
-    {"question": "Heteroscedasticity in regression means:", "options": ["Equal variance of errors across all values of X", "Unequal variance of errors across values of X", "Errors are normally distributed", "No correlation between features"], "answer": "Unequal variance of errors across values of X", "difficulty": "Hard"},
-    {"question": "The Variance Inflation Factor (VIF) is used to detect:", "options": ["Overfitting", "Multicollinearity", "Heteroscedasticity", "Outliers"], "answer": "Multicollinearity", "difficulty": "Hard"},
-    {"question": "In simple linear regression, the slope m = 0.8 means:", "options": ["For every 1 unit increase in X, Y increases by 0.8 units", "Correlation is 0.8", "R² is 0.64", "80% variance is explained"], "answer": "For every 1 unit increase in X, Y increases by 0.8 units", "difficulty": "Easy"},
-    {"question": "Stochastic gradient descent (SGD) updates weights based on:", "options": ["Full training batch", "Random single training example per iteration", "Half the training data", "Validation set only"], "answer": "Random single training example per iteration", "difficulty": "Medium"},
-    {"question": "Which Python library function fits a linear regression model?", "options": ["sklearn.linear_model.LinearRegression().fit(X, y)", "sklearn.cluster.KMeans().fit(X)", "sklearn.svm.SVC().predict(X)", "sklearn.tree.fit(y)"], "answer": "sklearn.linear_model.LinearRegression().fit(X, y)", "difficulty": "Easy"},
-    {"question": "Logistic regression despite its name is used for:", "options": ["Regression tasks (continuous output)", "Classification tasks (categorical output)", "Clustering", "Dimensionality reduction"], "answer": "Classification tasks (categorical output)", "difficulty": "Medium"},
-    {"question": "In model y = β₀ + β₁x₁ + β₂x₂, the number of parameters to estimate is:", "options": ["2", "3", "4", "1"], "answer": "3", "difficulty": "Easy"},
-    {"question": "Cross-validation is preferred over single train-test split because:", "options": ["It's faster", "It provides more reliable estimate of model performance by using all data for testing", "It requires less data", "It eliminates overfitting completely"], "answer": "It provides more reliable estimate of model performance by using all data for testing", "difficulty": "Medium"},
-    {"question": "A regression model with R² = 0.95 means:", "options": ["5% error rate", "Model explains 95% of variance in the target variable", "95% of predictions are correct", "Model has 95% accuracy"], "answer": "Model explains 95% of variance in the target variable", "difficulty": "Medium"},
-    {"question": "When the number of features p exceeds number of samples n in linear regression, you should use:", "options": ["OLS (Ordinary Least Squares)", "Regularized regression (Ridge/Lasso)", "No regression possible", "Only polynomial regression"], "answer": "Regularized regression (Ridge/Lasso)", "difficulty": "Hard"}
+    {
+      "question": "Linear Regression models the relationship between variables as:",
+      "options": [
+        "Step function",
+        "Polynomial",
+        "Straight line (linear relationship)",
+        "Exponential curve"
+      ],
+      "answer": "Straight line (linear relationship)",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The cost function in Linear Regression minimizes:",
+      "options": [
+        "Sum of absolute residuals",
+        "Product of residuals",
+        "Maximum residual",
+        "Sum of squared residuals (MSE)"
+      ],
+      "answer": "Sum of squared residuals (MSE)",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In simple linear regression y = mx + b, 'b' represents:",
+      "options": [
+        "Residual",
+        "Correlation coefficient",
+        "Y-intercept",
+        "Slope"
+      ],
+      "answer": "Y-intercept",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The Ordinary Least Squares (OLS) method finds parameters by:",
+      "options": [
+        "Cross-validation",
+        "Maximizing the sum of residuals",
+        "Minimizing the sum of squared differences between predicted and actual values",
+        "Gradient descent only"
+      ],
+      "answer": "Minimizing the sum of squared differences between predicted and actual values",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "R² (coefficient of determination) value of 0 means:",
+      "options": [
+        "Perfect fit",
+        "Negative correlation",
+        "Model explains none of the variance in the data",
+        "Model overfits"
+      ],
+      "answer": "Model explains none of the variance in the data",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Multicollinearity in multiple linear regression occurs when:",
+      "options": [
+        "Independent features are highly correlated with each other",
+        "Training data is too small",
+        "There is no relationship between features and target",
+        "Target variable is categorical"
+      ],
+      "answer": "Independent features are highly correlated with each other",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Which transformation can convert a non-linear relationship to linear?",
+      "options": [
+        "One-hot encoding",
+        "Min-max scaling",
+        "PCA",
+        "Log transformation"
+      ],
+      "answer": "Log transformation",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Polynomial regression is considered:",
+      "options": [
+        "An unsupervised method",
+        "A type of linear regression (linear in parameters)",
+        "A completely different algorithm from linear regression",
+        "Only applicable to time series"
+      ],
+      "answer": "A type of linear regression (linear in parameters)",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Ridge regression (L2 regularization) adds to the cost function:",
+      "options": [
+        "Sum of squared values of weights × λ",
+        "Sum of absolute values of weights",
+        "Entropy of weights",
+        "Maximum weight value"
+      ],
+      "answer": "Sum of squared values of weights × λ",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Lasso regression (L1 regularization) can perform:",
+      "options": [
+        "Only scaling of features",
+        "Automatic feature selection by setting some weights to exactly zero",
+        "Data augmentation",
+        "Increase model complexity"
+      ],
+      "answer": "Automatic feature selection by setting some weights to exactly zero",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "The residual in regression is defined as:",
+      "options": [
+        "Sum of all actual values",
+        "Predicted value",
+        "Actual value - Predicted value",
+        "Predicted value - Mean"
+      ],
+      "answer": "Actual value - Predicted value",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which assumption of linear regression states that errors are independent of each other?",
+      "options": [
+        "Normality",
+        "Homoscedasticity",
+        "No multicollinearity",
+        "No autocorrelation"
+      ],
+      "answer": "No autocorrelation",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Gradient descent updates weights in the direction of:",
+      "options": [
+        "Random direction",
+        "Negative gradient (steepest descent)",
+        "Positive gradient",
+        "Zero gradient"
+      ],
+      "answer": "Negative gradient (steepest descent)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The learning rate in gradient descent controls:",
+      "options": [
+        "Model complexity",
+        "Number of training epochs",
+        "Step size of each parameter update",
+        "Number of features"
+      ],
+      "answer": "Step size of each parameter update",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "If learning rate is too high in gradient descent:",
+      "options": [
+        "Weights converge to optimal quickly",
+        "Model underfits",
+        "Training is too slow",
+        "Algorithm may diverge or oscillate"
+      ],
+      "answer": "Algorithm may diverge or oscillate",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Mean Absolute Error (MAE) vs MSE: which is more sensitive to outliers?",
+      "options": [
+        "Neither",
+        "Both equally",
+        "MSE (squares errors, magnifying large errors)",
+        "MAE"
+      ],
+      "answer": "MSE (squares errors, magnifying large errors)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "In logistic regression for binary classification, the output is passed through:",
+      "options": [
+        "ReLU function",
+        "Sigmoid function",
+        "Linear function",
+        "Softmax function"
+      ],
+      "answer": "Sigmoid function",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Non-linear regression differs from linear regression in that:",
+      "options": [
+        "It has more features",
+        "The relationship between variables is modeled as a non-linear function",
+        "It cannot be solved with gradient descent",
+        "It requires more data"
+      ],
+      "answer": "The relationship between variables is modeled as a non-linear function",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The 'normal equation' provides the closed-form solution for linear regression as:",
+      "options": [
+        "θ = X^T / y",
+        "θ = (X X^T) y",
+        "θ = (X^T X)^{-1} X^T y",
+        "θ = X y^T"
+      ],
+      "answer": "θ = (X^T X)^{-1} X^T y",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Elastic Net regularization combines:",
+      "options": [
+        "L1 and L3 regularization",
+        "L2 and L3 regularization",
+        "L1 and L2 regularization",
+        "No regularization"
+      ],
+      "answer": "L1 and L2 regularization",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Heteroscedasticity in regression means:",
+      "options": [
+        "Unequal variance of errors across values of X",
+        "Errors are normally distributed",
+        "Equal variance of errors across all values of X",
+        "No correlation between features"
+      ],
+      "answer": "Unequal variance of errors across values of X",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "The Variance Inflation Factor (VIF) is used to detect:",
+      "options": [
+        "Overfitting",
+        "Multicollinearity",
+        "Heteroscedasticity",
+        "Outliers"
+      ],
+      "answer": "Multicollinearity",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "In simple linear regression, the slope m = 0.8 means:",
+      "options": [
+        "R² is 0.64",
+        "80% variance is explained",
+        "For every 1 unit increase in X, Y increases by 0.8 units",
+        "Correlation is 0.8"
+      ],
+      "answer": "For every 1 unit increase in X, Y increases by 0.8 units",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Stochastic gradient descent (SGD) updates weights based on:",
+      "options": [
+        "Half the training data",
+        "Random single training example per iteration",
+        "Validation set only",
+        "Full training batch"
+      ],
+      "answer": "Random single training example per iteration",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which Python library function fits a linear regression model?",
+      "options": [
+        "sklearn.linear_model.LinearRegression().fit(X, y)",
+        "sklearn.cluster.KMeans().fit(X)",
+        "sklearn.svm.SVC().predict(X)",
+        "sklearn.tree.fit(y)"
+      ],
+      "answer": "sklearn.linear_model.LinearRegression().fit(X, y)",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Logistic regression despite its name is used for:",
+      "options": [
+        "Classification tasks (categorical output)",
+        "Regression tasks (continuous output)",
+        "Dimensionality reduction",
+        "Clustering"
+      ],
+      "answer": "Classification tasks (categorical output)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "In model y = β₀ + β₁x₁ + β₂x₂, the number of parameters to estimate is:",
+      "options": [
+        "4",
+        "1",
+        "3",
+        "2"
+      ],
+      "answer": "3",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Cross-validation is preferred over single train-test split because:",
+      "options": [
+        "It's faster",
+        "It provides more reliable estimate of model performance by using all data for testing",
+        "It eliminates overfitting completely",
+        "It requires less data"
+      ],
+      "answer": "It provides more reliable estimate of model performance by using all data for testing",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "A regression model with R² = 0.95 means:",
+      "options": [
+        "95% of predictions are correct",
+        "5% error rate",
+        "Model explains 95% of variance in the target variable",
+        "Model has 95% accuracy"
+      ],
+      "answer": "Model explains 95% of variance in the target variable",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "When the number of features p exceeds number of samples n in linear regression, you should use:",
+      "options": [
+        "Regularized regression (Ridge/Lasso)",
+        "No regression possible",
+        "OLS (Ordinary Least Squares)",
+        "Only polynomial regression"
+      ],
+      "answer": "Regularized regression (Ridge/Lasso)",
+      "difficulty": "Hard"
+    }
   ],
   "Unsupervised Learning and Clustering": [
-    {"question": "K-Means clustering requires specifying K, which represents:", "options": ["Maximum iterations", "Number of clusters to form", "Distance threshold", "Minimum cluster size"], "answer": "Number of clusters to form", "difficulty": "Easy"},
-    {"question": "The K-Means algorithm assigns each point to the cluster with:", "options": ["Maximum distance centroid", "Nearest centroid", "Random centroid", "Farthest centroid"], "answer": "Nearest centroid", "difficulty": "Easy"},
-    {"question": "The K-Means algorithm is sensitive to:", "options": ["Number of features", "Initial centroid placement", "Batch size", "Learning rate"], "answer": "Initial centroid placement", "difficulty": "Medium"},
-    {"question": "The 'Elbow Method' is used in K-Means to:", "options": ["Select the best distance metric", "Determine the optimal number of clusters K", "Initialize centroids", "Handle outliers"], "answer": "Determine the optimal number of clusters K", "difficulty": "Medium"},
-    {"question": "K-Means clustering minimizes the objective function called:", "options": ["Entropy", "Within-cluster sum of squares (WCSS) / Inertia", "Silhouette score", "Gini impurity"], "answer": "Within-cluster sum of squares (WCSS) / Inertia", "difficulty": "Medium"},
-    {"question": "K-Means algorithm CANNOT handle clusters that are:", "options": ["Spherical", "Equally sized", "Non-convex or irregularly shaped", "High dimensional"], "answer": "Non-convex or irregularly shaped", "difficulty": "Hard"},
-    {"question": "Hierarchical clustering produces a tree-like structure called:", "options": ["Decision tree", "Dendrogram", "Cluster map", "Phylogenetic graph"], "answer": "Dendrogram", "difficulty": "Easy"},
-    {"question": "In agglomerative hierarchical clustering, we start with:", "options": ["One cluster containing all points", "K clusters", "Each point as its own cluster and merge", "Randomly assigned clusters"], "answer": "Each point as its own cluster and merge", "difficulty": "Medium"},
-    {"question": "Complete linkage in hierarchical clustering uses:", "options": ["Minimum distance between clusters", "Maximum distance between any two points in different clusters", "Average of all pairwise distances", "Centroid distance"], "answer": "Maximum distance between any two points in different clusters", "difficulty": "Hard"},
-    {"question": "DBSCAN stands for:", "options": ["Distance-Based Scanning Algorithm Notation", "Density-Based Spatial Clustering of Applications with Noise", "Dynamic Balanced Spatial Clustering and Normalization", "Distributed Batch Sampling Cluster Analysis Network"], "answer": "Density-Based Spatial Clustering of Applications with Noise", "difficulty": "Easy"},
-    {"question": "DBSCAN identifies points that don't belong to any cluster as:", "options": ["Core points", "Border points", "Noise/outlier points", "Centroid points"], "answer": "Noise/outlier points", "difficulty": "Medium"},
-    {"question": "The two parameters of DBSCAN are:", "options": ["K and distance", "ε (epsilon) and MinPts", "Alpha and beta", "Mean and variance"], "answer": "ε (epsilon) and MinPts", "difficulty": "Medium"},
-    {"question": "DBSCAN has an advantage over K-Means in that it:", "options": ["Requires specifying K", "Can find arbitrarily shaped clusters and handle noise", "Is faster on all datasets", "Always produces better clusters"], "answer": "Can find arbitrarily shaped clusters and handle noise", "difficulty": "Medium"},
-    {"question": "The Silhouette score for clustering ranges from:", "options": ["0 to 1", "-1 to 1", "0 to infinity", "-infinity to infinity"], "answer": "-1 to 1", "difficulty": "Medium"},
-    {"question": "A Silhouette score close to +1 indicates:", "options": ["Poor clustering", "Point is near a cluster boundary", "Point is well-matched to its cluster, far from others", "Point is noise"], "answer": "Point is well-matched to its cluster, far from others", "difficulty": "Medium"},
-    {"question": "In a Genetic Algorithm, 'fitness function' measures:", "options": ["Population size", "How well each individual solves the problem", "Mutation rate", "Crossover probability"], "answer": "How well each individual solves the problem", "difficulty": "Medium"},
-    {"question": "'Crossover' in Genetic Algorithms is analogous to:", "options": ["Random mutation", "Biological sexual reproduction combining parent genes", "Natural selection", "Population initialization"], "answer": "Biological sexual reproduction combining parent genes", "difficulty": "Medium"},
-    {"question": "'Mutation' in Genetic Algorithms:", "options": ["Combines two parent chromosomes", "Randomly alters genes in a chromosome to maintain diversity", "Selects best individuals", "Evaluates fitness"], "answer": "Randomly alters genes in a chromosome to maintain diversity", "difficulty": "Easy"},
-    {"question": "The 'selection' step in Genetic Algorithms chooses individuals for reproduction based on:", "options": ["Random selection", "Fitness (better solutions more likely to be selected)", "Age of individual", "Smallest genome"], "answer": "Fitness (better solutions more likely to be selected)", "difficulty": "Medium"},
-    {"question": "K-Means with K=1 results in:", "options": ["All points in one cluster with centroid at mean of all points", "Error — K must be > 1", "One cluster per point", "Random assignment"], "answer": "All points in one cluster with centroid at mean of all points", "difficulty": "Hard"},
-    {"question": "Divisive hierarchical clustering starts with:", "options": ["Each point as its own cluster", "All points in one cluster and recursively divides", "K initial clusters", "Random partitioning"], "answer": "All points in one cluster and recursively divides", "difficulty": "Medium"},
-    {"question": "K-Means++ initialization improves K-Means by:", "options": ["Running K-Means multiple times", "Choosing initial centroids probabilistically spread apart", "Using density-based initialization", "Selecting centroids from dense regions"], "answer": "Choosing initial centroids probabilistically spread apart", "difficulty": "Hard"},
-    {"question": "Which clustering algorithm does NOT require specifying the number of clusters beforehand?", "options": ["K-Means", "Gaussian Mixture Models (fixed K)", "DBSCAN", "K-Medoids"], "answer": "DBSCAN", "difficulty": "Medium"},
-    {"question": "A 'core point' in DBSCAN is a point that:", "options": ["Has exactly MinPts neighbors", "Has at least MinPts neighbors within radius ε", "Is at the center of a cluster", "Has no neighbors"], "answer": "Has at least MinPts neighbors within radius ε", "difficulty": "Medium"},
-    {"question": "The genetic algorithm termination condition can be:", "options": ["Only when optimal solution is found", "After fixed generations, or when fitness converges, or time limit", "Never — it runs indefinitely", "When all individuals have equal fitness"], "answer": "After fixed generations, or when fitness converges, or time limit", "difficulty": "Medium"},
-    {"question": "Which is NOT a step in the K-Means algorithm?", "options": ["Initialize K centroids", "Assign each point to nearest centroid", "Compute gradient of loss", "Update centroids to mean of assigned points"], "answer": "Compute gradient of loss", "difficulty": "Medium"},
-    {"question": "Gap statistic is used to:", "options": ["Measure cluster compactness", "Determine optimal K by comparing within-cluster variation to expected under null reference", "Speed up K-Means convergence", "Handle missing values in clustering"], "answer": "Determine optimal K by comparing within-cluster variation to expected under null reference", "difficulty": "Hard"},
-    {"question": "K-Medoids differs from K-Means in that:", "options": ["It uses mean of cluster as representative", "It uses actual data points (medoids) as cluster centers", "It requires fewer iterations", "It doesn't need K specified"], "answer": "It uses actual data points (medoids) as cluster centers", "difficulty": "Hard"},
-    {"question": "Hierarchical clustering time complexity is:", "options": ["O(n log n)", "O(n²) to O(n³)", "O(kn) where k is number of clusters", "O(1)"], "answer": "O(n²) to O(n³)", "difficulty": "Hard"},
-    {"question": "In sklearn Python, which function implements K-Means?", "options": ["sklearn.cluster.KMeans", "sklearn.neighbors.KNeighborsClassifier", "sklearn.linear_model.KMeans", "sklearn.decomposition.KMeans"], "answer": "sklearn.cluster.KMeans", "difficulty": "Easy"}
+    {
+      "question": "K-Means clustering requires specifying K, which represents:",
+      "options": [
+        "Maximum iterations",
+        "Number of clusters to form",
+        "Minimum cluster size",
+        "Distance threshold"
+      ],
+      "answer": "Number of clusters to form",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The K-Means algorithm assigns each point to the cluster with:",
+      "options": [
+        "Farthest centroid",
+        "Random centroid",
+        "Nearest centroid",
+        "Maximum distance centroid"
+      ],
+      "answer": "Nearest centroid",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The K-Means algorithm is sensitive to:",
+      "options": [
+        "Initial centroid placement",
+        "Number of features",
+        "Learning rate",
+        "Batch size"
+      ],
+      "answer": "Initial centroid placement",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The 'Elbow Method' is used in K-Means to:",
+      "options": [
+        "Initialize centroids",
+        "Handle outliers",
+        "Select the best distance metric",
+        "Determine the optimal number of clusters K"
+      ],
+      "answer": "Determine the optimal number of clusters K",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "K-Means clustering minimizes the objective function called:",
+      "options": [
+        "Entropy",
+        "Gini impurity",
+        "Within-cluster sum of squares (WCSS) / Inertia",
+        "Silhouette score"
+      ],
+      "answer": "Within-cluster sum of squares (WCSS) / Inertia",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "K-Means algorithm CANNOT handle clusters that are:",
+      "options": [
+        "Non-convex or irregularly shaped",
+        "High dimensional",
+        "Spherical",
+        "Equally sized"
+      ],
+      "answer": "Non-convex or irregularly shaped",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Hierarchical clustering produces a tree-like structure called:",
+      "options": [
+        "Dendrogram",
+        "Cluster map",
+        "Phylogenetic graph",
+        "Decision tree"
+      ],
+      "answer": "Dendrogram",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In agglomerative hierarchical clustering, we start with:",
+      "options": [
+        "One cluster containing all points",
+        "Randomly assigned clusters",
+        "Each point as its own cluster and merge",
+        "K clusters"
+      ],
+      "answer": "Each point as its own cluster and merge",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Complete linkage in hierarchical clustering uses:",
+      "options": [
+        "Minimum distance between clusters",
+        "Maximum distance between any two points in different clusters",
+        "Average of all pairwise distances",
+        "Centroid distance"
+      ],
+      "answer": "Maximum distance between any two points in different clusters",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "DBSCAN stands for:",
+      "options": [
+        "Distributed Batch Sampling Cluster Analysis Network",
+        "Distance-Based Scanning Algorithm Notation",
+        "Dynamic Balanced Spatial Clustering and Normalization",
+        "Density-Based Spatial Clustering of Applications with Noise"
+      ],
+      "answer": "Density-Based Spatial Clustering of Applications with Noise",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "DBSCAN identifies points that don't belong to any cluster as:",
+      "options": [
+        "Core points",
+        "Border points",
+        "Centroid points",
+        "Noise/outlier points"
+      ],
+      "answer": "Noise/outlier points",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The two parameters of DBSCAN are:",
+      "options": [
+        "K and distance",
+        "Alpha and beta",
+        "Mean and variance",
+        "ε (epsilon) and MinPts"
+      ],
+      "answer": "ε (epsilon) and MinPts",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "DBSCAN has an advantage over K-Means in that it:",
+      "options": [
+        "Requires specifying K",
+        "Can find arbitrarily shaped clusters and handle noise",
+        "Always produces better clusters",
+        "Is faster on all datasets"
+      ],
+      "answer": "Can find arbitrarily shaped clusters and handle noise",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The Silhouette score for clustering ranges from:",
+      "options": [
+        "-infinity to infinity",
+        "0 to 1",
+        "-1 to 1",
+        "0 to infinity"
+      ],
+      "answer": "-1 to 1",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "A Silhouette score close to +1 indicates:",
+      "options": [
+        "Point is noise",
+        "Poor clustering",
+        "Point is near a cluster boundary",
+        "Point is well-matched to its cluster, far from others"
+      ],
+      "answer": "Point is well-matched to its cluster, far from others",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "In a Genetic Algorithm, 'fitness function' measures:",
+      "options": [
+        "Population size",
+        "How well each individual solves the problem",
+        "Mutation rate",
+        "Crossover probability"
+      ],
+      "answer": "How well each individual solves the problem",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "'Crossover' in Genetic Algorithms is analogous to:",
+      "options": [
+        "Population initialization",
+        "Biological sexual reproduction combining parent genes",
+        "Natural selection",
+        "Random mutation"
+      ],
+      "answer": "Biological sexual reproduction combining parent genes",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "'Mutation' in Genetic Algorithms:",
+      "options": [
+        "Randomly alters genes in a chromosome to maintain diversity",
+        "Combines two parent chromosomes",
+        "Evaluates fitness",
+        "Selects best individuals"
+      ],
+      "answer": "Randomly alters genes in a chromosome to maintain diversity",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The 'selection' step in Genetic Algorithms chooses individuals for reproduction based on:",
+      "options": [
+        "Smallest genome",
+        "Fitness (better solutions more likely to be selected)",
+        "Age of individual",
+        "Random selection"
+      ],
+      "answer": "Fitness (better solutions more likely to be selected)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "K-Means with K=1 results in:",
+      "options": [
+        "All points in one cluster with centroid at mean of all points",
+        "Random assignment",
+        "One cluster per point",
+        "Error — K must be > 1"
+      ],
+      "answer": "All points in one cluster with centroid at mean of all points",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Divisive hierarchical clustering starts with:",
+      "options": [
+        "Random partitioning",
+        "Each point as its own cluster",
+        "K initial clusters",
+        "All points in one cluster and recursively divides"
+      ],
+      "answer": "All points in one cluster and recursively divides",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "K-Means++ initialization improves K-Means by:",
+      "options": [
+        "Choosing initial centroids probabilistically spread apart",
+        "Selecting centroids from dense regions",
+        "Using density-based initialization",
+        "Running K-Means multiple times"
+      ],
+      "answer": "Choosing initial centroids probabilistically spread apart",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Which clustering algorithm does NOT require specifying the number of clusters beforehand?",
+      "options": [
+        "DBSCAN",
+        "K-Medoids",
+        "K-Means",
+        "Gaussian Mixture Models (fixed K)"
+      ],
+      "answer": "DBSCAN",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "A 'core point' in DBSCAN is a point that:",
+      "options": [
+        "Has no neighbors",
+        "Has exactly MinPts neighbors",
+        "Has at least MinPts neighbors within radius ε",
+        "Is at the center of a cluster"
+      ],
+      "answer": "Has at least MinPts neighbors within radius ε",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The genetic algorithm termination condition can be:",
+      "options": [
+        "After fixed generations, or when fitness converges, or time limit",
+        "Only when optimal solution is found",
+        "Never — it runs indefinitely",
+        "When all individuals have equal fitness"
+      ],
+      "answer": "After fixed generations, or when fitness converges, or time limit",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which is NOT a step in the K-Means algorithm?",
+      "options": [
+        "Initialize K centroids",
+        "Assign each point to nearest centroid",
+        "Compute gradient of loss",
+        "Update centroids to mean of assigned points"
+      ],
+      "answer": "Compute gradient of loss",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Gap statistic is used to:",
+      "options": [
+        "Determine optimal K by comparing within-cluster variation to expected under null reference",
+        "Handle missing values in clustering",
+        "Speed up K-Means convergence",
+        "Measure cluster compactness"
+      ],
+      "answer": "Determine optimal K by comparing within-cluster variation to expected under null reference",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "K-Medoids differs from K-Means in that:",
+      "options": [
+        "It uses mean of cluster as representative",
+        "It doesn't need K specified",
+        "It requires fewer iterations",
+        "It uses actual data points (medoids) as cluster centers"
+      ],
+      "answer": "It uses actual data points (medoids) as cluster centers",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Hierarchical clustering time complexity is:",
+      "options": [
+        "O(n log n)",
+        "O(n²) to O(n³)",
+        "O(kn) where k is number of clusters",
+        "O(1)"
+      ],
+      "answer": "O(n²) to O(n³)",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "In sklearn Python, which function implements K-Means?",
+      "options": [
+        "sklearn.decomposition.KMeans",
+        "sklearn.neighbors.KNeighborsClassifier",
+        "sklearn.cluster.KMeans",
+        "sklearn.linear_model.KMeans"
+      ],
+      "answer": "sklearn.cluster.KMeans",
+      "difficulty": "Easy"
+    }
   ],
   "Python for Machine Learning": [
-    {"question": "Which Python library is primarily used for data manipulation and analysis?", "options": ["NumPy", "Pandas", "Matplotlib", "Scikit-learn"], "answer": "Pandas", "difficulty": "Easy"},
-    {"question": "In NumPy, the shape of a 2D array with 3 rows and 4 columns is:", "options": ["(4, 3)", "(3, 4)", "(12,)", "(3, 4, 1)"], "answer": "(3, 4)", "difficulty": "Easy"},
-    {"question": "The Pandas function to read a CSV file is:", "options": ["pd.read_excel()", "pd.load_csv()", "pd.read_csv()", "pd.import_csv()"], "answer": "pd.read_csv()", "difficulty": "Easy"},
-    {"question": "In scikit-learn, the train_test_split function from which module?", "options": ["sklearn.model_selection", "sklearn.preprocessing", "sklearn.datasets", "sklearn.metrics"], "answer": "sklearn.model_selection", "difficulty": "Easy"},
-    {"question": "Which scikit-learn function normalizes features to range [0,1]?", "options": ["StandardScaler", "MinMaxScaler", "RobustScaler", "Normalizer"], "answer": "MinMaxScaler", "difficulty": "Medium"},
-    {"question": "StandardScaler in sklearn transforms data to have:", "options": ["Range [0,1]", "Mean=0 and Standard Deviation=1", "All positive values", "Integer values only"], "answer": "Mean=0 and Standard Deviation=1", "difficulty": "Easy"},
-    {"question": "In a Pandas DataFrame, df.dropna() does:", "options": ["Fills missing values with 0", "Removes rows/columns with NaN values", "Counts missing values", "Replaces NaN with mean"], "answer": "Removes rows/columns with NaN values", "difficulty": "Easy"},
-    {"question": "Which Matplotlib function creates a scatter plot?", "options": ["plt.plot()", "plt.scatter()", "plt.bar()", "plt.hist()"], "answer": "plt.scatter()", "difficulty": "Easy"},
-    {"question": "The seaborn library is used for:", "options": ["Building ML models", "Statistical data visualization", "Data preprocessing", "Model deployment"], "answer": "Statistical data visualization", "difficulty": "Easy"},
-    {"question": "In sklearn, after fitting a model, predictions are made using:", "options": [".train()", ".evaluate()", ".predict()", ".transform()"], "answer": ".predict()", "difficulty": "Easy"},
-    {"question": "The sklearn function to evaluate classification accuracy is:", "options": ["sklearn.metrics.accuracy_score", "sklearn.metrics.r2_score", "sklearn.metrics.mean_squared_error", "sklearn.metrics.silhouette_score"], "answer": "sklearn.metrics.accuracy_score", "difficulty": "Easy"},
-    {"question": "In NumPy, np.zeros((3,3)) creates:", "options": ["A 3×3 matrix of ones", "A 3×3 matrix of zeros", "An array of 3 zeros", "A 3D array"], "answer": "A 3×3 matrix of zeros", "difficulty": "Easy"},
-    {"question": "The LabelEncoder in sklearn converts:", "options": ["Numerical to categorical", "Categorical labels to numerical integers", "One-hot encoded to integers", "Text to embeddings"], "answer": "Categorical labels to numerical integers", "difficulty": "Medium"},
-    {"question": "pd.get_dummies() in Pandas performs:", "options": ["Label encoding", "One-hot encoding", "Ordinal encoding", "Target encoding"], "answer": "One-hot encoding", "difficulty": "Medium"},
-    {"question": "The GridSearchCV in sklearn is used for:", "options": ["Splitting data into grid-shaped partitions", "Exhaustive hyperparameter tuning with cross-validation", "Visualizing model performance as a grid", "Parallel model training"], "answer": "Exhaustive hyperparameter tuning with cross-validation", "difficulty": "Medium"},
-    {"question": "Which Python library provides the confusion_matrix function?", "options": ["numpy", "pandas", "sklearn.metrics", "matplotlib"], "answer": "sklearn.metrics", "difficulty": "Easy"},
-    {"question": "In Python ML, a Pipeline from sklearn:", "options": ["Runs code in parallel", "Chains multiple preprocessing steps and a model into a single object", "Provides data loading utilities", "Visualizes model architecture"], "answer": "Chains multiple preprocessing steps and a model into a single object", "difficulty": "Medium"},
-    {"question": "The Future Scope of ML includes:", "options": ["Only image recognition", "Autonomous AI systems, healthcare diagnostics, personalized education, and more", "Replacing all human workers immediately", "Only recommendation systems"], "answer": "Autonomous AI systems, healthcare diagnostics, personalized education, and more", "difficulty": "Easy"},
-    {"question": "In sklearn, cross_val_score with cv=5 returns:", "options": ["Single accuracy value", "5 accuracy scores, one for each fold", "Best model parameters", "Training loss per fold"], "answer": "5 accuracy scores, one for each fold", "difficulty": "Medium"},
-    {"question": "Which dataset loading utility is available in sklearn?", "options": ["sklearn.data.load_csv", "sklearn.datasets.load_iris", "sklearn.io.read_data", "sklearn.utils.import_data"], "answer": "sklearn.datasets.load_iris", "difficulty": "Easy"},
-    {"question": "The joblib.dump() function in sklearn is used for:", "options": ["Data loading", "Saving/serializing trained ML models to disk", "Parallel computation", "Feature extraction"], "answer": "Saving/serializing trained ML models to disk", "difficulty": "Medium"},
-    {"question": "In Pandas, df.describe() outputs:", "options": ["Column data types", "Summary statistics (count, mean, std, min, max, quartiles)", "First 5 rows", "Missing value counts"], "answer": "Summary statistics (count, mean, std, min, max, quartiles)", "difficulty": "Easy"},
-    {"question": "The WEKA tool supports data in which primary format?", "options": ["CSV only", "ARFF (Attribute-Relation File Format)", "JSON", "XML"], "answer": "ARFF (Attribute-Relation File Format)", "difficulty": "Medium"},
-    {"question": "Result analysis from a dataset in ML typically involves:", "options": ["Only printing accuracy", "Confusion matrix, classification report, ROC curve, and statistical interpretation", "Running the model once", "Counting data points"], "answer": "Confusion matrix, classification report, ROC curve, and statistical interpretation", "difficulty": "Medium"},
-    {"question": "Which statement correctly imports and uses KNN in sklearn?", "options": ["from sklearn.neighbors import KNeighborsClassifier; clf = KNeighborsClassifier(n_neighbors=5)", "from sklearn.knn import KNN; clf = KNN(k=5)", "import KNN from sklearn; clf = KNN(5)", "from sklearn.ml import KNN; clf = KNN()"], "answer": "from sklearn.neighbors import KNeighborsClassifier; clf = KNeighborsClassifier(n_neighbors=5)", "difficulty": "Easy"},
-    {"question": "The train_test_split parameter 'random_state' ensures:", "options": ["Faster splitting", "Reproducible random splits", "Stratified sampling", "Equal class distribution"], "answer": "Reproducible random splits", "difficulty": "Easy"},
-    {"question": "In sklearn, the .fit_transform() method:", "options": ["Only fits the model", "Only transforms data", "Fits and then transforms data in one step", "Predicts and transforms"], "answer": "Fits and then transforms data in one step", "difficulty": "Medium"},
-    {"question": "The Iris dataset has how many features and classes?", "options": ["2 features, 2 classes", "4 features, 3 classes", "3 features, 4 classes", "5 features, 2 classes"], "answer": "4 features, 3 classes", "difficulty": "Easy"},
-    {"question": "Which function visualizes a decision tree in sklearn?", "options": ["sklearn.tree.plot_tree()", "sklearn.vis.draw_tree()", "sklearn.tree.export_tree()", "sklearn.plot.decision_tree()"], "answer": "sklearn.tree.plot_tree()", "difficulty": "Medium"},
-    {"question": "Feature importance in a Random Forest model can be accessed via:", "options": [".coef_", ".feature_importances_", ".importance_scores_", ".weights_"], "answer": ".feature_importances_", "difficulty": "Medium"}
+    {
+      "question": "Which Python library is primarily used for data manipulation and analysis?",
+      "options": [
+        "NumPy",
+        "Pandas",
+        "Scikit-learn",
+        "Matplotlib"
+      ],
+      "answer": "Pandas",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In NumPy, the shape of a 2D array with 3 rows and 4 columns is:",
+      "options": [
+        "(4, 3)",
+        "(3, 4)",
+        "(3, 4, 1)",
+        "(12,)"
+      ],
+      "answer": "(3, 4)",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The Pandas function to read a CSV file is:",
+      "options": [
+        "pd.read_csv()",
+        "pd.import_csv()",
+        "pd.read_excel()",
+        "pd.load_csv()"
+      ],
+      "answer": "pd.read_csv()",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In scikit-learn, the train_test_split function from which module?",
+      "options": [
+        "sklearn.metrics",
+        "sklearn.preprocessing",
+        "sklearn.model_selection",
+        "sklearn.datasets"
+      ],
+      "answer": "sklearn.model_selection",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which scikit-learn function normalizes features to range [0,1]?",
+      "options": [
+        "MinMaxScaler",
+        "StandardScaler",
+        "Normalizer",
+        "RobustScaler"
+      ],
+      "answer": "MinMaxScaler",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "StandardScaler in sklearn transforms data to have:",
+      "options": [
+        "Range [0,1]",
+        "All positive values",
+        "Mean=0 and Standard Deviation=1",
+        "Integer values only"
+      ],
+      "answer": "Mean=0 and Standard Deviation=1",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In a Pandas DataFrame, df.dropna() does:",
+      "options": [
+        "Fills missing values with 0",
+        "Removes rows/columns with NaN values",
+        "Replaces NaN with mean",
+        "Counts missing values"
+      ],
+      "answer": "Removes rows/columns with NaN values",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which Matplotlib function creates a scatter plot?",
+      "options": [
+        "plt.hist()",
+        "plt.scatter()",
+        "plt.plot()",
+        "plt.bar()"
+      ],
+      "answer": "plt.scatter()",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The seaborn library is used for:",
+      "options": [
+        "Data preprocessing",
+        "Building ML models",
+        "Statistical data visualization",
+        "Model deployment"
+      ],
+      "answer": "Statistical data visualization",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In sklearn, after fitting a model, predictions are made using:",
+      "options": [
+        ".transform()",
+        ".evaluate()",
+        ".train()",
+        ".predict()"
+      ],
+      "answer": ".predict()",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The sklearn function to evaluate classification accuracy is:",
+      "options": [
+        "sklearn.metrics.silhouette_score",
+        "sklearn.metrics.mean_squared_error",
+        "sklearn.metrics.r2_score",
+        "sklearn.metrics.accuracy_score"
+      ],
+      "answer": "sklearn.metrics.accuracy_score",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In NumPy, np.zeros((3,3)) creates:",
+      "options": [
+        "A 3×3 matrix of ones",
+        "A 3×3 matrix of zeros",
+        "A 3D array",
+        "An array of 3 zeros"
+      ],
+      "answer": "A 3×3 matrix of zeros",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The LabelEncoder in sklearn converts:",
+      "options": [
+        "One-hot encoded to integers",
+        "Text to embeddings",
+        "Numerical to categorical",
+        "Categorical labels to numerical integers"
+      ],
+      "answer": "Categorical labels to numerical integers",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "pd.get_dummies() in Pandas performs:",
+      "options": [
+        "One-hot encoding",
+        "Target encoding",
+        "Label encoding",
+        "Ordinal encoding"
+      ],
+      "answer": "One-hot encoding",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The GridSearchCV in sklearn is used for:",
+      "options": [
+        "Parallel model training",
+        "Visualizing model performance as a grid",
+        "Splitting data into grid-shaped partitions",
+        "Exhaustive hyperparameter tuning with cross-validation"
+      ],
+      "answer": "Exhaustive hyperparameter tuning with cross-validation",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which Python library provides the confusion_matrix function?",
+      "options": [
+        "matplotlib",
+        "numpy",
+        "sklearn.metrics",
+        "pandas"
+      ],
+      "answer": "sklearn.metrics",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In Python ML, a Pipeline from sklearn:",
+      "options": [
+        "Provides data loading utilities",
+        "Chains multiple preprocessing steps and a model into a single object",
+        "Visualizes model architecture",
+        "Runs code in parallel"
+      ],
+      "answer": "Chains multiple preprocessing steps and a model into a single object",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The Future Scope of ML includes:",
+      "options": [
+        "Only image recognition",
+        "Autonomous AI systems, healthcare diagnostics, personalized education, and more",
+        "Only recommendation systems",
+        "Replacing all human workers immediately"
+      ],
+      "answer": "Autonomous AI systems, healthcare diagnostics, personalized education, and more",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In sklearn, cross_val_score with cv=5 returns:",
+      "options": [
+        "5 accuracy scores, one for each fold",
+        "Training loss per fold",
+        "Best model parameters",
+        "Single accuracy value"
+      ],
+      "answer": "5 accuracy scores, one for each fold",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which dataset loading utility is available in sklearn?",
+      "options": [
+        "sklearn.datasets.load_iris",
+        "sklearn.utils.import_data",
+        "sklearn.io.read_data",
+        "sklearn.data.load_csv"
+      ],
+      "answer": "sklearn.datasets.load_iris",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The joblib.dump() function in sklearn is used for:",
+      "options": [
+        "Data loading",
+        "Saving/serializing trained ML models to disk",
+        "Parallel computation",
+        "Feature extraction"
+      ],
+      "answer": "Saving/serializing trained ML models to disk",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "In Pandas, df.describe() outputs:",
+      "options": [
+        "Summary statistics (count, mean, std, min, max, quartiles)",
+        "Column data types",
+        "First 5 rows",
+        "Missing value counts"
+      ],
+      "answer": "Summary statistics (count, mean, std, min, max, quartiles)",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The WEKA tool supports data in which primary format?",
+      "options": [
+        "CSV only",
+        "XML",
+        "ARFF (Attribute-Relation File Format)",
+        "JSON"
+      ],
+      "answer": "ARFF (Attribute-Relation File Format)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Result analysis from a dataset in ML typically involves:",
+      "options": [
+        "Confusion matrix, classification report, ROC curve, and statistical interpretation",
+        "Running the model once",
+        "Counting data points",
+        "Only printing accuracy"
+      ],
+      "answer": "Confusion matrix, classification report, ROC curve, and statistical interpretation",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Which statement correctly imports and uses KNN in sklearn?",
+      "options": [
+        "import KNN from sklearn; clf = KNN(5)",
+        "from sklearn.knn import KNN; clf = KNN(k=5)",
+        "from sklearn.ml import KNN; clf = KNN()",
+        "from sklearn.neighbors import KNeighborsClassifier; clf = KNeighborsClassifier(n_neighbors=5)"
+      ],
+      "answer": "from sklearn.neighbors import KNeighborsClassifier; clf = KNeighborsClassifier(n_neighbors=5)",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "The train_test_split parameter 'random_state' ensures:",
+      "options": [
+        "Stratified sampling",
+        "Equal class distribution",
+        "Faster splitting",
+        "Reproducible random splits"
+      ],
+      "answer": "Reproducible random splits",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "In sklearn, the .fit_transform() method:",
+      "options": [
+        "Fits and then transforms data in one step",
+        "Only transforms data",
+        "Only fits the model",
+        "Predicts and transforms"
+      ],
+      "answer": "Fits and then transforms data in one step",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "The Iris dataset has how many features and classes?",
+      "options": [
+        "3 features, 4 classes",
+        "4 features, 3 classes",
+        "5 features, 2 classes",
+        "2 features, 2 classes"
+      ],
+      "answer": "4 features, 3 classes",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which function visualizes a decision tree in sklearn?",
+      "options": [
+        "sklearn.plot.decision_tree()",
+        "sklearn.tree.export_tree()",
+        "sklearn.vis.draw_tree()",
+        "sklearn.tree.plot_tree()"
+      ],
+      "answer": "sklearn.tree.plot_tree()",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "Feature importance in a Random Forest model can be accessed via:",
+      "options": [
+        ".coef_",
+        ".feature_importances_",
+        ".importance_scores_",
+        ".weights_"
+      ],
+      "answer": ".feature_importances_",
+      "difficulty": "Medium"
+    }
   ]
 }

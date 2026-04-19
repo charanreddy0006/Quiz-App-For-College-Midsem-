@@ -1,162 +1,1662 @@
 {
   "OS Overview and Structure": [
-    {"question": "What is an operating system?", "options": ["A hardware component that manages CPU speed", "System software that manages hardware resources and provides services to applications", "A program that compiles source code", "A database management system"], "answer": "System software that manages hardware resources and provides services to applications", "difficulty": "Easy"},
-    {"question": "What is an interrupt in computer architecture?", "options": ["A hardware malfunction", "A signal to the CPU indicating an event that requires immediate attention", "A software bug causing program crash", "A network packet loss event"], "answer": "A signal to the CPU indicating an event that requires immediate attention", "difficulty": "Easy"},
-    {"question": "What is DMA (Direct Memory Access)?", "options": ["A type of CPU cache", "Hardware mechanism allowing I/O devices to transfer data directly to/from memory without CPU intervention", "Direct Memory Addressing mode", "A virtual memory technique"], "answer": "Hardware mechanism allowing I/O devices to transfer data directly to/from memory without CPU intervention", "difficulty": "Medium"},
-    {"question": "What is the memory hierarchy in computer architecture?", "options": ["RAM → Cache → Registers → Disk in order of size", "Registers → Cache → RAM → Disk in order of speed (fastest to slowest)", "Disk → RAM → Cache → Registers in order of cost", "All memory types have the same access speed"], "answer": "Registers → Cache → RAM → Disk in order of speed (fastest to slowest)", "difficulty": "Medium"},
-    {"question": "What is a system call?", "options": ["A hardware interrupt from a peripheral", "An interface for user programs to request OS services", "A network communication method", "A type of function call between processes"], "answer": "An interface for user programs to request OS services", "difficulty": "Easy"},
-    {"question": "What is a multiprocessor system?", "options": ["A system with multiple users", "A system with two or more CPUs sharing memory and I/O devices", "A system running multiple operating systems", "A system with multiple storage devices"], "answer": "A system with two or more CPUs sharing memory and I/O devices", "difficulty": "Easy"},
-    {"question": "What is cache memory and what is its purpose?", "options": ["A type of virtual memory on disk", "Fast memory between CPU and RAM that stores frequently accessed data to reduce latency", "Memory for temporary internet storage", "A backup memory system"], "answer": "Fast memory between CPU and RAM that stores frequently accessed data to reduce latency", "difficulty": "Easy"},
-    {"question": "What is the difference between a monolithic kernel and a microkernel?", "options": ["Monolithic kernels are smaller; microkernels are larger", "Monolithic kernels include all OS services in kernel space; microkernels run minimal services in kernel space", "They are identical architectures", "Microkernels run everything in user space"], "answer": "Monolithic kernels include all OS services in kernel space; microkernels run minimal services in kernel space", "difficulty": "Medium"},
-    {"question": "What is OS bootstrapping (booting)?", "options": ["Installing a new application", "The process of loading the OS from storage into memory when the computer starts", "Running diagnostic tests on hardware", "Creating a virtual machine"], "answer": "The process of loading the OS from storage into memory when the computer starts", "difficulty": "Easy"},
-    {"question": "What is a system program?", "options": ["A user application", "A program associated with the OS that provides a convenient environment for program development and execution", "A hardware driver", "A network protocol"], "answer": "A program associated with the OS that provides a convenient environment for program development and execution", "difficulty": "Medium"},
-    {"question": "What is instruction execution in a basic computer system?", "options": ["The fetch-decode-execute cycle where the CPU fetches, decodes, and executes instructions", "Writing machine code by programmers", "Compiling high-level language to machine code", "Running multiple instructions simultaneously"], "answer": "The fetch-decode-execute cycle where the CPU fetches, decodes, and executes instructions", "difficulty": "Medium"},
-    {"question": "What is the purpose of the OS kernel?", "options": ["To provide the graphical interface", "The core of the OS that manages hardware resources and provides fundamental services", "To compile user programs", "To manage network connections"], "answer": "The core of the OS that manages hardware resources and provides fundamental services", "difficulty": "Easy"},
-    {"question": "What is dual-mode operation in an OS?", "options": ["Running two OS simultaneously", "Switching between user mode and kernel mode to protect OS resources", "Having two processors for fault tolerance", "Running 32-bit and 64-bit programs simultaneously"], "answer": "Switching between user mode and kernel mode to protect OS resources", "difficulty": "Medium"},
-    {"question": "What is an I/O interrupt?", "options": ["An error in input data", "A signal sent by an I/O device to notify the CPU that an I/O operation is complete", "A network packet arriving", "A keyboard keystroke event only"], "answer": "A signal sent by an I/O device to notify the CPU that an I/O operation is complete", "difficulty": "Medium"},
-    {"question": "What is the role of device drivers in an OS?", "options": ["They are user applications for device control", "Software that provides a standard interface between OS and hardware devices", "Network protocols for device communication", "Security modules for device protection"], "answer": "Software that provides a standard interface between OS and hardware devices", "difficulty": "Easy"},
-    {"question": "What is multiprogramming in OS?", "options": ["Programming in multiple languages", "Keeping multiple programs in memory simultaneously to improve CPU utilization", "Running a program on multiple processors", "Using multiple programming paradigms"], "answer": "Keeping multiple programs in memory simultaneously to improve CPU utilization", "difficulty": "Medium"},
-    {"question": "What is multitasking in an OS context?", "options": ["Running multiple applications visible on screen", "OS rapidly switching between processes to give illusion of concurrent execution", "Having multiple CPUs execute simultaneously", "Running multiple threads in one process"], "answer": "OS rapidly switching between processes to give illusion of concurrent execution", "difficulty": "Medium"},
-    {"question": "What is the difference between firmware and an operating system?", "options": ["Firmware is stored in ROM/flash for low-level hardware control; OS is loaded from storage for higher-level management", "They are the same thing", "Firmware manages user applications; OS manages hardware", "OS is stored in ROM; firmware is on disk"], "answer": "Firmware is stored in ROM/flash for low-level hardware control; OS is loaded from storage for higher-level management", "difficulty": "Hard"},
-    {"question": "What is spooling in operating systems?", "options": ["A memory management technique", "Simultaneous Peripheral Operations Online – buffering I/O for slow devices like printers", "A type of network protocol", "A CPU scheduling algorithm"], "answer": "Simultaneous Peripheral Operations Online – buffering I/O for slow devices like printers", "difficulty": "Hard"},
-    {"question": "What is a trap in OS context?", "options": ["A hardware malfunction", "A software-generated interrupt caused by error or user request for OS service", "A network packet interception", "A type of process scheduling signal"], "answer": "A software-generated interrupt caused by error or user request for OS service", "difficulty": "Medium"},
-    {"question": "What does a multicore processor provide?", "options": ["Multiple CPU chips on separate boards", "Multiple processing units on a single chip for true parallel execution", "Multiple operating systems running simultaneously", "Multiple network interfaces"], "answer": "Multiple processing units on a single chip for true parallel execution", "difficulty": "Easy"},
-    {"question": "What is the significance of privileged instructions in OS?", "options": ["Instructions that run faster than normal", "Instructions that can only execute in kernel mode to prevent unauthorized hardware access", "Instructions reserved for graphics processing", "Instructions used only for system calls"], "answer": "Instructions that can only execute in kernel mode to prevent unauthorized hardware access", "difficulty": "Medium"},
-    {"question": "What is program counter (PC) in CPU architecture?", "options": ["A performance measurement tool", "A register holding the address of the next instruction to be executed", "A counter for program loops", "Memory for storing program data"], "answer": "A register holding the address of the next instruction to be executed", "difficulty": "Easy"},
-    {"question": "What is the purpose of OS generation (SYSGEN)?", "options": ["Generating system calls", "Configuring and building an OS for a specific hardware configuration", "Creating new processes", "Generating system logs"], "answer": "Configuring and building an OS for a specific hardware configuration", "difficulty": "Hard"},
-    {"question": "What is the difference between time-sharing and batch processing OS?", "options": ["Time-sharing allows multiple users interactive access; batch processes jobs sequentially without interaction", "Batch processing is interactive; time-sharing processes jobs in sequence", "Both provide interactive computing", "Time-sharing is for single users only"], "answer": "Time-sharing allows multiple users interactive access; batch processes jobs sequentially without interaction", "difficulty": "Medium"},
-    {"question": "What is the interrupt vector in an OS?", "options": ["A list of active processes", "A table containing addresses of interrupt service routines for each interrupt type", "A hardware buffer for interrupts", "A priority queue for interrupt handling"], "answer": "A table containing addresses of interrupt service routines for each interrupt type", "difficulty": "Hard"},
-    {"question": "What is a real-time operating system (RTOS)?", "options": ["An OS that processes tasks as fast as possible", "An OS with strict timing guarantees, ensuring tasks complete within defined deadlines", "An OS for real-time video processing only", "An OS that runs without scheduling delays"], "answer": "An OS with strict timing guarantees, ensuring tasks complete within defined deadlines", "difficulty": "Medium"},
-    {"question": "What does it mean for an OS to be preemptive?", "options": ["The OS can forcibly remove a process from CPU before it voluntarily relinquishes it", "Processes run to completion without interruption", "The OS predicts process behavior", "Processes can preempt OS kernel operations"], "answer": "The OS can forcibly remove a process from CPU before it voluntarily relinquishes it", "difficulty": "Medium"},
-    {"question": "What is a shell in an operating system?", "options": ["The OS kernel itself", "A command-line or graphical interface providing access to OS services", "A hardware enclosure for the CPU", "A memory protection mechanism"], "answer": "A command-line or graphical interface providing access to OS services", "difficulty": "Easy"},
-    {"question": "What is the purpose of context switching?", "options": ["Changing the GUI theme of an OS", "Saving the state of a running process and restoring another process's state to switch execution", "Switching between network interfaces", "Changing CPU power modes"], "answer": "Saving the state of a running process and restoring another process's state to switch execution", "difficulty": "Medium"}
+    {
+      "question": "What is an operating system?",
+      "options": [
+        "A hardware component that manages CPU speed",
+        "A program that compiles source code",
+        "A database management system",
+        "System software that manages hardware resources and provides services to applications"
+      ],
+      "answer": "System software that manages hardware resources and provides services to applications",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is an interrupt in computer architecture?",
+      "options": [
+        "A software bug causing program crash",
+        "A hardware malfunction",
+        "A signal to the CPU indicating an event that requires immediate attention",
+        "A network packet loss event"
+      ],
+      "answer": "A signal to the CPU indicating an event that requires immediate attention",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is DMA (Direct Memory Access)?",
+      "options": [
+        "Direct Memory Addressing mode",
+        "A type of CPU cache",
+        "Hardware mechanism allowing I/O devices to transfer data directly to/from memory without CPU intervention",
+        "A virtual memory technique"
+      ],
+      "answer": "Hardware mechanism allowing I/O devices to transfer data directly to/from memory without CPU intervention",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the memory hierarchy in computer architecture?",
+      "options": [
+        "All memory types have the same access speed",
+        "Disk → RAM → Cache → Registers in order of cost",
+        "Registers → Cache → RAM → Disk in order of speed (fastest to slowest)",
+        "RAM → Cache → Registers → Disk in order of size"
+      ],
+      "answer": "Registers → Cache → RAM → Disk in order of speed (fastest to slowest)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a system call?",
+      "options": [
+        "A hardware interrupt from a peripheral",
+        "An interface for user programs to request OS services",
+        "A type of function call between processes",
+        "A network communication method"
+      ],
+      "answer": "An interface for user programs to request OS services",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is a multiprocessor system?",
+      "options": [
+        "A system with multiple users",
+        "A system with multiple storage devices",
+        "A system with two or more CPUs sharing memory and I/O devices",
+        "A system running multiple operating systems"
+      ],
+      "answer": "A system with two or more CPUs sharing memory and I/O devices",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is cache memory and what is its purpose?",
+      "options": [
+        "A type of virtual memory on disk",
+        "Memory for temporary internet storage",
+        "A backup memory system",
+        "Fast memory between CPU and RAM that stores frequently accessed data to reduce latency"
+      ],
+      "answer": "Fast memory between CPU and RAM that stores frequently accessed data to reduce latency",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the difference between a monolithic kernel and a microkernel?",
+      "options": [
+        "They are identical architectures",
+        "Monolithic kernels include all OS services in kernel space; microkernels run minimal services in kernel space",
+        "Microkernels run everything in user space",
+        "Monolithic kernels are smaller; microkernels are larger"
+      ],
+      "answer": "Monolithic kernels include all OS services in kernel space; microkernels run minimal services in kernel space",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is OS bootstrapping (booting)?",
+      "options": [
+        "Installing a new application",
+        "The process of loading the OS from storage into memory when the computer starts",
+        "Creating a virtual machine",
+        "Running diagnostic tests on hardware"
+      ],
+      "answer": "The process of loading the OS from storage into memory when the computer starts",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is a system program?",
+      "options": [
+        "A network protocol",
+        "A program associated with the OS that provides a convenient environment for program development and execution",
+        "A user application",
+        "A hardware driver"
+      ],
+      "answer": "A program associated with the OS that provides a convenient environment for program development and execution",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is instruction execution in a basic computer system?",
+      "options": [
+        "Writing machine code by programmers",
+        "Running multiple instructions simultaneously",
+        "The fetch-decode-execute cycle where the CPU fetches, decodes, and executes instructions",
+        "Compiling high-level language to machine code"
+      ],
+      "answer": "The fetch-decode-execute cycle where the CPU fetches, decodes, and executes instructions",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the purpose of the OS kernel?",
+      "options": [
+        "To compile user programs",
+        "To provide the graphical interface",
+        "The core of the OS that manages hardware resources and provides fundamental services",
+        "To manage network connections"
+      ],
+      "answer": "The core of the OS that manages hardware resources and provides fundamental services",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is dual-mode operation in an OS?",
+      "options": [
+        "Switching between user mode and kernel mode to protect OS resources",
+        "Running 32-bit and 64-bit programs simultaneously",
+        "Running two OS simultaneously",
+        "Having two processors for fault tolerance"
+      ],
+      "answer": "Switching between user mode and kernel mode to protect OS resources",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is an I/O interrupt?",
+      "options": [
+        "A signal sent by an I/O device to notify the CPU that an I/O operation is complete",
+        "An error in input data",
+        "A keyboard keystroke event only",
+        "A network packet arriving"
+      ],
+      "answer": "A signal sent by an I/O device to notify the CPU that an I/O operation is complete",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the role of device drivers in an OS?",
+      "options": [
+        "Software that provides a standard interface between OS and hardware devices",
+        "Security modules for device protection",
+        "Network protocols for device communication",
+        "They are user applications for device control"
+      ],
+      "answer": "Software that provides a standard interface between OS and hardware devices",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is multiprogramming in OS?",
+      "options": [
+        "Using multiple programming paradigms",
+        "Programming in multiple languages",
+        "Keeping multiple programs in memory simultaneously to improve CPU utilization",
+        "Running a program on multiple processors"
+      ],
+      "answer": "Keeping multiple programs in memory simultaneously to improve CPU utilization",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is multitasking in an OS context?",
+      "options": [
+        "OS rapidly switching between processes to give illusion of concurrent execution",
+        "Running multiple applications visible on screen",
+        "Running multiple threads in one process",
+        "Having multiple CPUs execute simultaneously"
+      ],
+      "answer": "OS rapidly switching between processes to give illusion of concurrent execution",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the difference between firmware and an operating system?",
+      "options": [
+        "OS is stored in ROM; firmware is on disk",
+        "Firmware manages user applications; OS manages hardware",
+        "They are the same thing",
+        "Firmware is stored in ROM/flash for low-level hardware control; OS is loaded from storage for higher-level management"
+      ],
+      "answer": "Firmware is stored in ROM/flash for low-level hardware control; OS is loaded from storage for higher-level management",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is spooling in operating systems?",
+      "options": [
+        "Simultaneous Peripheral Operations Online – buffering I/O for slow devices like printers",
+        "A type of network protocol",
+        "A memory management technique",
+        "A CPU scheduling algorithm"
+      ],
+      "answer": "Simultaneous Peripheral Operations Online – buffering I/O for slow devices like printers",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is a trap in OS context?",
+      "options": [
+        "A hardware malfunction",
+        "A type of process scheduling signal",
+        "A network packet interception",
+        "A software-generated interrupt caused by error or user request for OS service"
+      ],
+      "answer": "A software-generated interrupt caused by error or user request for OS service",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What does a multicore processor provide?",
+      "options": [
+        "Multiple network interfaces",
+        "Multiple processing units on a single chip for true parallel execution",
+        "Multiple CPU chips on separate boards",
+        "Multiple operating systems running simultaneously"
+      ],
+      "answer": "Multiple processing units on a single chip for true parallel execution",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the significance of privileged instructions in OS?",
+      "options": [
+        "Instructions that run faster than normal",
+        "Instructions reserved for graphics processing",
+        "Instructions that can only execute in kernel mode to prevent unauthorized hardware access",
+        "Instructions used only for system calls"
+      ],
+      "answer": "Instructions that can only execute in kernel mode to prevent unauthorized hardware access",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is program counter (PC) in CPU architecture?",
+      "options": [
+        "A counter for program loops",
+        "Memory for storing program data",
+        "A register holding the address of the next instruction to be executed",
+        "A performance measurement tool"
+      ],
+      "answer": "A register holding the address of the next instruction to be executed",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the purpose of OS generation (SYSGEN)?",
+      "options": [
+        "Creating new processes",
+        "Generating system logs",
+        "Generating system calls",
+        "Configuring and building an OS for a specific hardware configuration"
+      ],
+      "answer": "Configuring and building an OS for a specific hardware configuration",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is the difference between time-sharing and batch processing OS?",
+      "options": [
+        "Time-sharing is for single users only",
+        "Batch processing is interactive; time-sharing processes jobs in sequence",
+        "Time-sharing allows multiple users interactive access; batch processes jobs sequentially without interaction",
+        "Both provide interactive computing"
+      ],
+      "answer": "Time-sharing allows multiple users interactive access; batch processes jobs sequentially without interaction",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the interrupt vector in an OS?",
+      "options": [
+        "A hardware buffer for interrupts",
+        "A priority queue for interrupt handling",
+        "A table containing addresses of interrupt service routines for each interrupt type",
+        "A list of active processes"
+      ],
+      "answer": "A table containing addresses of interrupt service routines for each interrupt type",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is a real-time operating system (RTOS)?",
+      "options": [
+        "An OS that processes tasks as fast as possible",
+        "An OS for real-time video processing only",
+        "An OS with strict timing guarantees, ensuring tasks complete within defined deadlines",
+        "An OS that runs without scheduling delays"
+      ],
+      "answer": "An OS with strict timing guarantees, ensuring tasks complete within defined deadlines",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What does it mean for an OS to be preemptive?",
+      "options": [
+        "The OS can forcibly remove a process from CPU before it voluntarily relinquishes it",
+        "Processes run to completion without interruption",
+        "The OS predicts process behavior",
+        "Processes can preempt OS kernel operations"
+      ],
+      "answer": "The OS can forcibly remove a process from CPU before it voluntarily relinquishes it",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a shell in an operating system?",
+      "options": [
+        "A command-line or graphical interface providing access to OS services",
+        "A memory protection mechanism",
+        "A hardware enclosure for the CPU",
+        "The OS kernel itself"
+      ],
+      "answer": "A command-line or graphical interface providing access to OS services",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the purpose of context switching?",
+      "options": [
+        "Switching between network interfaces",
+        "Saving the state of a running process and restoring another process's state to switch execution",
+        "Changing the GUI theme of an OS",
+        "Changing CPU power modes"
+      ],
+      "answer": "Saving the state of a running process and restoring another process's state to switch execution",
+      "difficulty": "Medium"
+    }
   ],
   "Process Management and Scheduling": [
-    {"question": "What is a process in an operating system?", "options": ["A program stored on disk", "A program in execution, including its code, data, stack, and current state", "A file in the file system", "A user account on the system"], "answer": "A program in execution, including its code, data, stack, and current state", "difficulty": "Easy"},
-    {"question": "What are the states of a process in an OS?", "options": ["Active and Inactive", "New, Ready, Running, Waiting, Terminated", "Start, Execute, Stop", "Created, Scheduled, Completed"], "answer": "New, Ready, Running, Waiting, Terminated", "difficulty": "Easy"},
-    {"question": "What is a PCB (Process Control Block)?", "options": ["A hardware component for process execution", "A data structure maintaining all information about a process (PID, state, registers, etc.)", "A scheduling algorithm parameter", "A memory block allocated to a process"], "answer": "A data structure maintaining all information about a process (PID, state, registers, etc.)", "difficulty": "Medium"},
-    {"question": "What is the difference between a process and a thread?", "options": ["Processes and threads are identical", "A process has its own memory space; threads within a process share memory", "Threads have separate memory; processes share memory", "Threads are slower than processes"], "answer": "A process has its own memory space; threads within a process share memory", "difficulty": "Medium"},
-    {"question": "What does FCFS (First Come First Served) scheduling do?", "options": ["Schedules shortest jobs first", "Processes jobs in the order they arrive in the ready queue", "Schedules based on priority", "Time-shares CPU among all processes equally"], "answer": "Processes jobs in the order they arrive in the ready queue", "difficulty": "Easy"},
-    {"question": "What is the convoy effect in FCFS scheduling?", "options": ["Multiple processes arriving simultaneously", "Short processes waiting behind a long process, causing poor CPU utilization", "Processes completing in the wrong order", "CPU starvation of high-priority processes"], "answer": "Short processes waiting behind a long process, causing poor CPU utilization", "difficulty": "Hard"},
-    {"question": "What is SJF (Shortest Job First) scheduling?", "options": ["Schedules the process that has been waiting longest", "Selects the process with the shortest next CPU burst for execution", "Schedules by priority", "Rotates through all processes equally"], "answer": "Selects the process with the shortest next CPU burst for execution", "difficulty": "Easy"},
-    {"question": "What is the disadvantage of SJF scheduling?", "options": ["Poor average waiting time", "Starvation of long processes and difficulty predicting burst times", "High context switching overhead", "Cannot handle I/O-bound processes"], "answer": "Starvation of long processes and difficulty predicting burst times", "difficulty": "Medium"},
-    {"question": "What is Round Robin (RR) scheduling?", "options": ["Scheduling based on job size", "Each process gets a fixed time quantum; if not done, goes back to end of ready queue", "Priority-based scheduling", "Shortest remaining time scheduling"], "answer": "Each process gets a fixed time quantum; if not done, goes back to end of ready queue", "difficulty": "Easy"},
-    {"question": "What is the effect of a very small time quantum in Round Robin scheduling?", "options": ["Faster completion for all processes", "High context switching overhead reducing CPU efficiency", "Better fairness with minimal overhead", "Longer average waiting time"], "answer": "High context switching overhead reducing CPU efficiency", "difficulty": "Medium"},
-    {"question": "What is IPC (Inter-Process Communication)?", "options": ["Internet Protocol Communication", "Mechanisms allowing processes to communicate and synchronize actions", "A type of CPU scheduling", "Internal process control"], "answer": "Mechanisms allowing processes to communicate and synchronize actions", "difficulty": "Easy"},
-    {"question": "What are the two main IPC models?", "options": ["Pipes and Sockets", "Shared memory and Message passing", "Semaphores and Monitors", "Signals and Interrupts"], "answer": "Shared memory and Message passing", "difficulty": "Medium"},
-    {"question": "What is the critical section problem?", "options": ["A dangerous section of code", "Ensuring that when one process executes in its critical section, no other process does so simultaneously", "Memory corruption in process code segments", "CPU scheduling conflict resolution"], "answer": "Ensuring that when one process executes in its critical section, no other process does so simultaneously", "difficulty": "Medium"},
-    {"question": "What is a semaphore in OS?", "options": ["A network signal protocol", "An integer variable used for process synchronization accessed via wait(P) and signal(V) operations", "A type of scheduling algorithm", "A memory protection mechanism"], "answer": "An integer variable used for process synchronization accessed via wait(P) and signal(V) operations", "difficulty": "Medium"},
-    {"question": "What is a mutex lock?", "options": ["A type of memory allocation", "A mutual exclusion lock ensuring only one thread accesses a critical section at a time", "A network security mechanism", "A CPU instruction for locking registers"], "answer": "A mutual exclusion lock ensuring only one thread accesses a critical section at a time", "difficulty": "Medium"},
-    {"question": "What is a monitor in process synchronization?", "options": ["A display device for OS GUI", "A high-level synchronization construct with procedures, data, and condition variables ensuring mutual exclusion", "A process monitoring tool", "A type of semaphore"], "answer": "A high-level synchronization construct with procedures, data, and condition variables ensuring mutual exclusion", "difficulty": "Hard"},
-    {"question": "What is deadlock and what are its four necessary conditions?", "options": ["A scheduling algorithm; its conditions are priority, arrival, burst, and waiting time", "A situation where processes are blocked forever; conditions: mutual exclusion, hold & wait, no preemption, circular wait", "Memory corruption; conditions are overflow, underflow, boundary, and alignment errors", "A network timeout; conditions are packet loss, congestion, delay, and bandwidth"], "answer": "A situation where processes are blocked forever; conditions: mutual exclusion, hold & wait, no preemption, circular wait", "difficulty": "Hard"},
-    {"question": "What is deadlock prevention?", "options": ["Detecting deadlocks after they occur", "Ensuring at least one of the four necessary deadlock conditions cannot hold", "Recovering from deadlocks by killing processes", "Avoiding deadlocks through careful resource allocation"], "answer": "Ensuring at least one of the four necessary deadlock conditions cannot hold", "difficulty": "Medium"},
-    {"question": "What is the Banker's Algorithm used for?", "options": ["Banking transaction processing", "Deadlock avoidance by determining if a safe state exists before granting resources", "CPU scheduling for financial systems", "Memory allocation optimization"], "answer": "Deadlock avoidance by determining if a safe state exists before granting resources", "difficulty": "Hard"},
-    {"question": "What is a safe state in the context of deadlock avoidance?", "options": ["A state with no active processes", "A state where there exists a sequence of processes that can complete without deadlock", "A state with maximum resource availability", "A deadlock-free state without any resource allocation"], "answer": "A state where there exists a sequence of processes that can complete without deadlock", "difficulty": "Hard"},
-    {"question": "What is multithreading model N:1?", "options": ["N kernel threads for 1 user thread", "N user threads mapped to 1 kernel thread", "N threads per processor", "N processes mapped to 1 thread"], "answer": "N user threads mapped to 1 kernel thread", "difficulty": "Medium"},
-    {"question": "What is CPU utilization and how is it calculated?", "options": ["Number of processes per second", "Percentage of time CPU is busy executing processes (not idle)", "Number of instructions per clock cycle", "Average waiting time for processes"], "answer": "Percentage of time CPU is busy executing processes (not idle)", "difficulty": "Easy"},
-    {"question": "What is turnaround time in CPU scheduling?", "options": ["Time from process creation to process completion", "Time a process waits in the ready queue", "Time a process executes on CPU", "Time for a context switch"], "answer": "Time from process creation to process completion", "difficulty": "Medium"},
-    {"question": "What is response time in CPU scheduling?", "options": ["Total execution time of a process", "Time from request submission until first response is produced", "Time until process completion", "Average waiting time for all processes"], "answer": "Time from request submission until first response is produced", "difficulty": "Medium"},
-    {"question": "What is preemptive scheduling?", "options": ["Process runs until it voluntarily gives up CPU", "OS can remove process from CPU when a higher-priority process arrives", "All processes have equal priority", "Scheduling is based on process arrival order only"], "answer": "OS can remove process from CPU when a higher-priority process arrives", "difficulty": "Easy"},
-    {"question": "What is starvation in CPU scheduling?", "options": ["CPU running with no processes", "A process waiting indefinitely because other processes continuously get CPU time first", "CPU consuming too many resources", "A scheduling algorithm failure"], "answer": "A process waiting indefinitely because other processes continuously get CPU time first", "difficulty": "Medium"},
-    {"question": "What is aging as a solution to starvation?", "options": ["Reducing priority of old processes", "Gradually increasing priority of waiting processes over time to ensure they eventually execute", "Terminating old processes to free resources", "Restarting aged processes from beginning"], "answer": "Gradually increasing priority of waiting processes over time to ensure they eventually execute", "difficulty": "Medium"},
-    {"question": "What is the Producer-Consumer problem?", "options": ["A CPU scheduling problem", "A classic synchronization problem where producer writes to a buffer and consumer reads from it", "A disk scheduling problem", "A memory allocation challenge"], "answer": "A classic synchronization problem where producer writes to a buffer and consumer reads from it", "difficulty": "Medium"},
-    {"question": "What is real-time scheduling?", "options": ["Scheduling that completes tasks as fast as possible", "Scheduling ensuring tasks complete by their deadlines (hard real-time) or best-effort (soft real-time)", "Scheduling based on clock time", "Round-robin scheduling with 1ms quantum"], "answer": "Scheduling ensuring tasks complete by their deadlines (hard real-time) or best-effort (soft real-time)", "difficulty": "Medium"},
-    {"question": "What is the Dining Philosophers problem?", "options": ["A CPU scheduling scenario", "A classic deadlock illustration where philosophers need two forks (resources) to eat", "A memory allocation problem", "A network communication scenario"], "answer": "A classic deadlock illustration where philosophers need two forks (resources) to eat", "difficulty": "Medium"}
+    {
+      "question": "What is a process in an operating system?",
+      "options": [
+        "A user account on the system",
+        "A program stored on disk",
+        "A file in the file system",
+        "A program in execution, including its code, data, stack, and current state"
+      ],
+      "answer": "A program in execution, including its code, data, stack, and current state",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What are the states of a process in an OS?",
+      "options": [
+        "Active and Inactive",
+        "New, Ready, Running, Waiting, Terminated",
+        "Start, Execute, Stop",
+        "Created, Scheduled, Completed"
+      ],
+      "answer": "New, Ready, Running, Waiting, Terminated",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is a PCB (Process Control Block)?",
+      "options": [
+        "A data structure maintaining all information about a process (PID, state, registers, etc.)",
+        "A scheduling algorithm parameter",
+        "A hardware component for process execution",
+        "A memory block allocated to a process"
+      ],
+      "answer": "A data structure maintaining all information about a process (PID, state, registers, etc.)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the difference between a process and a thread?",
+      "options": [
+        "Threads have separate memory; processes share memory",
+        "A process has its own memory space; threads within a process share memory",
+        "Threads are slower than processes",
+        "Processes and threads are identical"
+      ],
+      "answer": "A process has its own memory space; threads within a process share memory",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What does FCFS (First Come First Served) scheduling do?",
+      "options": [
+        "Processes jobs in the order they arrive in the ready queue",
+        "Schedules based on priority",
+        "Schedules shortest jobs first",
+        "Time-shares CPU among all processes equally"
+      ],
+      "answer": "Processes jobs in the order they arrive in the ready queue",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the convoy effect in FCFS scheduling?",
+      "options": [
+        "CPU starvation of high-priority processes",
+        "Multiple processes arriving simultaneously",
+        "Processes completing in the wrong order",
+        "Short processes waiting behind a long process, causing poor CPU utilization"
+      ],
+      "answer": "Short processes waiting behind a long process, causing poor CPU utilization",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is SJF (Shortest Job First) scheduling?",
+      "options": [
+        "Schedules the process that has been waiting longest",
+        "Schedules by priority",
+        "Selects the process with the shortest next CPU burst for execution",
+        "Rotates through all processes equally"
+      ],
+      "answer": "Selects the process with the shortest next CPU burst for execution",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the disadvantage of SJF scheduling?",
+      "options": [
+        "Starvation of long processes and difficulty predicting burst times",
+        "Poor average waiting time",
+        "High context switching overhead",
+        "Cannot handle I/O-bound processes"
+      ],
+      "answer": "Starvation of long processes and difficulty predicting burst times",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is Round Robin (RR) scheduling?",
+      "options": [
+        "Each process gets a fixed time quantum; if not done, goes back to end of ready queue",
+        "Scheduling based on job size",
+        "Priority-based scheduling",
+        "Shortest remaining time scheduling"
+      ],
+      "answer": "Each process gets a fixed time quantum; if not done, goes back to end of ready queue",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the effect of a very small time quantum in Round Robin scheduling?",
+      "options": [
+        "Faster completion for all processes",
+        "High context switching overhead reducing CPU efficiency",
+        "Better fairness with minimal overhead",
+        "Longer average waiting time"
+      ],
+      "answer": "High context switching overhead reducing CPU efficiency",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is IPC (Inter-Process Communication)?",
+      "options": [
+        "Internal process control",
+        "Mechanisms allowing processes to communicate and synchronize actions",
+        "Internet Protocol Communication",
+        "A type of CPU scheduling"
+      ],
+      "answer": "Mechanisms allowing processes to communicate and synchronize actions",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What are the two main IPC models?",
+      "options": [
+        "Pipes and Sockets",
+        "Semaphores and Monitors",
+        "Signals and Interrupts",
+        "Shared memory and Message passing"
+      ],
+      "answer": "Shared memory and Message passing",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the critical section problem?",
+      "options": [
+        "Memory corruption in process code segments",
+        "A dangerous section of code",
+        "CPU scheduling conflict resolution",
+        "Ensuring that when one process executes in its critical section, no other process does so simultaneously"
+      ],
+      "answer": "Ensuring that when one process executes in its critical section, no other process does so simultaneously",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a semaphore in OS?",
+      "options": [
+        "A network signal protocol",
+        "An integer variable used for process synchronization accessed via wait(P) and signal(V) operations",
+        "A memory protection mechanism",
+        "A type of scheduling algorithm"
+      ],
+      "answer": "An integer variable used for process synchronization accessed via wait(P) and signal(V) operations",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a mutex lock?",
+      "options": [
+        "A CPU instruction for locking registers",
+        "A network security mechanism",
+        "A mutual exclusion lock ensuring only one thread accesses a critical section at a time",
+        "A type of memory allocation"
+      ],
+      "answer": "A mutual exclusion lock ensuring only one thread accesses a critical section at a time",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a monitor in process synchronization?",
+      "options": [
+        "A process monitoring tool",
+        "A type of semaphore",
+        "A display device for OS GUI",
+        "A high-level synchronization construct with procedures, data, and condition variables ensuring mutual exclusion"
+      ],
+      "answer": "A high-level synchronization construct with procedures, data, and condition variables ensuring mutual exclusion",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is deadlock and what are its four necessary conditions?",
+      "options": [
+        "A situation where processes are blocked forever; conditions: mutual exclusion, hold & wait, no preemption, circular wait",
+        "A network timeout; conditions are packet loss, congestion, delay, and bandwidth",
+        "Memory corruption; conditions are overflow, underflow, boundary, and alignment errors",
+        "A scheduling algorithm; its conditions are priority, arrival, burst, and waiting time"
+      ],
+      "answer": "A situation where processes are blocked forever; conditions: mutual exclusion, hold & wait, no preemption, circular wait",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is deadlock prevention?",
+      "options": [
+        "Recovering from deadlocks by killing processes",
+        "Ensuring at least one of the four necessary deadlock conditions cannot hold",
+        "Avoiding deadlocks through careful resource allocation",
+        "Detecting deadlocks after they occur"
+      ],
+      "answer": "Ensuring at least one of the four necessary deadlock conditions cannot hold",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the Banker's Algorithm used for?",
+      "options": [
+        "Memory allocation optimization",
+        "CPU scheduling for financial systems",
+        "Banking transaction processing",
+        "Deadlock avoidance by determining if a safe state exists before granting resources"
+      ],
+      "answer": "Deadlock avoidance by determining if a safe state exists before granting resources",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is a safe state in the context of deadlock avoidance?",
+      "options": [
+        "A state where there exists a sequence of processes that can complete without deadlock",
+        "A deadlock-free state without any resource allocation",
+        "A state with maximum resource availability",
+        "A state with no active processes"
+      ],
+      "answer": "A state where there exists a sequence of processes that can complete without deadlock",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is multithreading model N:1?",
+      "options": [
+        "N threads per processor",
+        "N processes mapped to 1 thread",
+        "N kernel threads for 1 user thread",
+        "N user threads mapped to 1 kernel thread"
+      ],
+      "answer": "N user threads mapped to 1 kernel thread",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is CPU utilization and how is it calculated?",
+      "options": [
+        "Average waiting time for processes",
+        "Number of processes per second",
+        "Number of instructions per clock cycle",
+        "Percentage of time CPU is busy executing processes (not idle)"
+      ],
+      "answer": "Percentage of time CPU is busy executing processes (not idle)",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is turnaround time in CPU scheduling?",
+      "options": [
+        "Time a process waits in the ready queue",
+        "Time for a context switch",
+        "Time from process creation to process completion",
+        "Time a process executes on CPU"
+      ],
+      "answer": "Time from process creation to process completion",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is response time in CPU scheduling?",
+      "options": [
+        "Time from request submission until first response is produced",
+        "Average waiting time for all processes",
+        "Total execution time of a process",
+        "Time until process completion"
+      ],
+      "answer": "Time from request submission until first response is produced",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is preemptive scheduling?",
+      "options": [
+        "OS can remove process from CPU when a higher-priority process arrives",
+        "All processes have equal priority",
+        "Scheduling is based on process arrival order only",
+        "Process runs until it voluntarily gives up CPU"
+      ],
+      "answer": "OS can remove process from CPU when a higher-priority process arrives",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is starvation in CPU scheduling?",
+      "options": [
+        "A scheduling algorithm failure",
+        "A process waiting indefinitely because other processes continuously get CPU time first",
+        "CPU running with no processes",
+        "CPU consuming too many resources"
+      ],
+      "answer": "A process waiting indefinitely because other processes continuously get CPU time first",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is aging as a solution to starvation?",
+      "options": [
+        "Terminating old processes to free resources",
+        "Gradually increasing priority of waiting processes over time to ensure they eventually execute",
+        "Restarting aged processes from beginning",
+        "Reducing priority of old processes"
+      ],
+      "answer": "Gradually increasing priority of waiting processes over time to ensure they eventually execute",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the Producer-Consumer problem?",
+      "options": [
+        "A disk scheduling problem",
+        "A classic synchronization problem where producer writes to a buffer and consumer reads from it",
+        "A memory allocation challenge",
+        "A CPU scheduling problem"
+      ],
+      "answer": "A classic synchronization problem where producer writes to a buffer and consumer reads from it",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is real-time scheduling?",
+      "options": [
+        "Scheduling ensuring tasks complete by their deadlines (hard real-time) or best-effort (soft real-time)",
+        "Round-robin scheduling with 1ms quantum",
+        "Scheduling based on clock time",
+        "Scheduling that completes tasks as fast as possible"
+      ],
+      "answer": "Scheduling ensuring tasks complete by their deadlines (hard real-time) or best-effort (soft real-time)",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the Dining Philosophers problem?",
+      "options": [
+        "A CPU scheduling scenario",
+        "A memory allocation problem",
+        "A classic deadlock illustration where philosophers need two forks (resources) to eat",
+        "A network communication scenario"
+      ],
+      "answer": "A classic deadlock illustration where philosophers need two forks (resources) to eat",
+      "difficulty": "Medium"
+    }
   ],
   "Memory Management": [
-    {"question": "What is memory management in an OS?", "options": ["Managing RAM chips physically", "Tracking which memory is in use, allocating memory to processes, and freeing it when done", "Managing virtual storage on disk", "Only managing cache memory"], "answer": "Tracking which memory is in use, allocating memory to processes, and freeing it when done", "difficulty": "Easy"},
-    {"question": "What is fixed partitioning in memory management?", "options": ["Memory divided into equal or different fixed-size partitions at system start", "Dynamically dividing memory based on process requests", "Using only one partition for all processes", "Partitioning disk memory for virtual memory"], "answer": "Memory divided into equal or different fixed-size partitions at system start", "difficulty": "Easy"},
-    {"question": "What is the First Fit memory allocation strategy?", "options": ["Allocates the smallest partition that fits the process", "Allocates the first memory hole that is large enough for the process", "Allocates the largest available partition", "Allocates the worst-fit partition"], "answer": "Allocates the first memory hole that is large enough for the process", "difficulty": "Easy"},
-    {"question": "What is the Best Fit memory allocation strategy?", "options": ["Allocates the first partition that fits", "Allocates the smallest hole that is large enough, minimizing wasted space", "Allocates the largest available partition", "Always best for performance"], "answer": "Allocates the smallest hole that is large enough, minimizing wasted space", "difficulty": "Medium"},
-    {"question": "What is the Worst Fit strategy and when might it be beneficial?", "options": ["Always the worst choice", "Allocates the largest available hole, leaving large remaining holes for future large requests", "Allocates the most recently used partition", "Allocates based on process priority"], "answer": "Allocates the largest available hole, leaving large remaining holes for future large requests", "difficulty": "Hard"},
-    {"question": "What is internal fragmentation?", "options": ["Fragmentation caused by external factors", "Unused memory within an allocated partition because the process doesn't use all allocated space", "Memory scattered across disk", "Fragmentation in the file system"], "answer": "Unused memory within an allocated partition because the process doesn't use all allocated space", "difficulty": "Medium"},
-    {"question": "What is external fragmentation?", "options": ["Fragmentation on external storage", "Enough total free memory exists but it's not contiguous, preventing large process allocation", "Memory corruption from external sources", "Unused memory at end of partitions"], "answer": "Enough total free memory exists but it's not contiguous, preventing large process allocation", "difficulty": "Medium"},
-    {"question": "What is paging in memory management?", "options": ["Reading pages from disk", "Dividing logical memory into fixed-size pages and physical memory into frames for non-contiguous allocation", "Swapping entire processes to disk", "A disk scheduling technique"], "answer": "Dividing logical memory into fixed-size pages and physical memory into frames for non-contiguous allocation", "difficulty": "Medium"},
-    {"question": "What is a page table?", "options": ["A table of web pages in cache", "A data structure mapping logical page numbers to physical frame numbers", "A list of process pages on disk", "A scheduling table for page requests"], "answer": "A data structure mapping logical page numbers to physical frame numbers", "difficulty": "Medium"},
-    {"question": "What is virtual memory?", "options": ["Memory on a virtual machine", "A technique allowing processes to use more memory than physically available by using disk as extension", "A faster type of RAM", "Memory used by the OS kernel only"], "answer": "A technique allowing processes to use more memory than physically available by using disk as extension", "difficulty": "Easy"},
-    {"question": "What is a page fault?", "options": ["A hardware memory error", "When a process accesses a page not currently in physical memory, triggering OS to load it from disk", "An error in the page table", "A CPU exception for invalid memory access"], "answer": "When a process accesses a page not currently in physical memory, triggering OS to load it from disk", "difficulty": "Medium"},
-    {"question": "What is thrashing in virtual memory systems?", "options": ["CPU performing unnecessary computations", "Excessive page faulting causing OS to spend more time swapping pages than executing processes", "Disk fragmentation causing slow access", "Memory overflow causing system crash"], "answer": "Excessive page faulting causing OS to spend more time swapping pages than executing processes", "difficulty": "Hard"},
-    {"question": "What is the FIFO page replacement algorithm?", "options": ["Replaces the most recently used page", "Replaces the page that has been in memory the longest (oldest)", "Replaces the least frequently used page", "Replaces the page with highest access count"], "answer": "Replaces the page that has been in memory the longest (oldest)", "difficulty": "Easy"},
-    {"question": "What is the LRU (Least Recently Used) page replacement algorithm?", "options": ["Replaces the oldest page in memory", "Replaces the page that was least recently accessed", "Replaces the page with smallest page number", "Replaces the most recently loaded page"], "answer": "Replaces the page that was least recently accessed", "difficulty": "Easy"},
-    {"question": "What is the Optimal page replacement algorithm?", "options": ["The best practical algorithm for real systems", "Replaces the page that will not be used for the longest period in the future", "Replaces the least used page", "Always replaces the first page loaded"], "answer": "Replaces the page that will not be used for the longest period in the future", "difficulty": "Medium"},
-    {"question": "What is Belady's Anomaly?", "options": ["A hardware memory error pattern", "In FIFO replacement, increasing frame count can sometimes increase page faults", "Optimal algorithm's theoretical limit", "A thrashing scenario in LRU"], "answer": "In FIFO replacement, increasing frame count can sometimes increase page faults", "difficulty": "Hard"},
-    {"question": "What is demand paging?", "options": ["Paging all process pages into memory at startup", "Loading pages into memory only when they are demanded/accessed", "Paging based on request priority", "A type of disk scheduling"], "answer": "Loading pages into memory only when they are demanded/accessed", "difficulty": "Medium"},
-    {"question": "What is a TLB (Translation Lookaside Buffer)?", "options": ["A type of hard drive buffer", "A fast cache for page table entries to speed up virtual-to-physical address translation", "A network packet buffer", "A level-2 CPU cache"], "answer": "A fast cache for page table entries to speed up virtual-to-physical address translation", "difficulty": "Hard"},
-    {"question": "What is swapping in memory management?", "options": ["Exchanging data between CPU registers", "Moving entire processes between main memory and disk to free up RAM", "Swapping page table entries", "Exchanging memory between two processes"], "answer": "Moving entire processes between main memory and disk to free up RAM", "difficulty": "Medium"},
-    {"question": "What is the working set model in virtual memory?", "options": ["A set of currently executing processes", "The set of pages a process is actively using in a given time window", "Pages loaded during program startup", "A set of free memory frames"], "answer": "The set of pages a process is actively using in a given time window", "difficulty": "Hard"},
-    {"question": "What is compaction in memory management?", "options": ["Data compression for storage", "Shuffling memory contents to consolidate fragmented free space into one contiguous block", "Compressing page tables", "Reducing process memory usage"], "answer": "Shuffling memory contents to consolidate fragmented free space into one contiguous block", "difficulty": "Medium"},
-    {"question": "What causes thrashing and how can it be prevented?", "options": ["CPU overheating; prevent by cooling", "Too many processes competing for limited frames; prevent by reducing multiprogramming degree", "Disk fragmentation; prevent by defragmenting", "Network congestion; prevent by throttling"], "answer": "Too many processes competing for limited frames; prevent by reducing multiprogramming degree", "difficulty": "Hard"},
-    {"question": "What is the page size trade-off in paging?", "options": ["Larger pages are always better", "Smaller pages reduce internal fragmentation but increase page table size and overhead", "Page size has no performance impact", "Larger pages always improve TLB hit rate"], "answer": "Smaller pages reduce internal fragmentation but increase page table size and overhead", "difficulty": "Hard"},
-    {"question": "What is a frame in paging?", "options": ["A data frame at the Data Link Layer", "A fixed-size block of physical memory that holds a page", "A boundary between memory partitions", "A unit of virtual memory"], "answer": "A fixed-size block of physical memory that holds a page", "difficulty": "Easy"},
-    {"question": "What is the difference between logical and physical address?", "options": ["Both are identical in modern OSes", "Logical address is generated by CPU (virtual); physical address is actual RAM location", "Physical address is used by programs; logical by hardware", "Logical addresses are larger than physical addresses"], "answer": "Logical address is generated by CPU (virtual); physical address is actual RAM location", "difficulty": "Medium"},
-    {"question": "What is a multi-level page table and why is it used?", "options": ["A page table with multiple entries per page", "Hierarchical page tables to reduce memory needed to store page table for large virtual address spaces", "A page table shared between multiple processes", "A page table stored on disk"], "answer": "Hierarchical page tables to reduce memory needed to store page table for large virtual address spaces", "difficulty": "Hard"},
-    {"question": "What is memory protection in OS?", "options": ["Physical locks on RAM modules", "Mechanisms preventing one process from accessing another process's memory", "Encryption of all memory contents", "Hardware ECC for memory error correction"], "answer": "Mechanisms preventing one process from accessing another process's memory", "difficulty": "Easy"},
-    {"question": "What is segmentation in memory management?", "options": ["Dividing memory into fixed-size segments", "Dividing a program's logical address space into variable-size segments (code, data, stack) based on logical units", "A type of disk partitioning", "Segmenting processes into threads"], "answer": "Dividing a program's logical address space into variable-size segments (code, data, stack) based on logical units", "difficulty": "Hard"},
-    {"question": "What is a dirty page in virtual memory?", "options": ["A corrupted memory page", "A page that has been modified in memory but not yet written back to disk", "An unused page in the page table", "A page with access violations"], "answer": "A page that has been modified in memory but not yet written back to disk", "difficulty": "Hard"},
-    {"question": "What determines the number of page table entries?", "options": ["The size of physical RAM", "The size of the virtual address space divided by page size", "The number of running processes", "The CPU architecture's word size"], "answer": "The size of the virtual address space divided by page size", "difficulty": "Hard"}
+    {
+      "question": "What is memory management in an OS?",
+      "options": [
+        "Managing virtual storage on disk",
+        "Only managing cache memory",
+        "Tracking which memory is in use, allocating memory to processes, and freeing it when done",
+        "Managing RAM chips physically"
+      ],
+      "answer": "Tracking which memory is in use, allocating memory to processes, and freeing it when done",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is fixed partitioning in memory management?",
+      "options": [
+        "Partitioning disk memory for virtual memory",
+        "Dynamically dividing memory based on process requests",
+        "Using only one partition for all processes",
+        "Memory divided into equal or different fixed-size partitions at system start"
+      ],
+      "answer": "Memory divided into equal or different fixed-size partitions at system start",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the First Fit memory allocation strategy?",
+      "options": [
+        "Allocates the first memory hole that is large enough for the process",
+        "Allocates the smallest partition that fits the process",
+        "Allocates the largest available partition",
+        "Allocates the worst-fit partition"
+      ],
+      "answer": "Allocates the first memory hole that is large enough for the process",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the Best Fit memory allocation strategy?",
+      "options": [
+        "Always best for performance",
+        "Allocates the largest available partition",
+        "Allocates the smallest hole that is large enough, minimizing wasted space",
+        "Allocates the first partition that fits"
+      ],
+      "answer": "Allocates the smallest hole that is large enough, minimizing wasted space",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the Worst Fit strategy and when might it be beneficial?",
+      "options": [
+        "Allocates the largest available hole, leaving large remaining holes for future large requests",
+        "Always the worst choice",
+        "Allocates the most recently used partition",
+        "Allocates based on process priority"
+      ],
+      "answer": "Allocates the largest available hole, leaving large remaining holes for future large requests",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is internal fragmentation?",
+      "options": [
+        "Fragmentation caused by external factors",
+        "Unused memory within an allocated partition because the process doesn't use all allocated space",
+        "Memory scattered across disk",
+        "Fragmentation in the file system"
+      ],
+      "answer": "Unused memory within an allocated partition because the process doesn't use all allocated space",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is external fragmentation?",
+      "options": [
+        "Memory corruption from external sources",
+        "Enough total free memory exists but it's not contiguous, preventing large process allocation",
+        "Unused memory at end of partitions",
+        "Fragmentation on external storage"
+      ],
+      "answer": "Enough total free memory exists but it's not contiguous, preventing large process allocation",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is paging in memory management?",
+      "options": [
+        "A disk scheduling technique",
+        "Swapping entire processes to disk",
+        "Reading pages from disk",
+        "Dividing logical memory into fixed-size pages and physical memory into frames for non-contiguous allocation"
+      ],
+      "answer": "Dividing logical memory into fixed-size pages and physical memory into frames for non-contiguous allocation",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a page table?",
+      "options": [
+        "A table of web pages in cache",
+        "A data structure mapping logical page numbers to physical frame numbers",
+        "A scheduling table for page requests",
+        "A list of process pages on disk"
+      ],
+      "answer": "A data structure mapping logical page numbers to physical frame numbers",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is virtual memory?",
+      "options": [
+        "Memory on a virtual machine",
+        "A technique allowing processes to use more memory than physically available by using disk as extension",
+        "A faster type of RAM",
+        "Memory used by the OS kernel only"
+      ],
+      "answer": "A technique allowing processes to use more memory than physically available by using disk as extension",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is a page fault?",
+      "options": [
+        "A hardware memory error",
+        "When a process accesses a page not currently in physical memory, triggering OS to load it from disk",
+        "An error in the page table",
+        "A CPU exception for invalid memory access"
+      ],
+      "answer": "When a process accesses a page not currently in physical memory, triggering OS to load it from disk",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is thrashing in virtual memory systems?",
+      "options": [
+        "Excessive page faulting causing OS to spend more time swapping pages than executing processes",
+        "Memory overflow causing system crash",
+        "Disk fragmentation causing slow access",
+        "CPU performing unnecessary computations"
+      ],
+      "answer": "Excessive page faulting causing OS to spend more time swapping pages than executing processes",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is the FIFO page replacement algorithm?",
+      "options": [
+        "Replaces the most recently used page",
+        "Replaces the least frequently used page",
+        "Replaces the page with highest access count",
+        "Replaces the page that has been in memory the longest (oldest)"
+      ],
+      "answer": "Replaces the page that has been in memory the longest (oldest)",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the LRU (Least Recently Used) page replacement algorithm?",
+      "options": [
+        "Replaces the oldest page in memory",
+        "Replaces the page with smallest page number",
+        "Replaces the most recently loaded page",
+        "Replaces the page that was least recently accessed"
+      ],
+      "answer": "Replaces the page that was least recently accessed",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the Optimal page replacement algorithm?",
+      "options": [
+        "The best practical algorithm for real systems",
+        "Replaces the least used page",
+        "Replaces the page that will not be used for the longest period in the future",
+        "Always replaces the first page loaded"
+      ],
+      "answer": "Replaces the page that will not be used for the longest period in the future",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is Belady's Anomaly?",
+      "options": [
+        "A thrashing scenario in LRU",
+        "Optimal algorithm's theoretical limit",
+        "In FIFO replacement, increasing frame count can sometimes increase page faults",
+        "A hardware memory error pattern"
+      ],
+      "answer": "In FIFO replacement, increasing frame count can sometimes increase page faults",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is demand paging?",
+      "options": [
+        "Paging all process pages into memory at startup",
+        "Loading pages into memory only when they are demanded/accessed",
+        "A type of disk scheduling",
+        "Paging based on request priority"
+      ],
+      "answer": "Loading pages into memory only when they are demanded/accessed",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a TLB (Translation Lookaside Buffer)?",
+      "options": [
+        "A level-2 CPU cache",
+        "A fast cache for page table entries to speed up virtual-to-physical address translation",
+        "A type of hard drive buffer",
+        "A network packet buffer"
+      ],
+      "answer": "A fast cache for page table entries to speed up virtual-to-physical address translation",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is swapping in memory management?",
+      "options": [
+        "Moving entire processes between main memory and disk to free up RAM",
+        "Swapping page table entries",
+        "Exchanging memory between two processes",
+        "Exchanging data between CPU registers"
+      ],
+      "answer": "Moving entire processes between main memory and disk to free up RAM",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the working set model in virtual memory?",
+      "options": [
+        "Pages loaded during program startup",
+        "A set of free memory frames",
+        "The set of pages a process is actively using in a given time window",
+        "A set of currently executing processes"
+      ],
+      "answer": "The set of pages a process is actively using in a given time window",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is compaction in memory management?",
+      "options": [
+        "Shuffling memory contents to consolidate fragmented free space into one contiguous block",
+        "Reducing process memory usage",
+        "Data compression for storage",
+        "Compressing page tables"
+      ],
+      "answer": "Shuffling memory contents to consolidate fragmented free space into one contiguous block",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What causes thrashing and how can it be prevented?",
+      "options": [
+        "Too many processes competing for limited frames; prevent by reducing multiprogramming degree",
+        "CPU overheating; prevent by cooling",
+        "Network congestion; prevent by throttling",
+        "Disk fragmentation; prevent by defragmenting"
+      ],
+      "answer": "Too many processes competing for limited frames; prevent by reducing multiprogramming degree",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is the page size trade-off in paging?",
+      "options": [
+        "Larger pages are always better",
+        "Page size has no performance impact",
+        "Smaller pages reduce internal fragmentation but increase page table size and overhead",
+        "Larger pages always improve TLB hit rate"
+      ],
+      "answer": "Smaller pages reduce internal fragmentation but increase page table size and overhead",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is a frame in paging?",
+      "options": [
+        "A unit of virtual memory",
+        "A boundary between memory partitions",
+        "A fixed-size block of physical memory that holds a page",
+        "A data frame at the Data Link Layer"
+      ],
+      "answer": "A fixed-size block of physical memory that holds a page",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the difference between logical and physical address?",
+      "options": [
+        "Logical address is generated by CPU (virtual); physical address is actual RAM location",
+        "Logical addresses are larger than physical addresses",
+        "Both are identical in modern OSes",
+        "Physical address is used by programs; logical by hardware"
+      ],
+      "answer": "Logical address is generated by CPU (virtual); physical address is actual RAM location",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a multi-level page table and why is it used?",
+      "options": [
+        "A page table with multiple entries per page",
+        "A page table stored on disk",
+        "A page table shared between multiple processes",
+        "Hierarchical page tables to reduce memory needed to store page table for large virtual address spaces"
+      ],
+      "answer": "Hierarchical page tables to reduce memory needed to store page table for large virtual address spaces",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is memory protection in OS?",
+      "options": [
+        "Encryption of all memory contents",
+        "Hardware ECC for memory error correction",
+        "Physical locks on RAM modules",
+        "Mechanisms preventing one process from accessing another process's memory"
+      ],
+      "answer": "Mechanisms preventing one process from accessing another process's memory",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is segmentation in memory management?",
+      "options": [
+        "Segmenting processes into threads",
+        "Dividing a program's logical address space into variable-size segments (code, data, stack) based on logical units",
+        "Dividing memory into fixed-size segments",
+        "A type of disk partitioning"
+      ],
+      "answer": "Dividing a program's logical address space into variable-size segments (code, data, stack) based on logical units",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is a dirty page in virtual memory?",
+      "options": [
+        "An unused page in the page table",
+        "A corrupted memory page",
+        "A page with access violations",
+        "A page that has been modified in memory but not yet written back to disk"
+      ],
+      "answer": "A page that has been modified in memory but not yet written back to disk",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What determines the number of page table entries?",
+      "options": [
+        "The size of the virtual address space divided by page size",
+        "The CPU architecture's word size",
+        "The size of physical RAM",
+        "The number of running processes"
+      ],
+      "answer": "The size of the virtual address space divided by page size",
+      "difficulty": "Hard"
+    }
   ],
   "File Systems and I/O": [
-    {"question": "What is a file system?", "options": ["A physical storage medium", "An OS component organizing, storing, and retrieving data on storage devices", "A type of database", "A network file sharing protocol only"], "answer": "An OS component organizing, storing, and retrieving data on storage devices", "difficulty": "Easy"},
-    {"question": "What are the three file access methods in operating systems?", "options": ["Read, Write, Execute", "Sequential, Direct (Random), Indexed", "Open, Close, Delete", "Block, Stream, Record"], "answer": "Sequential, Direct (Random), Indexed", "difficulty": "Medium"},
-    {"question": "What is a directory in a file system?", "options": ["A special type of file containing information about other files", "A section of memory", "An index of all processes", "A network share location"], "answer": "A special type of file containing information about other files", "difficulty": "Easy"},
-    {"question": "What is disk scheduling and why is it needed?", "options": ["Scheduling CPU time for disk operations", "Ordering disk I/O requests to minimize seek time and improve throughput", "Scheduling file system maintenance", "Allocating disk space to processes"], "answer": "Ordering disk I/O requests to minimize seek time and improve throughput", "difficulty": "Medium"},
-    {"question": "What is the FCFS disk scheduling algorithm?", "options": ["Services requests in order of track proximity", "Services disk requests in the order they arrive, regardless of track location", "Services shortest seek time requests first", "Sweeps the disk like an elevator"], "answer": "Services disk requests in the order they arrive, regardless of track location", "difficulty": "Easy"},
-    {"question": "What is the SCAN (elevator) disk scheduling algorithm?", "options": ["Scans disk for errors", "Disk arm moves in one direction servicing requests until end, then reverses", "Services requests randomly", "Only scans a specific disk area"], "answer": "Disk arm moves in one direction servicing requests until end, then reverses", "difficulty": "Medium"},
-    {"question": "What is SSTF (Shortest Seek Time First) disk scheduling?", "options": ["Shortest service time first", "Services the request closest to the current head position", "Services requests in arrival order", "Services requests by track number"], "answer": "Services the request closest to the current head position", "difficulty": "Medium"},
-    {"question": "What is contiguous file allocation?", "options": ["Files distributed across disk", "Each file occupies a contiguous set of disk blocks", "Files stored in linked list of blocks", "Files indexed by a separate table"], "answer": "Each file occupies a contiguous set of disk blocks", "difficulty": "Medium"},
-    {"question": "What is linked file allocation?", "options": ["Files with hyperlinks to other files", "Each file is a linked list of disk blocks; each block points to the next", "Files linked by inode numbers", "Files stored in contiguous blocks with links"], "answer": "Each file is a linked list of disk blocks; each block points to the next", "difficulty": "Medium"},
-    {"question": "What is indexed file allocation?", "options": ["Files indexed for fast search", "Each file has an index block containing pointers to all its data blocks", "Files allocated using B-tree index", "A search index for file names"], "answer": "Each file has an index block containing pointers to all its data blocks", "difficulty": "Medium"},
-    {"question": "What is free space management in a file system?", "options": ["Managing free memory in RAM", "Tracking which disk blocks are free using bit vectors or linked lists", "Managing file deletion schedules", "Optimizing disk read/write speed"], "answer": "Tracking which disk blocks are free using bit vectors or linked lists", "difficulty": "Medium"},
-    {"question": "What is file system mounting?", "options": ["Physically installing a hard drive", "Making a file system accessible by attaching it to a directory in the existing file system tree", "Formatting a disk partition", "Loading the file system into RAM"], "answer": "Making a file system accessible by attaching it to a directory in the existing file system tree", "difficulty": "Medium"},
-    {"question": "What is an inode in Unix/Linux file systems?", "options": ["An input/output node in a network", "A data structure storing metadata about a file (permissions, timestamps, block pointers)", "An internet node identifier", "An index of all network interfaces"], "answer": "A data structure storing metadata about a file (permissions, timestamps, block pointers)", "difficulty": "Hard"},
-    {"question": "What is I/O hardware in OS management context?", "options": ["The CPU and memory subsystem", "Devices like keyboards, disks, network cards managed through I/O hardware interfaces", "Hardware specifically for security", "Video and audio hardware only"], "answer": "Devices like keyboards, disks, network cards managed through I/O hardware interfaces", "difficulty": "Easy"},
-    {"question": "What is the kernel I/O subsystem?", "options": ["The kernel's network management", "OS kernel components managing I/O operations including scheduling, buffering, caching, and error handling", "A user-space I/O library", "Hardware I/O controllers"], "answer": "OS kernel components managing I/O operations including scheduling, buffering, caching, and error handling", "difficulty": "Medium"},
-    {"question": "What is swap space management?", "options": ["Managing network packet exchange", "Managing the disk area used as extension of physical RAM for virtual memory", "File swapping between directories", "CPU cache swap management"], "answer": "Managing the disk area used as extension of physical RAM for virtual memory", "difficulty": "Medium"},
-    {"question": "What is the difference between absolute and relative path?", "options": ["No practical difference", "Absolute path starts from root directory (/); relative path starts from current directory", "Relative path is faster to access", "Absolute path is for files; relative for directories"], "answer": "Absolute path starts from root directory (/); relative path starts from current directory", "difficulty": "Easy"},
-    {"question": "What is a file descriptor in Unix/Linux?", "options": ["A description of file contents", "A non-negative integer used by OS to identify an open file for a process", "A file format identifier", "A hardware descriptor for I/O devices"], "answer": "A non-negative integer used by OS to identify an open file for a process", "difficulty": "Medium"},
-    {"question": "What is buffering in I/O management?", "options": ["Storing permanent data on disk", "Temporarily storing data in memory while it moves between device and application", "Encrypting I/O streams", "Delaying I/O operations"], "answer": "Temporarily storing data in memory while it moves between device and application", "difficulty": "Medium"},
-    {"question": "What is the difference between seek time, rotational latency, and transfer time in disk I/O?", "options": ["All three are identical measurements", "Seek time: head moves to track; rotational latency: wait for sector; transfer time: read/write data", "Transfer time includes seek and rotational latency", "Seek time is the total access time"], "answer": "Seek time: head moves to track; rotational latency: wait for sector; transfer time: read/write data", "difficulty": "Hard"},
-    {"question": "What is file protection in an OS?", "options": ["Physical protection of storage media", "Controlling who can access a file and what operations they can perform", "Encryption of file contents", "Backup copies of important files"], "answer": "Controlling who can access a file and what operations they can perform", "difficulty": "Easy"},
-    {"question": "What is the C-SCAN disk scheduling algorithm?", "options": ["Circular SCAN – arm moves in one direction only; returns to beginning without servicing on return", "A SCAN variant that caches frequently accessed tracks", "Scans disk continuously without reversal", "SCAN algorithm for SSD disks"], "answer": "Circular SCAN – arm moves in one direction only; returns to beginning without servicing on return", "difficulty": "Hard"},
-    {"question": "What is a hard link vs soft (symbolic) link?", "options": ["Both are identical types of links", "Hard link: another name for same inode/data; soft link: a pointer file to another path", "Soft link is faster; hard link is slower", "Hard links work across file systems; soft links do not"], "answer": "Hard link: another name for same inode/data; soft link: a pointer file to another path", "difficulty": "Hard"},
-    {"question": "What is file recovery in file systems?", "options": ["Undeleting files from trash", "Restoring file system consistency and recovering data after crashes using logs or backups", "Moving files to a new location", "Defragmenting files for faster access"], "answer": "Restoring file system consistency and recovering data after crashes using logs or backups", "difficulty": "Medium"},
-    {"question": "What is application I/O interface?", "options": ["Network API for applications", "Standard OS interface (system calls) through which applications access I/O devices", "GUI for managing I/O settings", "Hardware driver interface"], "answer": "Standard OS interface (system calls) through which applications access I/O devices", "difficulty": "Medium"},
-    {"question": "What is a stream in Unix I/O?", "options": ["A video streaming service", "A full-duplex connection between user process and device, supporting modular protocol layers", "A sequential file read", "A network byte stream only"], "answer": "A full-duplex connection between user process and device, supporting modular protocol layers", "difficulty": "Hard"},
-    {"question": "What is the two-level directory structure in file systems?", "options": ["Root directory only with two subdirectories", "Master directory with subdirectory for each user, providing user isolation", "A directory with exactly two levels of subdirectories", "A hierarchical directory with depth limit of two"], "answer": "Master directory with subdirectory for each user, providing user isolation", "difficulty": "Medium"},
-    {"question": "What is fragmentation in disk file systems and how is it resolved?", "options": ["File system corruption; resolved by reinstalling OS", "Files split across non-contiguous blocks causing slow access; resolved by defragmentation", "Disk formatting errors; resolved by reformatting", "Cache invalidation; resolved by clearing cache"], "answer": "Files split across non-contiguous blocks causing slow access; resolved by defragmentation", "difficulty": "Medium"},
-    {"question": "What is the purpose of write-ahead logging in file systems?", "options": ["Pre-loading frequently accessed files", "Recording changes to a log before applying them to ensure file system consistency after crashes", "Logging all write operations for auditing", "Caching write operations for performance"], "answer": "Recording changes to a log before applying them to ensure file system consistency after crashes", "difficulty": "Hard"},
-    {"question": "What is the FAT (File Allocation Table) file system?", "options": ["A Linux-specific file system", "A file system using a table to track which clusters belong to each file on disk", "A file authentication table", "A file access tracking system"], "answer": "A file system using a table to track which clusters belong to each file on disk", "difficulty": "Medium"}
+    {
+      "question": "What is a file system?",
+      "options": [
+        "A physical storage medium",
+        "An OS component organizing, storing, and retrieving data on storage devices",
+        "A network file sharing protocol only",
+        "A type of database"
+      ],
+      "answer": "An OS component organizing, storing, and retrieving data on storage devices",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What are the three file access methods in operating systems?",
+      "options": [
+        "Block, Stream, Record",
+        "Read, Write, Execute",
+        "Sequential, Direct (Random), Indexed",
+        "Open, Close, Delete"
+      ],
+      "answer": "Sequential, Direct (Random), Indexed",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a directory in a file system?",
+      "options": [
+        "An index of all processes",
+        "A network share location",
+        "A special type of file containing information about other files",
+        "A section of memory"
+      ],
+      "answer": "A special type of file containing information about other files",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is disk scheduling and why is it needed?",
+      "options": [
+        "Ordering disk I/O requests to minimize seek time and improve throughput",
+        "Scheduling file system maintenance",
+        "Allocating disk space to processes",
+        "Scheduling CPU time for disk operations"
+      ],
+      "answer": "Ordering disk I/O requests to minimize seek time and improve throughput",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the FCFS disk scheduling algorithm?",
+      "options": [
+        "Services disk requests in the order they arrive, regardless of track location",
+        "Sweeps the disk like an elevator",
+        "Services shortest seek time requests first",
+        "Services requests in order of track proximity"
+      ],
+      "answer": "Services disk requests in the order they arrive, regardless of track location",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the SCAN (elevator) disk scheduling algorithm?",
+      "options": [
+        "Scans disk for errors",
+        "Services requests randomly",
+        "Disk arm moves in one direction servicing requests until end, then reverses",
+        "Only scans a specific disk area"
+      ],
+      "answer": "Disk arm moves in one direction servicing requests until end, then reverses",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is SSTF (Shortest Seek Time First) disk scheduling?",
+      "options": [
+        "Services requests by track number",
+        "Services the request closest to the current head position",
+        "Shortest service time first",
+        "Services requests in arrival order"
+      ],
+      "answer": "Services the request closest to the current head position",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is contiguous file allocation?",
+      "options": [
+        "Files distributed across disk",
+        "Each file occupies a contiguous set of disk blocks",
+        "Files indexed by a separate table",
+        "Files stored in linked list of blocks"
+      ],
+      "answer": "Each file occupies a contiguous set of disk blocks",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is linked file allocation?",
+      "options": [
+        "Each file is a linked list of disk blocks; each block points to the next",
+        "Files linked by inode numbers",
+        "Files stored in contiguous blocks with links",
+        "Files with hyperlinks to other files"
+      ],
+      "answer": "Each file is a linked list of disk blocks; each block points to the next",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is indexed file allocation?",
+      "options": [
+        "A search index for file names",
+        "Files indexed for fast search",
+        "Files allocated using B-tree index",
+        "Each file has an index block containing pointers to all its data blocks"
+      ],
+      "answer": "Each file has an index block containing pointers to all its data blocks",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is free space management in a file system?",
+      "options": [
+        "Optimizing disk read/write speed",
+        "Managing file deletion schedules",
+        "Tracking which disk blocks are free using bit vectors or linked lists",
+        "Managing free memory in RAM"
+      ],
+      "answer": "Tracking which disk blocks are free using bit vectors or linked lists",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is file system mounting?",
+      "options": [
+        "Physically installing a hard drive",
+        "Formatting a disk partition",
+        "Making a file system accessible by attaching it to a directory in the existing file system tree",
+        "Loading the file system into RAM"
+      ],
+      "answer": "Making a file system accessible by attaching it to a directory in the existing file system tree",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is an inode in Unix/Linux file systems?",
+      "options": [
+        "An internet node identifier",
+        "An input/output node in a network",
+        "A data structure storing metadata about a file (permissions, timestamps, block pointers)",
+        "An index of all network interfaces"
+      ],
+      "answer": "A data structure storing metadata about a file (permissions, timestamps, block pointers)",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is I/O hardware in OS management context?",
+      "options": [
+        "Video and audio hardware only",
+        "Hardware specifically for security",
+        "Devices like keyboards, disks, network cards managed through I/O hardware interfaces",
+        "The CPU and memory subsystem"
+      ],
+      "answer": "Devices like keyboards, disks, network cards managed through I/O hardware interfaces",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the kernel I/O subsystem?",
+      "options": [
+        "Hardware I/O controllers",
+        "A user-space I/O library",
+        "OS kernel components managing I/O operations including scheduling, buffering, caching, and error handling",
+        "The kernel's network management"
+      ],
+      "answer": "OS kernel components managing I/O operations including scheduling, buffering, caching, and error handling",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is swap space management?",
+      "options": [
+        "Managing the disk area used as extension of physical RAM for virtual memory",
+        "CPU cache swap management",
+        "Managing network packet exchange",
+        "File swapping between directories"
+      ],
+      "answer": "Managing the disk area used as extension of physical RAM for virtual memory",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the difference between absolute and relative path?",
+      "options": [
+        "Absolute path starts from root directory (/); relative path starts from current directory",
+        "No practical difference",
+        "Relative path is faster to access",
+        "Absolute path is for files; relative for directories"
+      ],
+      "answer": "Absolute path starts from root directory (/); relative path starts from current directory",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is a file descriptor in Unix/Linux?",
+      "options": [
+        "A file format identifier",
+        "A non-negative integer used by OS to identify an open file for a process",
+        "A hardware descriptor for I/O devices",
+        "A description of file contents"
+      ],
+      "answer": "A non-negative integer used by OS to identify an open file for a process",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is buffering in I/O management?",
+      "options": [
+        "Encrypting I/O streams",
+        "Delaying I/O operations",
+        "Storing permanent data on disk",
+        "Temporarily storing data in memory while it moves between device and application"
+      ],
+      "answer": "Temporarily storing data in memory while it moves between device and application",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the difference between seek time, rotational latency, and transfer time in disk I/O?",
+      "options": [
+        "Seek time is the total access time",
+        "All three are identical measurements",
+        "Seek time: head moves to track; rotational latency: wait for sector; transfer time: read/write data",
+        "Transfer time includes seek and rotational latency"
+      ],
+      "answer": "Seek time: head moves to track; rotational latency: wait for sector; transfer time: read/write data",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is file protection in an OS?",
+      "options": [
+        "Backup copies of important files",
+        "Encryption of file contents",
+        "Controlling who can access a file and what operations they can perform",
+        "Physical protection of storage media"
+      ],
+      "answer": "Controlling who can access a file and what operations they can perform",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the C-SCAN disk scheduling algorithm?",
+      "options": [
+        "Scans disk continuously without reversal",
+        "SCAN algorithm for SSD disks",
+        "Circular SCAN – arm moves in one direction only; returns to beginning without servicing on return",
+        "A SCAN variant that caches frequently accessed tracks"
+      ],
+      "answer": "Circular SCAN – arm moves in one direction only; returns to beginning without servicing on return",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is a hard link vs soft (symbolic) link?",
+      "options": [
+        "Both are identical types of links",
+        "Hard links work across file systems; soft links do not",
+        "Soft link is faster; hard link is slower",
+        "Hard link: another name for same inode/data; soft link: a pointer file to another path"
+      ],
+      "answer": "Hard link: another name for same inode/data; soft link: a pointer file to another path",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is file recovery in file systems?",
+      "options": [
+        "Moving files to a new location",
+        "Defragmenting files for faster access",
+        "Restoring file system consistency and recovering data after crashes using logs or backups",
+        "Undeleting files from trash"
+      ],
+      "answer": "Restoring file system consistency and recovering data after crashes using logs or backups",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is application I/O interface?",
+      "options": [
+        "GUI for managing I/O settings",
+        "Standard OS interface (system calls) through which applications access I/O devices",
+        "Network API for applications",
+        "Hardware driver interface"
+      ],
+      "answer": "Standard OS interface (system calls) through which applications access I/O devices",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a stream in Unix I/O?",
+      "options": [
+        "A network byte stream only",
+        "A sequential file read",
+        "A full-duplex connection between user process and device, supporting modular protocol layers",
+        "A video streaming service"
+      ],
+      "answer": "A full-duplex connection between user process and device, supporting modular protocol layers",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is the two-level directory structure in file systems?",
+      "options": [
+        "Root directory only with two subdirectories",
+        "Master directory with subdirectory for each user, providing user isolation",
+        "A directory with exactly two levels of subdirectories",
+        "A hierarchical directory with depth limit of two"
+      ],
+      "answer": "Master directory with subdirectory for each user, providing user isolation",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is fragmentation in disk file systems and how is it resolved?",
+      "options": [
+        "Cache invalidation; resolved by clearing cache",
+        "Files split across non-contiguous blocks causing slow access; resolved by defragmentation",
+        "File system corruption; resolved by reinstalling OS",
+        "Disk formatting errors; resolved by reformatting"
+      ],
+      "answer": "Files split across non-contiguous blocks causing slow access; resolved by defragmentation",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the purpose of write-ahead logging in file systems?",
+      "options": [
+        "Logging all write operations for auditing",
+        "Caching write operations for performance",
+        "Recording changes to a log before applying them to ensure file system consistency after crashes",
+        "Pre-loading frequently accessed files"
+      ],
+      "answer": "Recording changes to a log before applying them to ensure file system consistency after crashes",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is the FAT (File Allocation Table) file system?",
+      "options": [
+        "A Linux-specific file system",
+        "A file system using a table to track which clusters belong to each file on disk",
+        "A file authentication table",
+        "A file access tracking system"
+      ],
+      "answer": "A file system using a table to track which clusters belong to each file on disk",
+      "difficulty": "Medium"
+    }
   ],
   "Virtualization": [
-    {"question": "What is virtualization in computing?", "options": ["Creating virtual files", "Creating a virtual version of hardware resources, allowing multiple OS instances on one physical machine", "Virtual reality computing", "Virtualizing network connections"], "answer": "Creating a virtual version of hardware resources, allowing multiple OS instances on one physical machine", "difficulty": "Easy"},
-    {"question": "What is a Virtual Machine (VM)?", "options": ["A machine that doesn't exist physically", "A software emulation of a physical computer running its own OS and applications", "A remote computer accessed via network", "A lightweight containerized application"], "answer": "A software emulation of a physical computer running its own OS and applications", "difficulty": "Easy"},
-    {"question": "What is a hypervisor?", "options": ["A high-performance CPU", "Software that creates and manages VMs by allocating hardware resources to virtual machines", "A super-fast network router", "A type of computer virus"], "answer": "Software that creates and manages VMs by allocating hardware resources to virtual machines", "difficulty": "Medium"},
-    {"question": "What is the difference between Type 1 and Type 2 hypervisors?", "options": ["Type 1 runs on a host OS; Type 2 runs directly on hardware", "Type 1 (bare-metal) runs directly on hardware; Type 2 runs on top of a host OS", "Both are identical in architecture", "Type 2 is always faster than Type 1"], "answer": "Type 1 (bare-metal) runs directly on hardware; Type 2 runs on top of a host OS", "difficulty": "Medium"},
-    {"question": "What is VMware ESXi?", "options": ["A Type 2 hypervisor running on Windows", "A Type 1 bare-metal hypervisor for enterprise server virtualization", "A desktop virtual machine application", "A cloud computing platform"], "answer": "A Type 1 bare-metal hypervisor for enterprise server virtualization", "difficulty": "Medium"},
-    {"question": "What is Microsoft Hyper-V?", "options": ["A Microsoft application virtualization tool", "Microsoft's Type 1 hypervisor for Windows Server virtualization", "A Windows desktop feature for app compatibility", "Microsoft's cloud VM service"], "answer": "Microsoft's Type 1 hypervisor for Windows Server virtualization", "difficulty": "Medium"},
-    {"question": "What is Xen hypervisor and what type is it?", "options": ["A Type 2 hypervisor for desktop use", "A Type 1 open-source hypervisor using paravirtualization", "A Windows-specific hypervisor", "A containerization platform"], "answer": "A Type 1 open-source hypervisor using paravirtualization", "difficulty": "Hard"},
-    {"question": "What is the Java Virtual Machine (JVM)?", "options": ["A virtual hardware machine for running Java programs", "A runtime environment that executes Java bytecode on any platform", "A hypervisor for Java-based applications", "A virtual machine that runs Java applications on cloud only"], "answer": "A runtime environment that executes Java bytecode on any platform", "difficulty": "Easy"},
-    {"question": "What is the Android Virtual Machine (ART)?", "options": ["A VM for emulating Android on desktops", "Android Runtime – the managed runtime environment executing Android apps", "A virtual Android device for testing", "VMware's Android support module"], "answer": "Android Runtime – the managed runtime environment executing Android apps", "difficulty": "Medium"},
-    {"question": "What is true (pure) virtualization?", "options": ["Virtualization where the guest OS runs unmodified on hardware that may differ from what it expects", "Virtualization requiring OS modification to run", "Virtual machines with 100% performance", "Virtualization without a hypervisor"], "answer": "Virtualization where the guest OS runs unmodified on hardware that may differ from what it expects", "difficulty": "Hard"},
-    {"question": "What is paravirtualization?", "options": ["Partial hardware virtualization", "Guest OS is modified to know it's running in a VM and makes hypercalls for better efficiency", "Full virtualization without guest modification", "Virtualization for parallel processing"], "answer": "Guest OS is modified to know it's running in a VM and makes hypercalls for better efficiency", "difficulty": "Hard"},
-    {"question": "How does virtualization handle processor (CPU) issues?", "options": ["By providing a dedicated physical CPU to each VM", "By time-sharing physical CPUs among VMs, emulating privileged instructions safely", "By limiting each VM to one thread", "VMs cannot use multiple CPU cores"], "answer": "By time-sharing physical CPUs among VMs, emulating privileged instructions safely", "difficulty": "Hard"},
-    {"question": "What is memory management in virtualization?", "options": ["Each VM gets its own physical RAM module", "Hypervisor manages mapping between guest physical memory and actual host physical memory", "VMs share a single memory address space", "Virtual memory is not used in VMs"], "answer": "Hypervisor manages mapping between guest physical memory and actual host physical memory", "difficulty": "Hard"},
-    {"question": "What is I/O management in virtualization?", "options": ["VMs have direct access to all physical I/O devices", "Hypervisor intercepts and manages guest I/O requests, providing virtual device drivers", "VMs cannot perform I/O operations", "I/O is always passed through without hypervisor involvement"], "answer": "Hypervisor intercepts and manages guest I/O requests, providing virtual device drivers", "difficulty": "Hard"},
-    {"question": "What is Linux VServer?", "options": ["A version of Linux for servers only", "OS-level virtualization for Linux allowing multiple isolated user-space instances (containers)", "A Linux hypervisor for full VMs", "A Linux file server application"], "answer": "OS-level virtualization for Linux allowing multiple isolated user-space instances (containers)", "difficulty": "Hard"},
-    {"question": "What is the main advantage of server virtualization?", "options": ["Faster individual application performance", "Better hardware utilization by running multiple workloads on one physical server", "Easier hardware maintenance", "Eliminating the need for network infrastructure"], "answer": "Better hardware utilization by running multiple workloads on one physical server", "difficulty": "Easy"},
-    {"question": "What is VM migration (live migration)?", "options": ["Moving VM files to backup storage", "Moving a running VM from one physical host to another with minimal downtime", "Installing a new OS in a VM", "Migrating from one hypervisor to another"], "answer": "Moving a running VM from one physical host to another with minimal downtime", "difficulty": "Medium"},
-    {"question": "What is a snapshot in virtualization?", "options": ["A screenshot of a VM desktop", "A saved state of a VM at a point in time that can be restored later", "A backup copy of VM files", "A performance benchmark of a VM"], "answer": "A saved state of a VM at a point in time that can be restored later", "difficulty": "Easy"},
-    {"question": "What is the difference between virtualization and containerization?", "options": ["They are identical technologies", "Virtualization emulates entire machines with separate OS; containers share the host OS kernel for lighter isolation", "Containers provide stronger isolation than VMs", "VMs are always faster than containers"], "answer": "Virtualization emulates entire machines with separate OS; containers share the host OS kernel for lighter isolation", "difficulty": "Medium"},
-    {"question": "What is hardware-assisted virtualization (Intel VT-x, AMD-V)?", "options": ["Hardware designed only for VMs", "CPU extensions providing native support for hypervisors, improving VM performance", "A type of paravirtualization", "Hardware that replaces the need for a hypervisor"], "answer": "CPU extensions providing native support for hypervisors, improving VM performance", "difficulty": "Hard"},
-    {"question": "What is the purpose of running one OS on top of another in virtualization?", "options": ["For entertainment purposes", "Testing, isolation, legacy support, and running different OS environments simultaneously", "Improving OS performance", "Required for internet connectivity"], "answer": "Testing, isolation, legacy support, and running different OS environments simultaneously", "difficulty": "Easy"},
-    {"question": "What is VDI (Virtual Desktop Infrastructure)?", "options": ["A type of virtual display adapter", "Hosting desktop environments as VMs on centralized servers, accessed remotely by users", "A video display interface standard", "Virtual data integration for databases"], "answer": "Hosting desktop environments as VMs on centralized servers, accessed remotely by users", "difficulty": "Medium"},
-    {"question": "What is a guest OS in virtualization context?", "options": ["The physical host machine's operating system", "The operating system running inside a virtual machine", "A read-only operating system", "An OS used only for VM management"], "answer": "The operating system running inside a virtual machine", "difficulty": "Easy"},
-    {"question": "What is resource overcommitment in virtualization?", "options": ["Providing exactly as many resources as requested", "Allocating more virtual resources than physically exist, betting not all will be used simultaneously", "Limiting VMs to minimum resources", "A hypervisor configuration error"], "answer": "Allocating more virtual resources than physically exist, betting not all will be used simultaneously", "difficulty": "Hard"},
-    {"question": "What security benefit does virtualization provide?", "options": ["VMs are immune to all malware", "Isolation between VMs means a compromise in one VM doesn't automatically affect others", "Virtualization replaces the need for firewalls", "All VMs share security policies automatically"], "answer": "Isolation between VMs means a compromise in one VM doesn't automatically affect others", "difficulty": "Medium"},
-    {"question": "What is a virtual network in the context of virtualization?", "options": ["A network that doesn't physically exist", "A software-defined network connecting VMs on the same host or across hosts", "A network with virtual IP addresses only", "Wireless network connections for VMs"], "answer": "A software-defined network connecting VMs on the same host or across hosts", "difficulty": "Medium"},
-    {"question": "What is the balloon driver technique in VM memory management?", "options": ["Inflating VM memory allocation dynamically", "A guest OS driver that reclaims memory from the VM for the hypervisor when host memory is scarce", "A memory compression technique", "Allocating memory in balloons of fixed size"], "answer": "A guest OS driver that reclaims memory from the VM for the hypervisor when host memory is scarce", "difficulty": "Hard"},
-    {"question": "What is the difference between hosted and bare-metal hypervisors in terms of performance?", "options": ["Both have identical performance", "Bare-metal hypervisors have lower overhead and better performance since they don't run on a host OS", "Hosted hypervisors perform better due to host OS optimization", "Performance depends only on the guest OS"], "answer": "Bare-metal hypervisors have lower overhead and better performance since they don't run on a host OS", "difficulty": "Medium"},
-    {"question": "What is cloud computing's relationship to virtualization?", "options": ["Cloud computing doesn't use virtualization", "Cloud platforms use virtualization extensively to provide on-demand, scalable compute resources to multiple tenants", "Cloud computing has replaced virtualization entirely", "Cloud uses only container technology, not VMs"], "answer": "Cloud platforms use virtualization extensively to provide on-demand, scalable compute resources to multiple tenants", "difficulty": "Medium"},
-    {"question": "What is the role of the VMM (Virtual Machine Monitor) in virtualization?", "options": ["Monitoring VM performance only", "Managing and controlling access to hardware resources, providing isolation and virtualized hardware to each VM", "Only starting and stopping VMs", "Network monitoring for VMs"], "answer": "Managing and controlling access to hardware resources, providing isolation and virtualized hardware to each VM", "difficulty": "Medium"}
+    {
+      "question": "What is virtualization in computing?",
+      "options": [
+        "Virtual reality computing",
+        "Virtualizing network connections",
+        "Creating a virtual version of hardware resources, allowing multiple OS instances on one physical machine",
+        "Creating virtual files"
+      ],
+      "answer": "Creating a virtual version of hardware resources, allowing multiple OS instances on one physical machine",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is a Virtual Machine (VM)?",
+      "options": [
+        "A machine that doesn't exist physically",
+        "A remote computer accessed via network",
+        "A lightweight containerized application",
+        "A software emulation of a physical computer running its own OS and applications"
+      ],
+      "answer": "A software emulation of a physical computer running its own OS and applications",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is a hypervisor?",
+      "options": [
+        "A type of computer virus",
+        "A super-fast network router",
+        "Software that creates and manages VMs by allocating hardware resources to virtual machines",
+        "A high-performance CPU"
+      ],
+      "answer": "Software that creates and manages VMs by allocating hardware resources to virtual machines",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the difference between Type 1 and Type 2 hypervisors?",
+      "options": [
+        "Type 2 is always faster than Type 1",
+        "Type 1 (bare-metal) runs directly on hardware; Type 2 runs on top of a host OS",
+        "Type 1 runs on a host OS; Type 2 runs directly on hardware",
+        "Both are identical in architecture"
+      ],
+      "answer": "Type 1 (bare-metal) runs directly on hardware; Type 2 runs on top of a host OS",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is VMware ESXi?",
+      "options": [
+        "A cloud computing platform",
+        "A desktop virtual machine application",
+        "A Type 2 hypervisor running on Windows",
+        "A Type 1 bare-metal hypervisor for enterprise server virtualization"
+      ],
+      "answer": "A Type 1 bare-metal hypervisor for enterprise server virtualization",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is Microsoft Hyper-V?",
+      "options": [
+        "A Microsoft application virtualization tool",
+        "A Windows desktop feature for app compatibility",
+        "Microsoft's cloud VM service",
+        "Microsoft's Type 1 hypervisor for Windows Server virtualization"
+      ],
+      "answer": "Microsoft's Type 1 hypervisor for Windows Server virtualization",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is Xen hypervisor and what type is it?",
+      "options": [
+        "A containerization platform",
+        "A Windows-specific hypervisor",
+        "A Type 2 hypervisor for desktop use",
+        "A Type 1 open-source hypervisor using paravirtualization"
+      ],
+      "answer": "A Type 1 open-source hypervisor using paravirtualization",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is the Java Virtual Machine (JVM)?",
+      "options": [
+        "A hypervisor for Java-based applications",
+        "A virtual hardware machine for running Java programs",
+        "A virtual machine that runs Java applications on cloud only",
+        "A runtime environment that executes Java bytecode on any platform"
+      ],
+      "answer": "A runtime environment that executes Java bytecode on any platform",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the Android Virtual Machine (ART)?",
+      "options": [
+        "VMware's Android support module",
+        "A VM for emulating Android on desktops",
+        "A virtual Android device for testing",
+        "Android Runtime – the managed runtime environment executing Android apps"
+      ],
+      "answer": "Android Runtime – the managed runtime environment executing Android apps",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is true (pure) virtualization?",
+      "options": [
+        "Virtual machines with 100% performance",
+        "Virtualization requiring OS modification to run",
+        "Virtualization without a hypervisor",
+        "Virtualization where the guest OS runs unmodified on hardware that may differ from what it expects"
+      ],
+      "answer": "Virtualization where the guest OS runs unmodified on hardware that may differ from what it expects",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is paravirtualization?",
+      "options": [
+        "Partial hardware virtualization",
+        "Guest OS is modified to know it's running in a VM and makes hypercalls for better efficiency",
+        "Full virtualization without guest modification",
+        "Virtualization for parallel processing"
+      ],
+      "answer": "Guest OS is modified to know it's running in a VM and makes hypercalls for better efficiency",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "How does virtualization handle processor (CPU) issues?",
+      "options": [
+        "By providing a dedicated physical CPU to each VM",
+        "By time-sharing physical CPUs among VMs, emulating privileged instructions safely",
+        "VMs cannot use multiple CPU cores",
+        "By limiting each VM to one thread"
+      ],
+      "answer": "By time-sharing physical CPUs among VMs, emulating privileged instructions safely",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is memory management in virtualization?",
+      "options": [
+        "VMs share a single memory address space",
+        "Each VM gets its own physical RAM module",
+        "Virtual memory is not used in VMs",
+        "Hypervisor manages mapping between guest physical memory and actual host physical memory"
+      ],
+      "answer": "Hypervisor manages mapping between guest physical memory and actual host physical memory",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is I/O management in virtualization?",
+      "options": [
+        "VMs have direct access to all physical I/O devices",
+        "VMs cannot perform I/O operations",
+        "Hypervisor intercepts and manages guest I/O requests, providing virtual device drivers",
+        "I/O is always passed through without hypervisor involvement"
+      ],
+      "answer": "Hypervisor intercepts and manages guest I/O requests, providing virtual device drivers",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is Linux VServer?",
+      "options": [
+        "OS-level virtualization for Linux allowing multiple isolated user-space instances (containers)",
+        "A version of Linux for servers only",
+        "A Linux file server application",
+        "A Linux hypervisor for full VMs"
+      ],
+      "answer": "OS-level virtualization for Linux allowing multiple isolated user-space instances (containers)",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is the main advantage of server virtualization?",
+      "options": [
+        "Better hardware utilization by running multiple workloads on one physical server",
+        "Faster individual application performance",
+        "Eliminating the need for network infrastructure",
+        "Easier hardware maintenance"
+      ],
+      "answer": "Better hardware utilization by running multiple workloads on one physical server",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is VM migration (live migration)?",
+      "options": [
+        "Moving VM files to backup storage",
+        "Migrating from one hypervisor to another",
+        "Moving a running VM from one physical host to another with minimal downtime",
+        "Installing a new OS in a VM"
+      ],
+      "answer": "Moving a running VM from one physical host to another with minimal downtime",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a snapshot in virtualization?",
+      "options": [
+        "A backup copy of VM files",
+        "A saved state of a VM at a point in time that can be restored later",
+        "A performance benchmark of a VM",
+        "A screenshot of a VM desktop"
+      ],
+      "answer": "A saved state of a VM at a point in time that can be restored later",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the difference between virtualization and containerization?",
+      "options": [
+        "Virtualization emulates entire machines with separate OS; containers share the host OS kernel for lighter isolation",
+        "VMs are always faster than containers",
+        "They are identical technologies",
+        "Containers provide stronger isolation than VMs"
+      ],
+      "answer": "Virtualization emulates entire machines with separate OS; containers share the host OS kernel for lighter isolation",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is hardware-assisted virtualization (Intel VT-x, AMD-V)?",
+      "options": [
+        "A type of paravirtualization",
+        "Hardware designed only for VMs",
+        "CPU extensions providing native support for hypervisors, improving VM performance",
+        "Hardware that replaces the need for a hypervisor"
+      ],
+      "answer": "CPU extensions providing native support for hypervisors, improving VM performance",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is the purpose of running one OS on top of another in virtualization?",
+      "options": [
+        "Testing, isolation, legacy support, and running different OS environments simultaneously",
+        "For entertainment purposes",
+        "Improving OS performance",
+        "Required for internet connectivity"
+      ],
+      "answer": "Testing, isolation, legacy support, and running different OS environments simultaneously",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is VDI (Virtual Desktop Infrastructure)?",
+      "options": [
+        "A type of virtual display adapter",
+        "Hosting desktop environments as VMs on centralized servers, accessed remotely by users",
+        "Virtual data integration for databases",
+        "A video display interface standard"
+      ],
+      "answer": "Hosting desktop environments as VMs on centralized servers, accessed remotely by users",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a guest OS in virtualization context?",
+      "options": [
+        "A read-only operating system",
+        "An OS used only for VM management",
+        "The physical host machine's operating system",
+        "The operating system running inside a virtual machine"
+      ],
+      "answer": "The operating system running inside a virtual machine",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is resource overcommitment in virtualization?",
+      "options": [
+        "Limiting VMs to minimum resources",
+        "A hypervisor configuration error",
+        "Allocating more virtual resources than physically exist, betting not all will be used simultaneously",
+        "Providing exactly as many resources as requested"
+      ],
+      "answer": "Allocating more virtual resources than physically exist, betting not all will be used simultaneously",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What security benefit does virtualization provide?",
+      "options": [
+        "All VMs share security policies automatically",
+        "Virtualization replaces the need for firewalls",
+        "VMs are immune to all malware",
+        "Isolation between VMs means a compromise in one VM doesn't automatically affect others"
+      ],
+      "answer": "Isolation between VMs means a compromise in one VM doesn't automatically affect others",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is a virtual network in the context of virtualization?",
+      "options": [
+        "A network with virtual IP addresses only",
+        "A network that doesn't physically exist",
+        "A software-defined network connecting VMs on the same host or across hosts",
+        "Wireless network connections for VMs"
+      ],
+      "answer": "A software-defined network connecting VMs on the same host or across hosts",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the balloon driver technique in VM memory management?",
+      "options": [
+        "Inflating VM memory allocation dynamically",
+        "Allocating memory in balloons of fixed size",
+        "A guest OS driver that reclaims memory from the VM for the hypervisor when host memory is scarce",
+        "A memory compression technique"
+      ],
+      "answer": "A guest OS driver that reclaims memory from the VM for the hypervisor when host memory is scarce",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "What is the difference between hosted and bare-metal hypervisors in terms of performance?",
+      "options": [
+        "Both have identical performance",
+        "Hosted hypervisors perform better due to host OS optimization",
+        "Bare-metal hypervisors have lower overhead and better performance since they don't run on a host OS",
+        "Performance depends only on the guest OS"
+      ],
+      "answer": "Bare-metal hypervisors have lower overhead and better performance since they don't run on a host OS",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is cloud computing's relationship to virtualization?",
+      "options": [
+        "Cloud uses only container technology, not VMs",
+        "Cloud platforms use virtualization extensively to provide on-demand, scalable compute resources to multiple tenants",
+        "Cloud computing has replaced virtualization entirely",
+        "Cloud computing doesn't use virtualization"
+      ],
+      "answer": "Cloud platforms use virtualization extensively to provide on-demand, scalable compute resources to multiple tenants",
+      "difficulty": "Medium"
+    },
+    {
+      "question": "What is the role of the VMM (Virtual Machine Monitor) in virtualization?",
+      "options": [
+        "Only starting and stopping VMs",
+        "Network monitoring for VMs",
+        "Managing and controlling access to hardware resources, providing isolation and virtualized hardware to each VM",
+        "Monitoring VM performance only"
+      ],
+      "answer": "Managing and controlling access to hardware resources, providing isolation and virtualized hardware to each VM",
+      "difficulty": "Medium"
+    }
   ]
 }

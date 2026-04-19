@@ -1,10 +1,9 @@
 import streamlit as st
 import json
 import random
-import time
 from pathlib import Path
 
-# ── Page config ────────────────────────────────────────────────────────────────
+# ─── Page Config ──────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="ExamPrep Pro",
     page_icon="🎓",
@@ -12,776 +11,571 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# ── Custom CSS ─────────────────────────────────────────────────────────────────
+# ─── CSS ──────────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
-
-:root {
-    --bg: #0a0e1a;
-    --surface: #111827;
-    --surface2: #1a2235;
-    --border: #1e3a5f;
-    --accent: #3b82f6;
-    --accent2: #06b6d4;
-    --accent3: #8b5cf6;
-    --success: #10b981;
-    --danger: #ef4444;
-    --warning: #f59e0b;
-    --text: #e2e8f0;
-    --muted: #64748b;
-    --card-glow: rgba(59, 130, 246, 0.08);
-}
-
-* { box-sizing: border-box; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
 
 html, body, [class*="css"] {
-    font-family: 'Space Grotesk', sans-serif;
-    background-color: var(--bg) !important;
-    color: var(--text);
+    font-family: 'Inter', sans-serif !important;
+    background-color: #0d1117 !important;
+    color: #e6edf3 !important;
 }
-
-/* Hide Streamlit branding */
 #MainMenu, footer, header { visibility: hidden; }
-.stDeployButton { display: none; }
+.stDeployButton { display: none !important; }
+.main .block-container { padding: 1.5rem 2rem 3rem; max-width: 960px; }
 
-/* Main container */
-.main .block-container {
-    padding: 1.5rem 2rem;
-    max-width: 1100px;
-}
-
-/* ── Hero Banner ── */
-.hero-banner {
-    background: linear-gradient(135deg, #0f1f3d 0%, #1a2a4a 40%, #0d1b2e 100%);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 2.5rem 3rem;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-}
-.hero-banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
-    pointer-events: none;
-}
-.hero-title {
-    font-size: 2.6rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #60a5fa, #06b6d4, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0 0 0.5rem 0;
-    letter-spacing: -0.5px;
-}
-.hero-sub {
-    color: var(--muted);
-    font-size: 1rem;
-    margin: 0;
-    font-weight: 400;
-}
-.hero-badge {
-    display: inline-block;
-    background: rgba(59,130,246,0.15);
-    border: 1px solid rgba(59,130,246,0.3);
-    color: #60a5fa;
-    padding: 3px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
-/* ── Subject Cards ── */
-.subject-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    transition: all 0.25s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-.subject-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--accent-color, var(--accent));
-    border-radius: 4px 0 0 4px;
-}
-.subject-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(59,130,246,0.15);
-}
-.subject-card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 0.3rem 0;
-    color: var(--text);
-}
-.subject-card p {
-    font-size: 0.82rem;
-    color: var(--muted);
-    margin: 0 0 1rem 0;
-}
-.subject-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-.stat-pills {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-.stat-pill {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px;
-    padding: 2px 10px;
-    font-size: 0.72rem;
-    color: var(--muted);
-    font-family: 'JetBrains Mono', monospace;
-}
-
-/* ── Section Grid ── */
-.section-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.2rem 1.4rem;
-    margin-bottom: 0.75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.2s ease;
-}
-.section-card:hover {
-    border-color: var(--accent);
-    background: var(--surface2);
-}
-.section-left h4 { margin: 0 0 0.2rem 0; font-size: 0.95rem; font-weight: 600; }
-.section-left p { margin: 0; font-size: 0.78rem; color: var(--muted); }
-.section-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 700;
-}
-.badge-complete { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
-.badge-pending { background: rgba(59,130,246,0.1); color: #60a5fa; border: 1px solid rgba(59,130,246,0.2); }
-
-/* ── Quiz Area ── */
-.quiz-header {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.2rem 1.5rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.quiz-qnum {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--muted);
-}
-.quiz-score-live {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--accent2);
-}
-.diff-badge {
-    font-size: 0.7rem;
-    padding: 2px 10px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-family: 'JetBrains Mono', monospace;
-}
-.diff-Easy { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
-.diff-Medium { background: rgba(245,158,11,0.15); color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
-.diff-Hard { background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
-
-.question-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-}
-.question-text {
-    font-size: 1.1rem;
-    font-weight: 500;
-    line-height: 1.6;
-    margin: 0;
-    color: var(--text);
-}
-
-/* ── Option Buttons ── */
-.stRadio > div {
-    gap: 0.6rem;
-    flex-direction: column;
-}
-.stRadio label {
-    background: var(--surface2) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 10px !important;
-    padding: 0.85rem 1.2rem !important;
-    font-size: 0.92rem !important;
-    cursor: pointer !important;
-    transition: all 0.2s !important;
-    width: 100% !important;
-    color: var(--text) !important;
-}
-.stRadio label:hover {
-    border-color: var(--accent) !important;
-    background: rgba(59,130,246,0.08) !important;
-}
-
-/* Correct/Wrong feedback */
-.feedback-correct {
-    background: rgba(16,185,129,0.1);
-    border: 1px solid rgba(16,185,129,0.4);
-    border-radius: 10px;
-    padding: 1rem 1.2rem;
-    color: #10b981;
-    font-weight: 500;
-    margin-top: 1rem;
-}
-.feedback-wrong {
-    background: rgba(239,68,68,0.1);
-    border: 1px solid rgba(239,68,68,0.4);
-    border-radius: 10px;
-    padding: 1rem 1.2rem;
-    color: #ef4444;
-    font-weight: 500;
-    margin-top: 1rem;
-}
-.correct-answer-reveal {
-    color: #10b981;
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
-}
-
-/* ── Progress Bar ── */
-.progress-container {
-    background: rgba(255,255,255,0.05);
-    border-radius: 10px;
-    height: 8px;
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-}
-.progress-fill {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #3b82f6, #06b6d4);
-    transition: width 0.4s ease;
-}
-
-/* ── Result Card ── */
-.result-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 3rem;
-    text-align: center;
-    margin: 2rem 0;
-    position: relative;
-    overflow: hidden;
-}
-.result-card::before {
-    content: '';
-    position: absolute;
-    top: -100px; left: 50%;
-    transform: translateX(-50%);
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
-    pointer-events: none;
-}
-.result-score-big {
-    font-size: 5rem;
-    font-weight: 700;
-    font-family: 'JetBrains Mono', monospace;
-    background: linear-gradient(135deg, #60a5fa, #06b6d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
-    line-height: 1;
-}
-.result-fraction { font-size: 1.2rem; color: var(--muted); margin-top: 0.3rem; }
-.result-grade { font-size: 1.5rem; font-weight: 600; margin: 1rem 0; }
-.result-stats {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 1.5rem 0;
-    flex-wrap: wrap;
-}
-.result-stat { text-align: center; }
-.result-stat-val { font-size: 1.8rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
-.result-stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
-
-/* ── Buttons ── */
 .stButton > button {
-    background: linear-gradient(135deg, #1d4ed8, #2563eb) !important;
-    color: white !important;
+    background: #1f6feb !important;
+    color: #fff !important;
     border: none !important;
-    border-radius: 10px !important;
+    border-radius: 8px !important;
     font-weight: 600 !important;
-    font-size: 0.9rem !important;
-    padding: 0.6rem 1.5rem !important;
+    font-size: 14px !important;
+    padding: 8px 20px !important;
     transition: all 0.2s !important;
-    font-family: 'Space Grotesk', sans-serif !important;
+    font-family: 'Inter', sans-serif !important;
+    width: 100% !important;
 }
 .stButton > button:hover {
-    background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+    background: #388bfd !important;
     transform: translateY(-1px) !important;
-    box-shadow: 0 4px 15px rgba(59,130,246,0.3) !important;
+    box-shadow: 0 4px 14px rgba(56,139,253,0.4) !important;
 }
 
-/* Back button style */
-.back-btn > button {
-    background: rgba(255,255,255,0.05) !important;
-    border: 1px solid var(--border) !important;
+div[data-testid="stRadio"] > div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+div[data-testid="stRadio"] label {
+    background: #161b22 !important;
+    border: 1.5px solid #30363d !important;
+    border-radius: 10px !important;
+    padding: 14px 18px !important;
+    font-size: 15px !important;
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+    color: #e6edf3 !important;
+    margin: 0 !important;
+}
+div[data-testid="stRadio"] label:hover {
+    border-color: #388bfd !important;
+    background: rgba(56,139,253,0.08) !important;
 }
 
-/* Section tracker pills */
-.tracker-row {
-    display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
+.stProgress > div > div > div {
+    background: linear-gradient(90deg, #1f6feb, #56d364) !important;
+    border-radius: 10px !important;
+}
+.stProgress > div > div {
+    background: rgba(255,255,255,0.06) !important;
+    border-radius: 10px !important;
+    height: 8px !important;
+}
+
+[data-testid="stMetric"] {
+    background: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 10px !important;
+    padding: 14px 16px !important;
+}
+[data-testid="stMetricValue"] {
+    font-family: 'JetBrains Mono', monospace !important;
+    color: #79c0ff !important;
+}
+[data-testid="stMetricLabel"] {
+    color: #8b949e !important;
+    font-size: 11px !important;
+}
+
+.hero-card {
+    background: linear-gradient(135deg, #161b22, #1c2128);
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    padding: 2.5rem;
     margin-bottom: 1.5rem;
 }
-.tracker-dot {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.65rem;
+.hero-tag {
+    display: inline-block;
+    background: rgba(56,139,253,0.15);
+    color: #79c0ff;
+    border: 1px solid rgba(56,139,253,0.3);
+    padding: 3px 14px;
+    border-radius: 20px;
+    font-size: 11px;
     font-weight: 700;
-    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
 }
-.dot-done { background: rgba(16,185,129,0.2); color: #10b981; border: 1px solid rgba(16,185,129,0.4); }
-.dot-pending { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid var(--border); }
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #79c0ff, #56d364, #d2a8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 8px;
+}
+.hero-sub { color: #8b949e; font-size: 15px; margin: 0; }
 
-/* Dividers */
-.section-title {
-    font-size: 0.75rem;
-    font-weight: 600;
+.subj-card {
+    background: #161b22;
+    border: 1.5px solid #30363d;
+    border-left: 4px solid var(--accent, #388bfd);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.q-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 14px;
+    padding: 24px 26px;
+    margin-bottom: 16px;
+}
+.section-row {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 8px;
+}
+.result-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.sec-label {
+    font-size: 11px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--muted);
-    margin: 1.5rem 0 0.75rem;
+    color: #8b949e;
+    margin: 16px 0 10px;
 }
+.q-text { font-size: 17px; line-height: 1.65; color: #e6edf3; margin: 0; }
+.q-num { font-size: 12px; color: #8b949e; font-family: 'JetBrains Mono', monospace; }
 
-/* Scrollbar */
+.badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+.badge-easy { background: rgba(86,211,100,0.12); color: #56d364; border: 1px solid rgba(86,211,100,0.3); }
+.badge-medium { background: rgba(227,179,65,0.12); color: #e3b341; border: 1px solid rgba(227,179,65,0.3); }
+.badge-hard { background: rgba(248,81,73,0.12); color: #f85149; border: 1px solid rgba(248,81,73,0.3); }
+.badge-done { background: rgba(86,211,100,0.12); color: #56d364; border: 1px solid rgba(86,211,100,0.3); }
+.badge-pending { background: rgba(56,139,253,0.1); color: #79c0ff; border: 1px solid rgba(56,139,253,0.2); }
+
+.res-pct {
+    font-size: 5rem;
+    font-weight: 800;
+    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(135deg, #79c0ff, #56d364);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+.pill { background: rgba(255,255,255,0.05); border: 1px solid #30363d; border-radius: 20px; padding: 3px 11px; font-size: 11px; color: #8b949e; font-family: 'JetBrains Mono', monospace; display: inline-block; margin-right: 4px; }
+.dots-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.dot { width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; font-family: 'JetBrains Mono', monospace; border: 1px solid #30363d; color: #8b949e; background: #161b22; }
+.dot-done { background: rgba(86,211,100,0.15); border-color: rgba(86,211,100,0.5); color: #56d364; }
+
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
 </style>
 """, unsafe_allow_html=True)
 
-# ── Data Loader ─────────────────────────────────────────────────────────────────
+
+# ─── Data Loader ──────────────────────────────────────────────────────────────
 @st.cache_data
-def load_questions(filename):
+def load_questions(filename: str) -> dict:
     path = Path(__file__).parent / filename
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
+
+# ─── Subject Config ───────────────────────────────────────────────────────────
 SUBJECTS = {
     "Java Programming": {
         "file": "questions_java.json",
         "icon": "☕",
-        "color": "#f59e0b",
-        "desc": "OOP, JVM, Collections, Threads, Swing & more",
+        "color": "#e3b341",
+        "desc": "OOP, JVM, Collections, Threads, Swing & Event Handling",
         "code": "JP",
     },
     "Computer Networks": {
         "file": "questions_cn.json",
         "icon": "🌐",
-        "color": "#3b82f6",
-        "desc": "OSI, TCP/IP, Routing, HTTP, DNS & more",
+        "color": "#388bfd",
+        "desc": "OSI, TCP/IP, HTTP, DNS, Routing & Data Link Layer",
         "code": "CN",
     },
-    "Operating Systems & Virtualization": {
+    "OS & Virtualization": {
         "file": "questions_osv.json",
         "icon": "🖥️",
-        "color": "#8b5cf6",
-        "desc": "Processes, Memory, File Systems, VM & more",
+        "color": "#bc8cff",
+        "desc": "Processes, Scheduling, Memory, File Systems & VM",
         "code": "OSV",
     },
-    "Machine Learning Essentials": {
+    "Machine Learning": {
         "file": "questions_mle.json",
         "icon": "🤖",
-        "color": "#10b981",
-        "desc": "Linear Algebra, ML Types, Classification, Clustering & more",
+        "color": "#56d364",
+        "desc": "Linear Algebra, ML Types, Classification, Clustering & Python",
         "code": "MLE",
     },
 }
 
-# ── State Init ──────────────────────────────────────────────────────────────────
-def init_state():
+DIFF_BADGE = {"Easy": "badge-easy", "Medium": "badge-medium", "Hard": "badge-hard"}
+
+
+# ─── State ────────────────────────────────────────────────────────────────────
+def init():
     defaults = {
-        "screen": "home",          # home | subject | quiz | result
+        "screen": "home",
         "subject": None,
         "section": None,
         "questions": [],
-        "q_index": 0,
+        "q_idx": 0,
         "score": 0,
-        "answers": {},             # {q_index: selected_option}
-        "answered_current": False,
-        "selected_option": None,
-        "section_scores": {},      # {subject: {section: score}}
-        "section_totals": {},      # {subject: {section: total}}
+        "user_answers": {},
+        "answered": False,
+        "chosen": None,
+        "section_scores": {},
     }
     for k, v in defaults.items():
         if k not in st.session_state:
             st.session_state[k] = v
 
-init_state()
-s = st.session_state
+init()
+S = st.session_state
 
-# ── Helpers ─────────────────────────────────────────────────────────────────────
-def go(screen, **kwargs):
-    s.screen = screen
-    for k, v in kwargs.items():
-        setattr(s, k, v)
 
-def get_section_status(subject_name, section_name):
-    ss = s.section_scores.get(subject_name, {})
-    st2 = s.section_totals.get(subject_name, {})
-    if section_name in ss:
-        score = ss[section_name]
-        total = st2[section_name]
-        pct = int(score / total * 100) if total else 0
-        return "done", score, total, pct
-    return "pending", 0, 0, 0
+def goto(screen, **kw):
+    S.screen = screen
+    for k, v in kw.items():
+        setattr(S, k, v)
+    st.rerun()
 
-def grade_label(pct):
-    if pct >= 90: return "🏆 Excellent!", "#10b981"
-    if pct >= 75: return "⭐ Great Job!", "#3b82f6"
-    if pct >= 60: return "👍 Good Work", "#f59e0b"
-    if pct >= 40: return "📚 Keep Studying", "#f97316"
-    return "💪 Needs Practice", "#ef4444"
 
-def progress_bar_html(current, total):
-    pct = int(current / total * 100) if total else 0
-    return f"""
-    <div class="progress-container">
-        <div class="progress-fill" style="width:{pct}%"></div>
-    </div>
-    """
+def pct(score, total):
+    return round(score / total * 100) if total else 0
+
+
+def grade(p):
+    if p >= 90: return "🏆 Excellent!", "#56d364"
+    if p >= 75: return "⭐ Great Job!", "#388bfd"
+    if p >= 60: return "👍 Good Work", "#e3b341"
+    if p >= 40: return "📚 Keep Studying", "#e09003"
+    return "💪 Needs Practice", "#f85149"
+
+
+def get_sec_info(subject, section):
+    return S.section_scores.get(subject, {}).get(section)
+
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  SCREEN: HOME
+#  HOME
 # ══════════════════════════════════════════════════════════════════════════════
-if s.screen == "home":
+if S.screen == "home":
     st.markdown("""
-    <div class="hero-banner">
-        <div class="hero-badge">Mid-Sem 2 Exam Prep</div>
+    <div class="hero-card">
+        <div class="hero-tag">Mid-Sem 2 · Exam Prep</div>
         <h1 class="hero-title">ExamPrep Pro</h1>
-        <p class="hero-sub">Master your B.Tech subjects with syllabus-aligned MCQs · Track progress · Ace your exams</p>
+        <p class="hero-sub">Syllabus-aligned MCQ practice for B.Tech AI students &mdash; 690 questions across 23 sections</p>
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown('<div class="section-title">Choose a Subject to Practice</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sec-label">Choose a Subject</div>', unsafe_allow_html=True)
 
-    cols = st.columns(2)
-    for i, (subj_name, meta) in enumerate(SUBJECTS.items()):
+    col1, col2 = st.columns(2)
+    for col, (name, meta) in zip([col1, col2, col1, col2], list(SUBJECTS.items())):
         data = load_questions(meta["file"])
-        total_q = sum(len(v) for v in data.values())
-        n_sections = len(data)
-        done_sections = len(s.section_scores.get(subj_name, {}))
-        col = cols[i % 2]
+        n_sec = len(data)
+        n_q = sum(len(v) for v in data.values())
+        done = len(S.section_scores.get(name, {}))
+        done_pill = f'<span class="pill" style="color:#56d364;border-color:rgba(86,211,100,0.3)">{done}/{n_sec} done</span>' if done else ""
+
         with col:
-            with st.container():
-                st.markdown(f"""
-                <div class="subject-card" style="--accent-color:{meta['color']}">
-                    <div class="subject-icon">{meta['icon']}</div>
-                    <h3>{subj_name}</h3>
-                    <p>{meta['desc']}</p>
-                    <div class="stat-pills">
-                        <span class="stat-pill">{n_sections} sections</span>
-                        <span class="stat-pill">{total_q} questions</span>
-                        <span class="stat-pill">{done_sections}/{n_sections} done</span>
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
-                if st.button(f"Open {meta['code']} →", key=f"subj_{i}"):
-                    go("subject", subject=subj_name)
-                    st.rerun()
-
-    # Overall progress
-    st.markdown('<div class="section-title">Overall Progress</div>', unsafe_allow_html=True)
-    all_done = sum(len(v) for v in s.section_scores.values())
-    total_sections = sum(len(load_questions(m["file"])) for m in SUBJECTS.values())
-    c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Sections Completed", all_done)
-    c2.metric("Total Sections", total_sections)
-    total_correct = sum(sum(v.values()) for v in s.section_scores.values())
-    total_attempted = sum(sum(v.values()) for v in s.section_totals.values())
-    pct_overall = f"{int(total_correct/total_attempted*100)}%" if total_attempted else "—"
-    c3.metric("Questions Attempted", total_attempted)
-    c4.metric("Overall Score %", pct_overall)
-
-# ══════════════════════════════════════════════════════════════════════════════
-#  SCREEN: SUBJECT (section list)
-# ══════════════════════════════════════════════════════════════════════════════
-elif s.screen == "subject":
-    meta = SUBJECTS[s.subject]
-    data = load_questions(meta["file"])
-
-    col_back, col_title = st.columns([1, 6])
-    with col_back:
-        st.markdown('<div class="back-btn">', unsafe_allow_html=True)
-        if st.button("← Home"):
-            go("home")
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
-
-    st.markdown(f"""
-    <div style="margin-bottom:1.5rem;">
-        <span style="font-size:2.2rem">{meta['icon']}</span>
-        <h2 style="margin:0;font-size:1.6rem;font-weight:700;color:var(--text)">{s.subject}</h2>
-        <p style="color:var(--muted);font-size:0.85rem;margin:0">{meta['desc']}</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Section completion tracker dots
-    dots_html = '<div class="tracker-row">'
-    for idx, sec in enumerate(data.keys()):
-        status, sc, tot, pct = get_section_status(s.subject, sec)
-        cls = "dot-done" if status == "done" else "dot-pending"
-        dots_html += f'<div class="tracker-dot {cls}" title="{sec}">{idx+1}</div>'
-    dots_html += '</div>'
-    st.markdown(dots_html, unsafe_allow_html=True)
-
-    st.markdown('<div class="section-title">Sections</div>', unsafe_allow_html=True)
-
-    for idx, (sec_name, questions) in enumerate(data.items()):
-        status, sc, tot, pct = get_section_status(s.subject, sec_name)
-        col1, col2 = st.columns([5, 1])
-        with col1:
-            if status == "done":
-                badge = f'<span class="section-badge badge-complete">✓ {sc}/{tot} · {pct}%</span>'
-            else:
-                badge = f'<span class="section-badge badge-pending">{len(questions)} Qs</span>'
             st.markdown(f"""
-            <div class="section-card">
-                <div class="section-left">
-                    <h4>{idx+1}. {sec_name}</h4>
-                    <p>{len(questions)} questions · Mix of Easy / Medium / Hard</p>
-                </div>
-                {badge}
+            <div class="subj-card" style="--accent:{meta['color']}">
+                <div style="font-size:2rem;margin-bottom:8px">{meta['icon']}</div>
+                <div style="font-size:16px;font-weight:700;margin-bottom:4px">{name}</div>
+                <div style="font-size:12px;color:#8b949e;margin-bottom:12px">{meta['desc']}</div>
+                <span class="pill">{n_sec} sections</span>
+                <span class="pill">{n_q} questions</span>
+                {done_pill}
             </div>
             """, unsafe_allow_html=True)
-        with col2:
-            btn_label = "Retake" if status == "done" else "Start"
-            if st.button(btn_label, key=f"sec_{idx}"):
-                # Prepare shuffled questions
-                qs = questions.copy()
-                random.shuffle(qs)
-                go("quiz",
-                   section=sec_name,
-                   questions=qs,
-                   q_index=0,
-                   score=0,
-                   answers={},
-                   answered_current=False,
-                   selected_option=None)
-                st.rerun()
+            if st.button(f"Open {meta['code']} →", key=f"h_{name}"):
+                goto("subject", subject=name)
+
+    st.markdown('<div class="sec-label" style="margin-top:20px">Your Progress</div>', unsafe_allow_html=True)
+    done_secs = sum(len(v) for v in S.section_scores.values())
+    total_secs = sum(len(load_questions(m["file"])) for m in SUBJECTS.values())
+    total_correct = sum(v["score"] for s in S.section_scores.values() for v in s.values())
+    total_att = sum(v["total"] for s in S.section_scores.values() for v in s.values())
+    overall = f"{pct(total_correct, total_att)}%" if total_att else "—"
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Sections Done", done_secs)
+    c2.metric("Total Sections", total_secs)
+    c3.metric("Qs Attempted", total_att)
+    c4.metric("Overall %", overall)
+
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  SCREEN: QUIZ
+#  SUBJECT
 # ══════════════════════════════════════════════════════════════════════════════
-elif s.screen == "quiz":
-    total_q = len(s.questions)
-    q_idx = s.q_index
+elif S.screen == "subject":
+    meta = SUBJECTS[S.subject]
+    data = load_questions(meta["file"])
+    sections = list(data.items())
 
-    # If done
-    if q_idx >= total_q:
-        go("result")
-        st.rerun()
+    if st.button("← Home", key="bk_home"):
+        goto("home")
 
-    q = s.questions[q_idx]
-    meta = SUBJECTS[s.subject]
-
-    # Header row
-    col_back, col_mid, col_score = st.columns([1, 5, 2])
-    with col_back:
-        st.markdown('<div class="back-btn">', unsafe_allow_html=True)
-        if st.button("← Back"):
-            go("subject")
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
-    with col_mid:
-        st.markdown(f"""
-        <div style="padding-top:0.4rem">
-            <span style="font-size:1rem;font-weight:600;color:var(--text)">{meta['icon']} {s.section}</span>
-        </div>
-        """, unsafe_allow_html=True)
-    with col_score:
-        st.markdown(f"""
-        <div style="text-align:right;padding-top:0.4rem">
-            <span class="quiz-score-live">Score: {s.score}/{q_idx}</span>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # Progress bar
-    st.markdown(progress_bar_html(q_idx, total_q), unsafe_allow_html=True)
-
-    # Question card
-    diff = q.get("difficulty", "Medium")
     st.markdown(f"""
-    <div class="question-box">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-            <span class="quiz-qnum">Question {q_idx+1} of {total_q}</span>
-            <span class="diff-badge diff-{diff}">{diff}</span>
+    <div style="display:flex;align-items:center;gap:14px;margin:16px 0 20px">
+        <span style="font-size:2.2rem">{meta['icon']}</span>
+        <div>
+            <h2 style="margin:0;font-size:1.5rem;font-weight:700;color:#e6edf3">{S.subject}</h2>
+            <p style="margin:0;color:#8b949e;font-size:13px">{meta['desc']}</p>
         </div>
-        <p class="question-text">{q['question']}</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Options — shown as radio
-    options = q["options"]
+    # Completion dots
+    dots = "".join(
+        f'<div class="dot {"dot-done" if get_sec_info(S.subject, sec) else ""}" title="{sec}">{i+1}</div>'
+        for i, (sec, _) in enumerate(sections)
+    )
+    st.markdown(f'<div class="dots-row">{dots}</div>', unsafe_allow_html=True)
 
-    if not s.answered_current:
-        selected = st.radio(
-            "Choose your answer:",
-            options,
-            key=f"radio_{q_idx}",
+    st.markdown('<div class="sec-label">Sections</div>', unsafe_allow_html=True)
+
+    for i, (sec, qs) in enumerate(sections):
+        info = get_sec_info(S.subject, sec)
+        if info:
+            badge = f'<span class="badge badge-done">✓ {info["score"]}/{info["total"]} · {pct(info["score"], info["total"])}%</span>'
+            btn_label = "Retake"
+        else:
+            badge = f'<span class="badge badge-pending">{len(qs)} Qs</span>'
+            btn_label = "Start →"
+
+        col_a, col_b = st.columns([6, 1])
+        with col_a:
+            st.markdown(f"""
+            <div class="section-row">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <div>
+                        <div style="font-weight:600;font-size:15px;margin-bottom:3px">{i+1}. {sec}</div>
+                        <div style="font-size:12px;color:#8b949e">{len(qs)} questions · Easy / Medium / Hard mix</div>
+                    </div>
+                    <div>{badge}</div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+        with col_b:
+            if st.button(btn_label, key=f"s_{i}"):
+                qs_shuffled = qs.copy()
+                random.shuffle(qs_shuffled)
+                goto("quiz",
+                     section=sec,
+                     questions=qs_shuffled,
+                     q_idx=0,
+                     score=0,
+                     user_answers={},
+                     answered=False,
+                     chosen=None)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  QUIZ
+# ══════════════════════════════════════════════════════════════════════════════
+elif S.screen == "quiz":
+    total_q = len(S.questions)
+
+    if S.q_idx >= total_q:
+        goto("result")
+
+    q = S.questions[S.q_idx]
+    diff = q.get("difficulty", "Medium")
+    meta = SUBJECTS[S.subject]
+
+    # ── Header ────────────────────────────────────────────────────────────
+    col_back, col_mid, col_sc = st.columns([1, 4, 2])
+    with col_back:
+        if st.button("← Exit", key="qz_exit"):
+            goto("subject")
+    with col_mid:
+        st.markdown(f"<div style='padding-top:6px;font-weight:600;font-size:14px;color:#e6edf3'>{meta['icon']} {S.section}</div>",
+                    unsafe_allow_html=True)
+    with col_sc:
+        st.markdown(
+            f"<div style='text-align:right;padding-top:4px;font-family:monospace;font-size:16px;"
+            f"font-weight:700;color:#56d364'>Score: {S.score}/{S.q_idx}</div>",
+            unsafe_allow_html=True)
+
+    # ── Progress bar ──────────────────────────────────────────────────────
+    st.progress(S.q_idx / total_q)
+
+    # ── Question card ─────────────────────────────────────────────────────
+    badge_cls = DIFF_BADGE.get(diff, "badge-medium")
+    st.markdown(f"""
+    <div class="q-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+            <span class="q-num">Question {S.q_idx + 1} of {total_q}</span>
+            <span class="badge {badge_cls}">{diff}</span>
+        </div>
+        <p class="q-text">{q['question']}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # ── Not yet answered ──────────────────────────────────────────────────
+    if not S.answered:
+        chosen = st.radio(
+            "Pick your answer:",
+            q["options"],
+            key=f"q_{S.q_idx}",
             index=None,
             label_visibility="collapsed",
         )
-        if selected:
-            s.selected_option = selected
+        if chosen:
+            S.chosen = chosen
 
-        col_sub, col_skip = st.columns([2, 5])
+        col_sub, _ = st.columns([2, 5])
         with col_sub:
-            if st.button("Submit Answer", disabled=(s.selected_option is None)):
-                s.answered_current = True
-                if s.selected_option == q["answer"]:
-                    s.score += 1
+            if st.button("✔ Submit Answer", key=f"sub_{S.q_idx}", disabled=(S.chosen is None)):
+                S.answered = True
+                if S.chosen == q["answer"]:
+                    S.score += 1
+                S.user_answers[S.q_idx] = S.chosen
                 st.rerun()
+
+    # ── Already answered: show feedback ───────────────────────────────────
     else:
-        # Show options with feedback
         correct = q["answer"]
-        chosen = s.selected_option
-        is_correct = chosen == correct
+        is_correct = (S.chosen == correct)
 
-        for opt in options:
-            if opt == correct:
-                st.markdown(f"✅ **{opt}**")
-            elif opt == chosen and not is_correct:
-                st.markdown(f"❌ ~~{opt}~~")
+        for opt in q["options"]:
+            if opt == correct and is_correct:
+                st.markdown(
+                    f'<div style="background:rgba(86,211,100,0.1);border:1.5px solid '
+                    f'rgba(86,211,100,0.5);border-radius:10px;padding:14px 18px;'
+                    f'color:#56d364;font-weight:600;margin-bottom:8px">✅ {opt}</div>',
+                    unsafe_allow_html=True)
+            elif opt == correct:
+                st.markdown(
+                    f'<div style="background:rgba(86,211,100,0.08);border:1.5px solid '
+                    f'rgba(86,211,100,0.4);border-radius:10px;padding:14px 18px;'
+                    f'color:#56d364;margin-bottom:8px">✅ {opt}</div>',
+                    unsafe_allow_html=True)
+            elif opt == S.chosen and not is_correct:
+                st.markdown(
+                    f'<div style="background:rgba(248,81,73,0.1);border:1.5px solid '
+                    f'rgba(248,81,73,0.5);border-radius:10px;padding:14px 18px;'
+                    f'color:#f85149;margin-bottom:8px">❌ {opt}</div>',
+                    unsafe_allow_html=True)
             else:
-                st.markdown(f"◦ {opt}")
+                st.markdown(
+                    f'<div style="background:#161b22;border:1px solid #21262d;'
+                    f'border-radius:10px;padding:14px 18px;color:#6e7681;'
+                    f'margin-bottom:8px">{opt}</div>',
+                    unsafe_allow_html=True)
 
+        # Feedback banner
         if is_correct:
-            st.markdown(f'<div class="feedback-correct">✓ Correct! Well done.</div>', unsafe_allow_html=True)
+            st.markdown(
+                '<div style="background:rgba(86,211,100,0.1);border:1.5px solid '
+                'rgba(86,211,100,0.4);border-radius:10px;padding:14px 18px;'
+                'color:#56d364;font-weight:600;margin-top:4px">✓ Correct! Well done.</div>',
+                unsafe_allow_html=True)
         else:
-            st.markdown(f'<div class="feedback-wrong">✗ Incorrect.<br><span class="correct-answer-reveal">Correct answer: {correct}</span></div>', unsafe_allow_html=True)
+            st.markdown(
+                f'<div style="background:rgba(248,81,73,0.1);border:1.5px solid '
+                f'rgba(248,81,73,0.4);border-radius:10px;padding:14px 18px;'
+                f'color:#f85149;font-weight:600;margin-top:4px">✗ Incorrect!<br>'
+                f'<span style="font-size:13px;color:#56d364;font-weight:500">'
+                f'✅ Correct Answer: {correct}</span></div>',
+                unsafe_allow_html=True)
 
-        col_next, _ = st.columns([2, 5])
-        with col_next:
-            btn_label = "Finish Quiz →" if q_idx + 1 >= total_q else "Next Question →"
-            if st.button(btn_label, type="primary"):
-                s.answers[q_idx] = chosen
-                s.q_index += 1
-                s.answered_current = False
-                s.selected_option = None
-                st.rerun()
+        st.markdown("")
+        is_last = (S.q_idx + 1 >= total_q)
+        col_nxt, _ = st.columns([2, 5])
+        with col_nxt:
+            btn_lbl = "🏁 Finish Quiz" if is_last else "Next Question →"
+            if st.button(btn_lbl, key=f"nx_{S.q_idx}"):
+                S.q_idx += 1
+                S.answered = False
+                S.chosen = None
+                if S.q_idx >= total_q:
+                    goto("result")
+                else:
+                    st.rerun()
+
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  SCREEN: RESULT
+#  RESULT
 # ══════════════════════════════════════════════════════════════════════════════
-elif s.screen == "result":
-    total_q = len(s.questions)
-    score = s.score
-    pct = int(score / total_q * 100) if total_q else 0
+elif S.screen == "result":
+    total_q = len(S.questions)
+    score = S.score
+    p = pct(score, total_q)
     wrong = total_q - score
-    grade, grade_color = grade_label(pct)
+    grade_txt, grade_color = grade(p)
+    meta = SUBJECTS[S.subject]
 
-    # Save result
-    if s.subject not in s.section_scores:
-        s.section_scores[s.subject] = {}
-        s.section_totals[s.subject] = {}
-    s.section_scores[s.subject][s.section] = score
-    s.section_totals[s.subject][s.section] = total_q
-
-    meta = SUBJECTS[s.subject]
+    # Persist score
+    if S.subject not in S.section_scores:
+        S.section_scores[S.subject] = {}
+    S.section_scores[S.subject][S.section] = {"score": score, "total": total_q}
 
     st.markdown(f"""
     <div class="result-card">
-        <p style="color:var(--muted);font-size:0.85rem;margin-bottom:0.5rem">{meta['icon']} {s.subject} · {s.section}</p>
-        <p class="result-score-big">{pct}%</p>
-        <p class="result-fraction">{score} out of {total_q} correct</p>
-        <p class="result-grade" style="color:{grade_color}">{grade}</p>
-        <div class="result-stats">
-            <div class="result-stat">
-                <div class="result-stat-val" style="color:#10b981">{score}</div>
-                <div class="result-stat-label">Correct</div>
-            </div>
-            <div class="result-stat">
-                <div class="result-stat-val" style="color:#ef4444">{wrong}</div>
-                <div class="result-stat-label">Wrong</div>
-            </div>
-            <div class="result-stat">
-                <div class="result-stat-val" style="color:#3b82f6">{total_q}</div>
-                <div class="result-stat-label">Total</div>
-            </div>
-            <div class="result-stat">
-                <div class="result-stat-val" style="color:#8b5cf6">{pct}%</div>
-                <div class="result-stat-label">Score</div>
-            </div>
-        </div>
+        <p style="color:#8b949e;font-size:13px;margin-bottom:10px">{meta['icon']} {S.subject} &mdash; {S.section}</p>
+        <div class="res-pct">{p}%</div>
+        <p style="color:#8b949e;font-size:16px;margin:10px 0 4px">{score} out of {total_q} correct</p>
+        <p style="font-size:1.3rem;font-weight:700;color:{grade_color};margin:0">{grade_txt}</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Difficulty breakdown
-    diff_stats = {"Easy": [0,0], "Medium": [0,0], "Hard": [0,0]}
-    for i, q in enumerate(s.questions):
-        diff = q.get("difficulty", "Medium")
-        diff_stats[diff][1] += 1
-        if s.answers.get(i) == q["answer"]:
-            diff_stats[diff][0] += 1
-
-    st.markdown('<div class="section-title">Difficulty Breakdown</div>', unsafe_allow_html=True)
-    dc1, dc2, dc3 = st.columns(3)
-    for col, (diff, (correct, total)) in zip([dc1, dc2, dc3], diff_stats.items()):
-        pct_d = int(correct/total*100) if total else 0
-        col.metric(f"{diff}", f"{correct}/{total}", f"{pct_d}%")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("✅ Correct", score)
+    c2.metric("❌ Wrong", wrong)
+    c3.metric("📝 Total Qs", total_q)
+    c4.metric("🎯 Score", f"{p}%")
 
     st.markdown("")
-    col1, col2, col3 = st.columns(3)
-    with col1:
+    st.markdown('<div class="sec-label">Difficulty Breakdown</div>', unsafe_allow_html=True)
+
+    diff_data = {"Easy": [0, 0], "Medium": [0, 0], "Hard": [0, 0]}
+    for i, q in enumerate(S.questions):
+        d = q.get("difficulty", "Medium")
+        diff_data[d][1] += 1
+        if S.user_answers.get(i) == q["answer"]:
+            diff_data[d][0] += 1
+
+    dc1, dc2, dc3 = st.columns(3)
+    for col, (diff, (c, t)) in zip([dc1, dc2, dc3], diff_data.items()):
+        dp = pct(c, t)
+        col.metric(diff, f"{c}/{t}", f"{dp}%")
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    b1, b2, b3 = st.columns(3)
+    with b1:
         if st.button("🔄 Retake Quiz"):
-            qs = s.questions.copy()
+            qs = S.questions.copy()
             random.shuffle(qs)
-            go("quiz", questions=qs, q_index=0, score=0, answers={},
-               answered_current=False, selected_option=None)
-            st.rerun()
-    with col2:
-        if st.button(f"📚 More Sections"):
-            go("subject")
-            st.rerun()
-    with col3:
+            goto("quiz", questions=qs, q_idx=0, score=0,
+                 user_answers={}, answered=False, chosen=None)
+    with b2:
+        if st.button("📚 More Sections"):
+            goto("subject")
+    with b3:
         if st.button("🏠 Home"):
-            go("home")
-            st.rerun()
+            goto("home")
