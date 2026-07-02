@@ -86,6 +86,7 @@ Deployed on **Streamlit Community Cloud** for instant access anywhere 🌍
 * ⏱️ Timed quizzes
 * 🌙 Dark mode UI
 * 📱 Mobile-friendly improvements
+* course based quizes
 
 ---
 
